@@ -19,3 +19,7 @@
 	<?php include ("includes/footer.php");?>
 </body>
 <html>
+<!-- Envoi fichier form :
+	input type="file"
+	input type="submit" value="Envoyer"
+-->

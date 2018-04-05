@@ -1,6 +1,8 @@
 <?php
 	// Connexion à la base de données :
 	include ("../modeles/connexion_bdd.php");
+
+	// Affichage information lié à l'id
 ?>
 <!DOCTYPE html>
 <html>
