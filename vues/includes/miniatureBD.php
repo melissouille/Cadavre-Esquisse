@@ -1,4 +1,6 @@
-<?php include ("../controles/fonction_miniatures.php"); ?>
+<?php 
+	include ("../controles/fonction_miniatures.php");
+?>
 
 <article class="bd_termninees">
 	<h2>Titre de la bd</h2>

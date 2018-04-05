@@ -60,5 +60,6 @@
 
 	<!-- Pied de page -->
 	<?php include ("includes/footer.php");?>
+
 </body>
 </html>

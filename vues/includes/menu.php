@@ -6,6 +6,6 @@
 		<li><a href="#">Participer à une BD</a></li>
 		<li><a href="creation_bd.php">Créer une BD</a></li>
 		<li><a href="contact.php">Contact</a></li>
-		<li>Connexion / Inscription</li>
+		<li><a href="modals/connexion.php">Connexion / Inscription</a></li>
 	</ul>
 </nav>
