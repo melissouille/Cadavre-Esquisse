@@ -11,7 +11,7 @@
 	<?php include("includes/menu.php");?>
 
 	<div class="header">
-		<p>Paramètre BD</p>
+		<a href="parametre_bd.php">Paramètre BD</a>
 		<a href="#.pdf" title="PDF">Télécharger le PDF</a>
 	</div>
 	<div id="titre">

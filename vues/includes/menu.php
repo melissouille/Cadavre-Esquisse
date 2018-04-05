@@ -1,6 +1,6 @@
 <nav>
 	<ul>
-		<li><a href="accueil.php">Accueil</a></li>
+		<li><a href="index.php">Accueil</a></li>
 		<li><a href="liste_bd.php">Bédés</a></li>
 		<li><a href="principe.php">Le principe</a></li>
 		<li><a href="#">Participer à une BD</a></li>
