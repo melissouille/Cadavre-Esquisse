@@ -1,3 +1,7 @@
+<?php
+	// Connexion à la base de données :
+	include ("../modeles/connexion_bdd.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>

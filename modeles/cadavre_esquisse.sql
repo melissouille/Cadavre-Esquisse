@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 03 avr. 2018 à 13:57
+-- Généré le :  jeu. 05 avr. 2018 à 08:33
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -19,8 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `cadavre esquisse`
+-- Base de données :  `cadavre_esquisse`
 --
+CREATE DATABASE IF NOT EXISTS `cadavre_esquisse` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `cadavre_esquisse`;
 
 -- --------------------------------------------------------
 
@@ -40,14 +42,21 @@ CREATE TABLE IF NOT EXISTS `bandesdessinees` (
   `date_creation` date NOT NULL,
   `nbr_participant` int(11) DEFAULT NULL,
   `nbr_page` int(11) DEFAULT NULL,
-  `nbr_case` int(11) NOT NULL,
-  `nbr_commentaire` int(11) NOT NULL,
+  `nbr_case` int(11) DEFAULT NULL,
+  `nbr_commentaire` int(11) DEFAULT NULL,
   `temps_real` time DEFAULT NULL,
   `duree_real` time DEFAULT NULL,
   `commentaire` text COLLATE utf8_bin,
-  `note` set('1','2','3','4','5') COLLATE utf8_bin NOT NULL,
+  `note` set('1','2','3','4','5') COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `bandesdessinees`
+--
+
+INSERT INTO `bandesdessinees` (`id`, `titre`, `utilisateur`, `droits`, `url`, `couverture`, `etat`, `date_creation`, `nbr_participant`, `nbr_page`, `nbr_case`, `nbr_commentaire`, `temps_real`, `duree_real`, `commentaire`, `note`) VALUES
+(1, 'Titre bande dessinée A', 'nomA', 'Entre pote', 'ww.cadavre-esquisse/titreA.com', NULL, 'En cours - Non réservée', '2018-04-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,14 +120,15 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `nbr_commentaire` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nom` (`nom_utilisateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`id`, `nom_utilisateur`, `email`, `date_inscription`, `url`, `url_avatar`, `description`, `lien_personnel`, `liens_reseaux`, `role`, `nbr_bd_cree`, `nbr_bd_participee`, `nbr_case_cree`, `nbr_like`, `nbr_commentaire`) VALUES
-(1, 'exemple1', 'exemple1@mail.com', '2018-04-03', 'wwww.exemple1.com', 'wwww.exemple1_avatar.com', 'exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 exemple1 ', 'ww.exemple1.fr', 'facebbok/exemple1.fr', 'admin', 2, 3, 4, 5, 6);
+(1, 'NomA', 'nomA@mail.com', '2018-04-03', 'wwww.nomA.com', 'wwww.nomA_avatar.com', 'bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ', 'ww.nomA.fr', 'facebbok/nomA.fr', 'admin', 2, 3, 4, 5, 6),
+(2, 'NomB', 'nomB@mail.com', '2018-04-05', 'ww.cadavre-esquisse/nomB.com', 'ww.cadavre-esquisse/avatar/nomB.com', 'blabla blabla blabla blabla blabla blabla blabla ', NULL, NULL, 'auteur', NULL, NULL, NULL, NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

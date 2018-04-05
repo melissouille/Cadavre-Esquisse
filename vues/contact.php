@@ -1,3 +1,7 @@
+<?php
+	// Connexion à la base de données :
+	include ("../modeles/connexion_bdd.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +15,7 @@
 	<?php include("includes/menu.php");?>
 
 	<fieldset>
-		<label>Contact :</label>
+		<legend>Contact :</legend>
 		<form>
 			
 		</form>

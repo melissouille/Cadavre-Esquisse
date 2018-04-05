@@ -1,3 +1,7 @@
+<?php
+	// Connexion à la base de données :
+	include ("../modeles/connexion_bdd.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +51,7 @@
 					<p></p>
 				</div>
 			</div>
-			
+
 			<?php include ("includes/miniatureBD.php"); ?>
 
 			<a href="#" id="voir_encours">Tout voir</a> <!--Bouton -->
