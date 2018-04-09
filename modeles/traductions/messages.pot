@@ -1,0 +1,24 @@
+# CATALOGUE CHAINES A TRADUIRE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-09 11:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+Nom du fichier où la chaîne caractères a été trouvée et le numéro de ligne
+#: C:\wamp64\www\Cadavre_Esquisse\modeles\textes.php:2
+Chaine à traduire
+msgid "Accueil"
+Ligne ou la chaine sera traduite
+msgstr ""

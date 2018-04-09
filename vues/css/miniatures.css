@@ -1,0 +1,37 @@
+article h2 {
+	color: #00FA9A;
+	background-color: none;
+}
+article button {
+	width: 80%;
+	height: 20%;
+	opacity: 0;
+	background-color: rgb(0,0,0);
+	border: none;
+	margin-top: 50%;
+}
+article button a {
+	color: rgb(255,255,255);
+}
+article button:hover {
+	opacity: 1;
+}
+div.image {
+	border: 0.4em solid #FFA500;
+	width: 9em;
+	height: 12em;
+	background-color: #2F4F4F;
+	margin: auto;
+}
+article {
+	width: 11em;
+	display: inline-block;
+}
+
+div.description {
+	color :#00FA9A;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	padding: 2%;
+}

@@ -3,31 +3,29 @@
 ?>
 
 <article class="bd_termninees">
-	<h2>Titre de la bd</h2>
+	
 	<div class="image">
 		<img src="">	
-		<a href="#">Lire la bd</a> <!-- Bouton -->
+		<button><a href="#">Lire la bd</a></button> <!-- Bouton -->
 	</div>
 	<div class="description">
-		<ul>
-			<li>date de création</li>
-			<li>nombre de participants</li>
-			<li>note</li>
-		</ul>
+			<h2>Titre de la bd</h2>
+			<span>etats</span>
+			<span>nombre de participants</span>
+			<span>note</span>
 	</div>
 </article>
 
 <article class="bd_encours">
-	<h2>Titre de la bd</h2>
+	
 	<div class="image">
 		<img src="">	
-		<a href="#">Lire la bd</a> <!-- Bouton -->
+		<button><a href="#">Lire la bd</a></button> <!-- Bouton -->
 	</div>
 	<div class="description">
-		<ul>
-			<li>date de création</li>
-			<li>nombre de participants</li>
-			<li>note</li>
-		</ul>
+			<h2>Titre de la bd</h2>
+			<span>etats</span>
+			<span>nombre de participants</span>
+			<span>note</span>
 	</div>
 </article>

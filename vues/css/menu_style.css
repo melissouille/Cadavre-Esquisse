@@ -1,0 +1,26 @@
+/* MENU */
+div#menu {
+	background-color: #2F4F4F;
+	text-align: center;
+}
+nav ul li {
+	display: inline-flex;
+	flex-direction: row;
+	list-style: none;
+	padding: 0% 1%;
+}
+nav a {
+	text-decoration: none;
+	color: rgba(255,255,255,1);
+}
+nav li:hover {
+	border-bottom: 0.2em solid #00FA9A;
+}
+#modal_login {
+	background-color: #00FA9A;
+	padding: 1% 1%;
+}
+#modal_login:hover {
+	border: none;
+	font-weight: bold;
+}

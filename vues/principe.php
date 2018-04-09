@@ -8,11 +8,13 @@
 	<meta charset="utf-8">
 	<title>Le Principe</title>
 	<script src="controles/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<!-- Menu -->
-	<?php include("includes/menu.php");?>
+	<div id="menu">
+		<?php include("includes/menu.php");?>
+	</div>
 
 	<div class="content">
 		<section class="principe">
@@ -23,13 +25,34 @@
 
 		<section class="comment">
 			<h2>Comment ça fonctionne ?</h2>
-			<img src="" class="left"> <p>- Crée un projet ou rejoins un projet</p>
-			<img src="" class="right"> <p>- Télécharger le template disponible de la case</p> 
-			<img src="" class="left"> <p>- Vous avez un temps définit pour réaliser la case</p>
-			<img src="" class="right"> <p>- Si une case est en cours de réalisation vous pouvez réserver la suivante</p> 
-			<img src="" class="left"> <p>- Une fois votre dessin fait, importez le via le bouton situé sur la case correspondante</p>
-			<img src="" class="right"> <p>- C'est ensuite autour d'une autre personne !</p>
-			<img src="" class="left"> <p>- Vous pouvez réserver une autre case à tout moment</p>
+			<div class="img_left">
+				<img src="" class="left">
+				<p>- Crée un projet ou rejoins un projet</p>
+			</div>
+			<div class="img_right">
+				<img src="" class="right">
+				<p>- Télécharger le template disponible de la case</p>
+			</div>
+			<div class="img_left">
+				<img src="" class="left">
+				<p>- Vous avez un temps définit pour réaliser la case</p>
+			</div>
+			<div class="img_right">
+				<img src="" class="right">
+				<p>- Si une case est en cours de réalisation vous pouvez réserver la suivante</p>
+			</div>
+			<div class="img_left">
+				<img src="" class="left">
+				<p>- Une fois votre dessin fait, importez le via le bouton situé sur la case correspondante</p>
+			</div>
+			<div class="img_right">
+				<img src="" class="right">
+				<p>- C'est ensuite autour d'une autre personne !</p>
+			</div>
+			<div class="img_left">
+				<img src="" class="left">
+				<p>- Vous pouvez réserver une autre case à tout moment</p>
+			</div>
 		</section>
 
 		<section class="regles">

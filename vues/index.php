@@ -8,11 +8,13 @@
 	<meta charset="utf-8">
 	<title>Accueil</title>
 	<script src="controles/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<!-- Menu -->
-	<?php include("includes/menu.php");?>
+	<div id="menu">
+		<?php include("includes/menu.php");?>
+	</div>
 
 	<div class="content">
 		<section class="encart">
@@ -27,34 +29,43 @@
 			Une case chacun, chacun son tour.</p>
 
 			<div class="guide">
-				<a href="principe.php">Suivez le guide !</a> <!-- Bouton -->
+				<button class="bouton_accueil"><a href="principe.php">Suivez le guide !</a> </button>
 			</div>
 		</section>
 
 		<section class="bd_terminees">
-			<h2>Bande Dessinée terminée</h2>
+			<h2 class="bandeau" id="titre_bd_terminees">Bande Dessinée terminée</h2>
 			<p>Consultez les Bande Dessinée les mieux notées.</p>
 
 				<?php include ("includes/miniatureBD.php"); ?>
 
-			<a href="#" id="voir_terminees">Tout voir</a> <!--Bouton -->
+			<button class="bouton_accueil">
+				<a href="#" id="voir_terminees">Tout voir</a>
+			</button>
 		</section>
 
 		<section class="bd_encours">
+			<h2 class="bandeau" id="titre_bd_encours">Bande Dessinée en cours...</h2>
 			<div class="legendes">
-				<div class="case_reservee">
-					<h3>Case réservée</h3>
-					<p>Vous pouvez faire une demande de notification pour savoir quand la prochaine case sera disponible !</p>
+				<div class="bloc_case">
+					<div id="case_reservee" class="etats_case">
+						<h3>Case réservée</h3>
+						<p>Vous pouvez faire une demande de notification pour savoir quand la prochaine case sera disponible !</p>
+					</div>
 				</div>
-				<div class="case_disponible">
-					<h3>Case disponible</h3>
-					<p></p>
+				<div class="bloc_case">
+					<div id="case_disponible" class="etats_case">
+						<h3>Case disponible</h3>
+						<p></p>
+					</div>
 				</div>
 			</div>
 
 			<?php include ("includes/miniatureBD.php"); ?>
 
-			<a href="#" id="voir_encours">Tout voir</a> <!--Bouton -->
+			<button class="bouton_accueil">
+				<a href="#" id="voir_encours">Tout voir</a>
+			</button>
 		</section>
 	</div>
 

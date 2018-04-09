@@ -1,0 +1,16 @@
+button.bouton_accueil {
+	display: block;
+	text-align: center;
+	margin: auto;
+	text-decoration: none;
+	background-color: #00FA9A;
+	padding: 1% 1%;
+	border: none;
+}
+button.bouton_accueil a{
+	text-decoration: none;
+	color: rgba(255,255,255,1);
+}
+button.bouton_accueil:hover {
+	font-weight: bold;
+}

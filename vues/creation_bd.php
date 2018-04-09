@@ -50,12 +50,9 @@
 						<!-- Affichage du nombre d'option en fonction de l'état de partage -->
 						<!-- Pour la Slidebar, utilisation potentiel de jQuery ou autre framework -->
 						<!-- Heures -->
-						<option value="1h">1h</option>
-						<option value="2h">2h</option>
+						<option value="1h">1h</option>					
 						<option value="3h">3h</option>
-						<option value="4h">4h</option>
 						<option value="6h">6h</option>
-						<option value="8h">8h</option>
 						<option value="12h">12h</option>
 						<!-- Jours -->
 						<option value="1j">1 jour</option>

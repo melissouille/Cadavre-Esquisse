@@ -1,0 +1,13 @@
+.comment img {
+	background-color: rgba(0,0,0,0.8);
+	border-radius: 50%;
+	width: 80px; height: 80px;
+}
+.img_left {
+	border : 1px solid red;
+	
+}
+.img_right {
+	
+	
+}

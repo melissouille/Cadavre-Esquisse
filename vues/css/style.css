@@ -1,0 +1,68 @@
+/* CASCADES */
+	@import url("menu_style.css");
+	@import url("dropdown.css");
+	@import url("miniatures.css");
+	@import url("button.css");
+	@import url("principes.css");
+	@import url("footer.css");
+
+html {
+	margin: auto; height: 100%; width: 100%;
+}
+body {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+div.content {
+
+}
+.encart {
+	background-color: #00FA9A;
+	height: 20em;
+}
+/* TEXT */
+	.visibilite {
+		font-style: italic;
+		font-weight: bold;
+	}
+	h2 {
+		color: #00FA9A;
+	}
+/* PAGE ACCUEIL */
+	h2.bandeau {
+		background-color: #2F4F4F;
+		padding: 2%;
+		margin-top: 1em;
+		margin-bottom: 0;
+	}
+	#titre_bd_terminees {
+		color: #FFA500;
+	}
+	#titre_bd_encours {
+
+	}
+	section.bd_terminees p {
+		color : #FF6347;
+	}
+	div.legendes {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin: auto;
+		height: 100%;
+		background-color: rgba(0,0,0,0.1);
+	}
+	div.bloc_case {
+		width: 30%;
+	}
+	div.etats_case {
+		padding: 2%; margin: auto;	
+		text-align: left;
+		width: 80%; height: 90%;
+		float: right;
+}
+/* LES COINS COLORES */
