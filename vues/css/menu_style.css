@@ -1,7 +1,8 @@
 /* MENU */
 div#menu {
-	background-color: #2F4F4F;
+	background-color: #3e5164;
 	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
 }
 nav ul li {
 	display: inline-flex;
@@ -13,14 +14,23 @@ nav a {
 	text-decoration: none;
 	color: rgba(255,255,255,1);
 }
-nav li:hover {
-	border-bottom: 0.2em solid #00FA9A;
+nav a:hover {
+	text-decoration: none;
+	color: rgba(255,255,255,1);
+	border-bottom: 0.2em solid #4bb5aa;
 }
 #modal_login {
-	background-color: #00FA9A;
+	background-color: #4bb5aa;
 	padding: 1% 1%;
 }
 #modal_login:hover {
 	border: none;
 	font-weight: bold;
 }
+/* Codes Couleurs :
+	Bleu: #3e5164
+	Orange: #ef974d
+	Jaune: #ffd591
+	Rose: #f18693
+	Vert: #4bb5aa
+*/

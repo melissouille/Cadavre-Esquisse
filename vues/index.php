@@ -3,11 +3,10 @@
 	include ("../modeles/connexion_bdd.php");
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>Accueil</title>
-	<script src="controles/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -17,35 +16,38 @@
 	</div>
 
 	<div class="content">
-		<section class="encart">
-			<div>
+		<section>
+			<div class="encart"> 
 				
 			</div>
 		</section>
 
-		<section class="lidee">
-			<h2>L'idée ?</h2>
-			<p>Créer une bd à plusieurs.<br>
-			Une case chacun, chacun son tour.</p>
+		<section>
+			<div class="lidee">
+				<h2 class="titres">L'idée ?</h2>
+				<p>Créer une bd à plusieurs.<br>
+				Une case chacun, chacun son tour.</p>
 
-			<div class="guide">
-				<button class="bouton_accueil"><a href="principe.php">Suivez le guide !</a> </button>
+
+				<div class="guide">
+					<button class="boutons"><a href="principe.php">Suivez le guide !</a> </button>
+				</div>
 			</div>
 		</section>
 
 		<section class="bd_terminees">
-			<h2 class="bandeau" id="titre_bd_terminees">Bande Dessinée terminée</h2>
+			<h2 class="bandeau titres" id="titre_bd_terminees">Bande Dessinée terminée</h2>
 			<p>Consultez les Bande Dessinée les mieux notées.</p>
 
 				<?php include ("includes/miniatureBD.php"); ?>
 
-			<button class="bouton_accueil">
+			<button class="boutons">
 				<a href="#" id="voir_terminees">Tout voir</a>
 			</button>
 		</section>
 
 		<section class="bd_encours">
-			<h2 class="bandeau" id="titre_bd_encours">Bande Dessinée en cours...</h2>
+			<h2 class="bandeau titres" id="titre_bd_encours">Bande Dessinée en cours...</h2>
 			<div class="legendes">
 				<div class="bloc_case">
 					<div id="case_reservee" class="etats_case">
@@ -63,7 +65,7 @@
 
 			<?php include ("includes/miniatureBD.php"); ?>
 
-			<button class="bouton_accueil">
+			<button class="boutons">
 				<a href="#" id="voir_encours">Tout voir</a>
 			</button>
 		</section>

@@ -9,7 +9,7 @@
 		<button><a href="#">Lire la bd</a></button> <!-- Bouton -->
 	</div>
 	<div class="description">
-			<h2>Titre de la bd</h2>
+			<h2 class="titres">Titre de la bd</h2>
 			<span>etats</span>
 			<span>nombre de participants</span>
 			<span>note</span>
@@ -23,7 +23,7 @@
 		<button><a href="#">Lire la bd</a></button> <!-- Bouton -->
 	</div>
 	<div class="description">
-			<h2>Titre de la bd</h2>
+			<h2 class="titres">Titre de la bd</h2>
 			<span>etats</span>
 			<span>nombre de participants</span>
 			<span>note</span>

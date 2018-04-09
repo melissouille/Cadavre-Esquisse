@@ -1,0 +1,6 @@
+Codes Couleurs :
+	Bleu: #3e5164
+	Orange: #ef974d
+	Jaune: #ffd591
+	Rose: #f18693
+	Vert: #4bb5aa

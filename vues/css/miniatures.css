@@ -1,5 +1,5 @@
 article h2 {
-	color: #00FA9A;
+	color: #4bb5aa;
 	background-color: none;
 }
 article button {
@@ -17,19 +17,20 @@ article button:hover {
 	opacity: 1;
 }
 div.image {
-	border: 0.4em solid #FFA500;
+
 	width: 9em;
 	height: 12em;
-	background-color: #2F4F4F;
+	background-color: #3e5164;
 	margin: auto;
 }
+/* Si terminée = border: 0.4em solid #ffd591; */
 article {
 	width: 11em;
 	display: inline-block;
 }
 
 div.description {
-	color :#00FA9A;
+	color :#4bb5aa;
 	display: flex;
 	flex-direction: column;
 	text-align: left;

@@ -8,7 +8,7 @@
 	<meta charset="utf-8">
 	<title>Contact</title>
 	<script src="controles/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<!-- Menu -->
@@ -16,8 +16,17 @@
 
 	<fieldset>
 		<legend>Contact :</legend>
-		<form>
-			
+		<form method="POST" action="../controles/formContact.php" form="contact">
+			<label>Pseudo :</label><br>
+			<input type="text" name="username"><br>
+
+			<label>Email :</label><br>
+			<input type="text" name="email"><br>
+
+			<label>Message :</label><br>
+			<textarea form="contact" rows="10" cols="50"></textarea><br>
+
+			<button class="boutons" type="submit" name="envoyer" value="envoyer">Envoyer</button>
 		</form>
 	</fieldset>
 
