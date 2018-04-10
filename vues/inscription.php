@@ -18,6 +18,10 @@
 	<fieldset>
 		<legend>Inscription</legend>
 		<form id="registerForm" method="POST" action="../controles/func_inscription.php" novalidate="novalidate">
+			
+			<label for="avatar"><abbr title="Taille max : 50Ko">Choisissez votre avatar :</abbr></label>
+			<input type="file" name="avatar" id="avatar" /><br />
+
 			<label for="username"><abbr title="required">Un Pseudo ?*</abbr></label>
 			<input type="text" id="username" name="username"/><br>
 
@@ -26,6 +30,9 @@
 
 			<label for="password"><abbr title="Le mot de passe doit comporté minumum 6 caractères avec au moins 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial.">Mot de Passe :*</abbr></label>
 			<input type="password" id="password" name="password"><br>
+
+			<label for="description"><abbr title="required">Description *</abbr></label>
+			<input type="text" id="description" name="description"><br>
 
 			<label><abbr title="saisir une url">Un site perso ?</abbr></label>
 			<input type="url" name="website"><br>
