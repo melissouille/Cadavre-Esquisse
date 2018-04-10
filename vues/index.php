@@ -18,34 +18,28 @@
 	<div class="content">
 		<section>
 			<div class="encart"> 
-				
 			</div>
 		</section>
-
 		<section>
 			<div class="lidee">
 				<h2 class="titres">L'idée ?</h2>
 				<p>Créer une bd à plusieurs.<br>
 				Une case chacun, chacun son tour.</p>
-
-
 				<div class="guide">
-					<button class="boutons"><a href="principe.php">Suivez le guide !</a> </button>
+					<div class="boutons">
+						<a href="principe.php">Suivez le guide !</a>
+					</div>
 				</div>
 			</div>
 		</section>
-
 		<section class="bd_terminees">
 			<h2 class="bandeau titres" id="titre_bd_terminees">Bande Dessinée terminée</h2>
 			<p>Consultez les Bande Dessinée les mieux notées.</p>
-
 				<?php include ("includes/miniatureBD.php"); ?>
-
-			<button class="boutons">
+			<div class="boutons">
 				<a href="#" id="voir_terminees">Tout voir</a>
-			</button>
+			</div>
 		</section>
-
 		<section class="bd_encours">
 			<h2 class="bandeau titres" id="titre_bd_encours">Bande Dessinée en cours...</h2>
 			<div class="legendes">
@@ -65,9 +59,9 @@
 
 			<?php include ("includes/miniatureBD.php"); ?>
 
-			<button class="boutons">
+			<div class="boutons">
 				<a href="#" id="voir_encours">Tout voir</a>
-			</button>
+			</div>
 		</section>
 	</div>
 

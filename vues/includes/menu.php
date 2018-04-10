@@ -14,7 +14,11 @@
 			<li><a href="#">Participer à une BD</a></li>
 			<li><a href="creation_bd.php">Créer une BD</a></li>
 			<li><a href="contact.php">Contact</a></li>
-			<li id="modal_login"><a href="modals/connexion.php">Connexion / Inscription</a></li>
+			<li>
+				<?php include ('modals/connexion.php');?>
+			</li>
+
+			<!-- Si identifié = Profil -->
 			<ul id="dropdown_profil" class="nav navbar-nav">
 			<li class="dropdown" hidden>
 				<a href="../profil.php" class="dropdown-toggle" data-toggle="dropdown">PSEUDO

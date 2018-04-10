@@ -1,5 +1,6 @@
-button.boutons{
+div.boutons{
 	display: block;
+	width: 150px; height: 50px;
 	text-align: center;
 	margin: auto;
 	text-decoration: none;
@@ -7,10 +8,16 @@ button.boutons{
 	padding: 1% 1%;
 	border: none;
 }
-button.boutons a{
+div.boutons a{
 	text-decoration: none;
 	color: rgba(255,255,255,1);
 }
-button.boutons:hover {
+div.boutons:hover {
+	text-decoration: none;
 	font-weight: bold;
 }
+/*** Bouton connexion ***/
+div#bouton_connexion {
+  height: 50px;
+  margin: auto;
+ }

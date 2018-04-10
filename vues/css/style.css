@@ -5,9 +5,12 @@
 	@import url("button.css");
 	@import url("principes.css");
 	@import url("footer.css");
+	@import url("login.css");
+	@import url("form.css");
 /* FONTS */
 	@import url('https://fonts.googleapis.com/css?family=Pacifico');
 	@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 
 html {
 	margin: auto;
@@ -26,8 +29,9 @@ body {
 	height: 20em;
 }
 /* TEXT */
-	.content {
+	.container, .content{
 		font-family: 'Ubuntu', sans-serif;
+		width: 100%;
 	}
 	.visibilite {
 		font-style: italic;

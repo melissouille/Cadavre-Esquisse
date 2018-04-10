@@ -6,7 +6,7 @@
 	
 	<div class="image">
 		<img src="">	
-		<button><a href="#">Lire la bd</a></button> <!-- Bouton -->
+		<div><a href="#">Lire la bd</a></div> <!-- Bouton -->
 	</div>
 	<div class="description">
 			<h2 class="titres">Titre de la bd</h2>
@@ -20,7 +20,7 @@
 	
 	<div class="image">
 		<img src="">	
-		<button><a href="#">Lire la bd</a></button> <!-- Bouton -->
+		<div><a href="#">Lire la bd</a></div> <!-- Bouton -->
 	</div>
 	<div class="description">
 			<h2 class="titres">Titre de la bd</h2>

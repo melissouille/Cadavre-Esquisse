@@ -1,37 +1,41 @@
 <?php
+	session_start();
 	// Connexion à la base de données :
-	include ("../modeles/connexion_bdd.php");
+	include ("../controles/func_inscription.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>S'inscrire</title>
-	<script src="controles/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<!-- Menu -->
 	<?php include("includes/menu.php");?>
 
-<div class="content">
+<div class="container">
 	<fieldset>
 		<legend>Inscription</legend>
 		<form id="registerForm" method="POST" action="../controles/func_inscription.php" novalidate="novalidate">
-			<label>Un Pseudo ?</label>
-			<input type="text" id="username" name="username" required/>
+			<label for="username"><abbr title="required">Un Pseudo ?*</abbr></label>
+			<input type="text" id="username" name="username"/><br>
 
-			<label>Email :</label>
-			<input type="text" id="email" name="email" placeholder="exemple@mail.com" required>
+			<label for="email"><abbr title="required">Email :*</abbr></label>
+			<input type="email" id="email" name="email" placeholder="exemple@mail.com"><br>
 
-			<label>Mot de Passe :</label>
-			<input type="password" name="password" required>
-			<p><span>Le mot de passe doit comporté minumum 6 caractères avec au moins 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial.</span></p>
+			<label for="password"><abbr title="Le mot de passe doit comporté minumum 6 caractères avec au moins 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial.">Mot de Passe :*</abbr></label>
+			<input type="password" id="password" name="password"><br>
 
-			<label>Un site perso ?</label>
-			<input type="text" name="website">
+			<label><abbr title="saisir une url">Un site perso ?</abbr></label>
+			<input type="url" name="website"><br>
 
-			<button type="submit" name="submit" value="inscription">Valider Inscription</button>
+			<p>
+				<span>Les champs prédédés d'un * sont obligatoires.</span>
+			</p>
+			<div class="boutons">
+				<button type="submit" name="submit" value="inscription">Valider Inscription</button>
+			</div>
 		</form>
 	</fieldset>
 </div>

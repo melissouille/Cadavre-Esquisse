@@ -1,0 +1,14 @@
+form#registerForm {
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+}
+form span {
+	font-size: 12px;
+}
+abbr {
+	text-decoration: none;
+}
+label {
+	background-color: #4bb5aa;
+}
