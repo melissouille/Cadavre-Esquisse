@@ -87,15 +87,16 @@ include ("../modeles/connexion_bdd.php");
 				echo "Merci de saisir un mot de passe <br>";
 				$er++;
 			}
-		/* TEST DESCRIPTION */
+		/* TEST DESCRIPTION
 			if (!empty($description) && isset($description)) {
+				// Enleve balises :
 				$description = strip_tags($description);
 
 			} else {
 				echo "Merci de saisir une description <br>";
 				$er++;
 			}
-
+		*/
 		/* TEST AVATAR */ //test2
 			if (!empty($_FILES['avatar']['size'])) {
 				$maxsize = 50024; // poids octets
@@ -128,24 +129,25 @@ include ("../modeles/connexion_bdd.php");
 				}
 			}
 
-		/* TEST LIEN SITE */
+		/* TEST LIEN SITE 
 			if (!empty($lien) && isset($lien)) {
 				// test url
 			} // ne retourne pas d'er car pas obligatoire
-
+		*/
 
 		// S'il n'y a aucune erreur :
 		if ($er == 0) {
-			$requete=$bdd->prepare('INSERT INTO utilisateurs (name,email,password,description,date_inscription) VALUES (:username, :email, :password, :description, :date_inscription)');
+			$requete=$bdd->prepare('INSERT INTO utilisateurs (name,email,password) VALUES (:username, :email, :password)');
 			$requete->bindValue(':username', $username, PDO::PARAM_STR);
 			$requete->bindValue(':email', $email, PDO::PARAM_STR);
 			$requete->bindValue(':password', $password, PDO::PARAM_STR);
-			$requete->bindValue(':description', $description, PDO::PARAM_STR);
-			$requete->bindValue(':date_inscription', $date_inscription, PDO::PARAM_STR);
+			//$requete->bindValue(':description', $description, PDO::PARAM_STR);
+			// $requete->bindValue(':date_inscription', $date_inscription, PDO::PARAM_STR);
 			$requete->execute();
 			// Définition des variables de SESSION :
 
 			$requete->closeCursor();
+			header('Location:index.php');
 		} 
 	}
 

@@ -1,12 +1,13 @@
 <?php
 	// Connexion à la base de données :
 	include ("../modeles/connexion_bdd.php");
+	include ("../controles/lang_config.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Le Principe</title>
+	<title><?php echo _LEPRINCIPE ;?></title>
 	<script src="controles/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -18,51 +19,40 @@
 
 	<div class="content">
 		<section class="principe">
-			<h2>Le principe ?</h2>
-			<p>Comme son nom l'indique à peu près, "Cadavre Esquisse" s'inspire du principe du cadavre exquis en l'appliquant à la bande dessinée.</p>
-			<p>Crée un projet, dessine une case et ce sera au monde entier d'imaginer la suite.</p>
+			<h2><?php echo _T_PRINCIPE ;?></h2>
+			<p><?php echo _P_PRINCIPE ;?></p>
 		</section>
 
 		<section class="comment">
-			<h2>Comment ça fonctionne ?</h2>
+			<h2><?php echo _COMMENT ;?></h2>
 			<div class="img_left">
 				<img src="" class="left">
-				<p>- Crée un projet ou rejoins un projet</p>
+				<p><?php echo _P_ICONE1 ;?></p>
 			</div>
 			<div class="img_right">
 				<img src="" class="right">
-				<p>- Télécharger le template disponible de la case</p>
+				<p><?php echo _P_ICONE2 ;?></p>
 			</div>
 			<div class="img_left">
 				<img src="" class="left">
-				<p>- Vous avez un temps définit pour réaliser la case</p>
+				<p><?php echo _P_ICONE3 ;?></p>
 			</div>
 			<div class="img_right">
 				<img src="" class="right">
-				<p>- Si une case est en cours de réalisation vous pouvez réserver la suivante</p>
-			</div>
-			<div class="img_left">
-				<img src="" class="left">
-				<p>- Une fois votre dessin fait, importez le via le bouton situé sur la case correspondante</p>
-			</div>
-			<div class="img_right">
-				<img src="" class="right">
-				<p>- C'est ensuite autour d'une autre personne !</p>
-			</div>
-			<div class="img_left">
-				<img src="" class="left">
-				<p>- Vous pouvez réserver une autre case à tout moment</p>
+				<p><?php echo _P_ICONE4 ;?></p>
 			</div>
 		</section>
 
 		<section class="regles">
-			<h2>Quelques règles et remarques :</h2>
+			<h2><?php echo _REGLES ;?></h2>
 			<ul>
-				<li>Les bd sont consultables par tout le monde qu'elles soient entre potes ou ouvertes à tous</li>
-				<li>C'est le créateur qui choisit le titre et qui clos la bd</li>
-				<li>Les cases sont délibérément neutres pour nous permettre de choisir : les bords des cases(ou pas), les typos, etc...</li>
-				<li>Différentes formes de case existent, le choix d'une forme contraint la forme suivante</li>
-				<li>Vous recevez une notification par mail lorsques c'est votre tour de dessiner</li>
+				<li><?php echo _P_REGLE1 ;?></li>
+				<li><?php echo _P_REGLE2 ;?></li>
+				<li><?php echo _P_REGLE3 ;?></li>
+				<li><?php echo _P_REGLE4 ;?></li>
+				<li><?php echo _P_REGLE5 ;?></li>
+				<li><?php echo _P_REGLE6 ;?></li>
+				<li><?php echo _P_REGLE7 ;?></li>
 			</ul>
 		</section>
 	</div>

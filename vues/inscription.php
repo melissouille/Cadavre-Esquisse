@@ -1,4 +1,7 @@
 <?php
+	// Configuration langues :
+	include ("../controles/lang_config.php");
+
 	session_start();
 	// Connexion à la base de données :
 	include ("../controles/func_inscription.php");
@@ -12,7 +15,9 @@
 </head>
 <body>
 	<!-- Menu -->
-	<?php include("includes/menu.php");?>
+	<div id="menu">
+		<?php include("includes/menu.php");?>
+	</div>
 
 <div class="container">
 	<fieldset>

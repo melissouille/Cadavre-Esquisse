@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -8,53 +11,34 @@
 <body>
 	<nav>
 		<ul>
-			<li><a href="index.php">Accueil</a></li>
-			<li><a href="liste_bd.php">Bédés</a></li>
-			<li><a href="principe.php">Le principe</a></li>
-			<li><a href="#">Participer à une BD</a></li>
-			<li><a href="creation_bd.php">Créer une BD</a></li>
-			<li><a href="contact.php">Contact</a></li>
+			<li><a href="index.php">
+				<?php echo _ACCUEIL ;?>
+			</a></li>
+			<li><a href="principe.php">
+				<?php echo _LEPRINCIPE ;?>
+			</a></li>
+			<li><a href="explorer.php">
+				<?php echo _EXPLORER ;?>
+			</a></li>
+			<li><a href="#">
+				<?php echo _PARTICIPERBD ;?>
+			</a></li>
+			<li><a href="creation_bd.php">
+				<?php echo _CREERBD ;?>
+			</a></li>
+			<li><a href="contact.php">
+				<?php echo _CONTACT ;?>
+			</a></li>
 			<li>
-				<?php include ('modals/connexion.php');?>
+				<?php
+					if (isset($_SESSION['user'])) {
+						$connecte = 1;
+						include ('dropdown_profil.php');
+					} else {
+						include ('modals/connexion.php');
+					}
+				?>
 			</li>
-
-			<!-- Si identifié = Profil -->
-			<ul id="dropdown_profil" class="nav navbar-nav">
-			<li class="dropdown" hidden>
-				<a href="../profil.php" class="dropdown-toggle" data-toggle="dropdown">PSEUDO
-					<span class="glyphicon glyphicon-user pull-right"></span>
-				</a>
-			    <ul class="dropdown-menu">
-			    	<li>
-			    		<a href="../user/notifications.php">Notifications (vue user) <span class="badge pull-right"> 5</span>
-			    		</a>
-			    	</li>
-			    	<li class="divider"></li>
-			    	<li>
-			    		<a href="../user/bandedessinees.php">Les BD
-			    		<span class="glyphicon glyphicon-stats pull-right"></span>
-			    		</a>
-			    	</li>
-			    	<li class="divider"></li>
-			    	<li>
-			    		<a href="../user/cases.php">Les Cases
-			    		<span class="glyphicon glyphicon-cog pull-right"></span>
-			    		</a>
-			    	</li>
-			    	<li class="divider"></li>
-			    	<li>
-			    		<a href="../user/paremetre_user.php">Paramètres (vue user)
-			    		<span class="glyphicon glyphicon-heart pull-right"></span>
-			    		</a>
-			    	</li>
-			    	<li class="divider"></li>
-			    	<li>
-			    		<a href="#">Déconnection
-			    		<span class="glyphicon glyphicon-log-out pull-right"></span></a>
-			    	</li>
-			    </ul>
-			</li>
-			</ul>
 		</ul>
 	</nav>
 </body>

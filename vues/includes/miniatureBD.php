@@ -1,31 +1,20 @@
 <?php 
-	include ("../controles/fonction_miniatures.php");
+	include ("../controles/miniature_config.php");
 ?>
-
-<article class="bd_termninees">
-	
-	<div class="image">
-		<img src="">	
-		<div><a href="#">Lire la bd</a></div> <!-- Bouton -->
-	</div>
-	<div class="description">
-			<h2 class="titres">Titre de la bd</h2>
-			<span>etats</span>
-			<span>nombre de participants</span>
-			<span>note</span>
-	</div>
-</article>
-
-<article class="bd_encours">
-	
-	<div class="image">
-		<img src="">	
-		<div><a href="#">Lire la bd</a></div> <!-- Bouton -->
-	</div>
-	<div class="description">
-			<h2 class="titres">Titre de la bd</h2>
-			<span>etats</span>
-			<span>nombre de participants</span>
-			<span>note</span>
+<article>
+	<div id="contener_bd">
+		<div class="image">
+			<img src="">	
+			<div>
+				<a href="#">
+					<?php echo _LIRE ;?>
+				</a>
+			</div>
+		</div>
+		<div class="description">
+			<h3 class="titres"><i>Titre de la bd</i></h3>
+			<p class="etat"><span><i>Ouverte à tous ou Entre potes</i></span></p>
+			<p class="participants"><span><i>“Chiffre”</i></span> <?php echo _NB_PARTICIPANTS ;?></p>
+		</div>
 	</div>
 </article>

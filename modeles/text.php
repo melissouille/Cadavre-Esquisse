@@ -1,5 +1,0 @@
-<?php
-	
-	$accueil = _('Accueil');
-
-?>

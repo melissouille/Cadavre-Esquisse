@@ -1,48 +1,26 @@
 <?php
+  // Connexion à la base de données :
+  include ("../modeles/connexion_bdd.php");
   session_start();
-  
-  // Par défaut non connecter :
-  $connexion = false ;
+  $message ="";
 
-  // Vérifications :
-  if (isset($_POST['submit']) && $_POST['submit'] =='connecter') {
-    if (!empty($_POST['username']) && isset($_POST['username'])) {
-      $_SESSION['username'] = $_POST['username'];
+  if (empty($_POST['user']) || empty($_POST['pass'])) {
+      $message= _ERREUR_CHAMPSVIDE;
+  } else {
+    $requete=$bdd->prepare('SELECT password, id, role, name FROM utilisateurs WHERE name =:user');
+    $requete->bindValue(':user', $_POST['user'], PDO::PARAM_STR);
+    $requete->execute();
+    $donnees=$requete->fetch();
 
-      if (!empty($_POST['password']) && isset($_POST['password'])) {
-        $_SESSION['password'] = $_POST['password'];
-        $connexion = true;
-      } else {
-        echo "Merci de saisir votre mot de passe";
-      }
+    if ($donnees['password'] == $_POST['pass']) {
+      $_SESSION['user'] = $donnees['name'];
+      $_SESSION['id'] = $donnees['id'];
+      $_SESSION['role'] = $donnees['role'];
     } else {
-      echo "Merci de saisir votre pseudo";
+      $message = "Saisie incorrecte";
     }
+    $requete->closeCursor();
+    header('Location:index.php');
   }
-
-  if ($connexion == true) {
-    /*TEST*/echo "Saisie correcte = " .$_SESSION['username'];
-    include ("../modeles/connexion_bdd.php");
-    // Récupération données table utilisateurs
-    $requete = $bdd->prepare('SELECT * FROM utilisateurs WHERE name=? AND password=?');
-    $requete->execute(array($_POST['username'], $_POST['password']));
-    while ($utilisateurs = $requete->fetch())
-    {
-
-    }
-  }
-/*  
-    // Comparaison :
-    if ($utilisateurs['name'] == $username) {
-      // HASHAGE //
-      if ($utilisateurs['password'] == $password) {
-        $connexion = true ;
-      } else {
-        echo "Mot de passe incorrect";
-      }
-    } else {
-      echo "Nom d'utilisateur incorrect";
-    }
-  }
-*/
+  echo $message;
 ?>

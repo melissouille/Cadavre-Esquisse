@@ -1,36 +1,63 @@
 <?php
 	// Connexion à la base de données :
 	include ("../modeles/connexion_bdd.php");
+	// Configuration langues :
+	include ("../controles/lang_config.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Edition d'une BD</title>
-	<script src="controles/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title><?php echo _PAGE_BD ;?></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<!-- Menu -->
-	<?php include("includes/menu.php");?>
-
-	<div class="header">
-		<a href="parametre_bd.php">Paramètre BD</a>
-		<a href="#.pdf" title="PDF">Télécharger le PDF</a>
+	<div id="menu">
+		<?php include("includes/menu.php");?>
 	</div>
-	<div id="titre">
-		<h2>Titre BD</h2>
-	</div>
+	<div class="content">
+		<div>
+			<h2 class="titres"><i>Titre BD</i></h2>
+		</div>
 
-	<?php
-		// dialogue base de données
+		<div class="case_vide" id="forme">
+			<p><?php echo _CONSIGNE_FORME ;?></p>
+		</div>
+		<!-- HOVER -->
+		<div class="over_case">
+			<img src="">
+			<!-- SI TERMINEE = -->
+			<p id="realisee_par"><?php echo _CASE_REALISE_PAR ;?></p>
+			<!-- SI RESERVEE = -->
+			<p id="reservee_par"><?php echo _CASE_RESERVEE_PAR ;?></p>
+			<!-- SI DISPONIBLE -->
+			<p id="case_disponible"><?php echo _RESERVER_CASE ;?></p>
+		</div>
+		<div class="temps">
+			<!-- Décompte temps restant pour réalisation -->
+		</div>
+		<div>
+			<!-- Bouton en bas de page(Si case déjà réservé) -->
+			<button><?php echo _PARTICIPER_NOTIF ;?></button>
+			<p></p>
+		</div>
+	</div>
+	<!-- Pied de page -->
+	<?php include ("includes/footer.php");?>
+</body>
+<html>
+
+<!-- NOTES -->
+<?php
+		/* dialogue base de données
 		// for ou foreach {
 		if (case[0].etat == "vide") { //?? Synthaxe ??
 			// affiche div.case_vide
 			// applique l'algorithme :
 			include ("../controles/planches_page_vierge.php");
 		};
-		/* RESERVATION */
+		/* RESERVATION
 		elseif (case[c].etat == "reservee") {
 			include ("modals/reservation.php");
 		}
@@ -40,21 +67,4 @@
 		}
 			
 		}
-		// fin boucle }
-	?>
-	<div class="case_vide">
-		<!-- image ;  flèche en bouton select ; case en bouton option de select -->
-	</div>
-	
-	<div class="case_termine">
-		<img src="">
-		<!-- HOVER -->
-			<p>Case réalisé par <span class="pseudo"></span></p>
-			<button type="button" name="avis" value="like">Like</button>
-			<button type="button" name="avis" value="dislike">Dislike</button>
-	</div>
-	
-	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
-</body>
-<html>
+		// fin boucle } */?>

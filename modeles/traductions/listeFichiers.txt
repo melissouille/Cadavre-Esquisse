@@ -1,2 +1,0 @@
-C:\wamp64\www\Cadavre_Esquisse\modeles\connexion_bdd.php
-C:\wamp64\www\Cadavre_Esquisse\modeles\textes.php

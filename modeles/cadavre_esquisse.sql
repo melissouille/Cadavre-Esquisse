@@ -104,22 +104,23 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
 DROP TABLE IF EXISTS `utilisateurs`;
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nom_utilisateur` varchar(100) COLLATE utf8_bin NOT NULL,
+  `name` varchar(100) COLLATE utf8_bin NOT NULL,
   `email` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `password` varchar(32) COLLATE utf8_bin DEFAULT NULL,
   `date_inscription` date DEFAULT NULL,
+  `dexcription` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `url` varchar(500) COLLATE utf8_bin DEFAULT NULL,
   `url_avatar` varchar(500) COLLATE utf8_bin DEFAULT NULL,
   `description` text COLLATE utf8_bin,
   `lien_personnel` varchar(500) COLLATE utf8_bin DEFAULT NULL,
   `liens_reseaux` varchar(500) COLLATE utf8_bin DEFAULT NULL,
   `role` enum('admin','editeur','auteur') COLLATE utf8_bin DEFAULT NULL,
-  `nbr_bd_cree` int(11) DEFAULT NULL,
-  `nbr_bd_participee` int(11) DEFAULT NULL,
-  `nbr_case_cree` int(11) DEFAULT NULL,
-  `nbr_like` int(11) DEFAULT NULL,
-  `nbr_commentaire` int(11) DEFAULT NULL,
+  `nb_bd_cree` int(11) DEFAULT NULL,
+  `nb_bd_participee` int(11) DEFAULT NULL,
+  `nb_case_cree` int(11) DEFAULT NULL,
+  `nb_commentaire` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `nom` (`nom_utilisateur`)
+  UNIQUE KEY `nom` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -127,8 +128,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `nom_utilisateur`, `email`, `date_inscription`, `url`, `url_avatar`, `description`, `lien_personnel`, `liens_reseaux`, `role`, `nbr_bd_cree`, `nbr_bd_participee`, `nbr_case_cree`, `nbr_like`, `nbr_commentaire`) VALUES
-(1, 'NomA', 'nomA@mail.com', '2018-04-03', 'wwww.nomA.com', 'wwww.nomA_avatar.com', 'bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ', 'ww.nomA.fr', 'facebbok/nomA.fr', 'admin', 2, 3, 4, 5, 6),
-(2, 'NomB', 'nomB@mail.com', '2018-04-05', 'ww.cadavre-esquisse/nomB.com', 'ww.cadavre-esquisse/avatar/nomB.com', 'blabla blabla blabla blabla blabla blabla blabla ', NULL, NULL, 'auteur', NULL, NULL, NULL, NULL, NULL);
+(1, 'Test1', 'test1@mail.com', '2018-04-03', '', '', '', '', '', 'admin', 2, 3, 4, 5, 6),
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

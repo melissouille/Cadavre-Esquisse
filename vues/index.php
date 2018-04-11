@@ -1,12 +1,14 @@
 <?php
 	// Connexion à la base de données :
 	include ("../modeles/connexion_bdd.php");
+	// Configuration langues :
+	include ("../controles/lang_config.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Accueil</title>
+	<title><?php echo _ACCUEIL ;?></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -17,42 +19,55 @@
 
 	<div class="content">
 		<section>
-			<div class="encart"> 
+			<div class="encart">
+			</div>
+			<div class="bienvenue">
+				<p><?php echo _P_BIENVENUE ;?></p>
 			</div>
 		</section>
 		<section>
 			<div class="lidee">
-				<h2 class="titres">L'idée ?</h2>
-				<p>Créer une bd à plusieurs.<br>
-				Une case chacun, chacun son tour.</p>
+				<h2 class="titres">
+					<?php echo _T_PRINCIPE ;?></h2>
+				<p><?php echo _PRINCIPE ;?></p>
 				<div class="guide">
 					<div class="boutons">
-						<a href="principe.php">Suivez le guide !</a>
+						<a href="principe.php">
+							<?php echo _ENSAVOIRPLUS ;?>
+						</a>
 					</div>
 				</div>
 			</div>
 		</section>
 		<section class="bd_terminees">
-			<h2 class="bandeau titres" id="titre_bd_terminees">Bande Dessinée terminée</h2>
-			<p>Consultez les Bande Dessinée les mieux notées.</p>
-				<?php include ("includes/miniatureBD.php"); ?>
+			<h2 class="bandeau titres" id="titre_bd_terminees">
+				<?php echo _T_BDTERMINEES ;?>
+			</h2>
+			<p><?php echo _BDTERMINEES ;?></p>
+
+			<?php include ("includes/miniatureBD.php"); ?>
+
 			<div class="boutons">
-				<a href="#" id="voir_terminees">Tout voir</a>
+				<a href="#" id="voir_terminees">
+					<?php echo _TOUTVOIR ;?>
+				</a>
 			</div>
 		</section>
 		<section class="bd_encours">
-			<h2 class="bandeau titres" id="titre_bd_encours">Bande Dessinée en cours...</h2>
+			<h2 class="bandeau titres" id="titre_bd_encours">
+				<?php echo _T_BDENCOURS ;?>
+			</h2>
 			<div class="legendes">
 				<div class="bloc_case">
 					<div id="case_reservee" class="etats_case">
-						<h3>Case réservée</h3>
-						<p>Vous pouvez faire une demande de notification pour savoir quand la prochaine case sera disponible !</p>
+						<h3><?php echo _CASERESERVEE ;?></h3>
+						<p><?php echo _P_CASERESERVEE ;?></p>
 					</div>
 				</div>
 				<div class="bloc_case">
 					<div id="case_disponible" class="etats_case">
-						<h3>Case disponible</h3>
-						<p></p>
+						<h3><?php echo _CASEDISPO ;?></h3>
+						<p><?php echo _P_CASEDISPO ;?></p>
 					</div>
 				</div>
 			</div>
@@ -60,7 +75,9 @@
 			<?php include ("includes/miniatureBD.php"); ?>
 
 			<div class="boutons">
-				<a href="#" id="voir_encours">Tout voir</a>
+				<a href="#" id="voir_encours">
+					<?php echo _TOUTVOIR ;?>
+				</a>
 			</div>
 		</section>
 	</div>
