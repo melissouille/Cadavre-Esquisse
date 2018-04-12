@@ -10,8 +10,10 @@
 	<meta charset="utf-8">
 	<title><?php echo _PARAM_BD ;?></title>
 	<script src="controles/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<!-- Less -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+	<link rel="stylesheet/less" type="text/css" href="/styles/style.less"></head>
 <body>
 	<!-- Menu -->
 	<div id="menu">
