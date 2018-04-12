@@ -1,0 +1,84 @@
+/* CASCADES */
+	@import "menu_style.less";
+	@import "dropdown.less";
+	@import "miniatures.less";
+	@import "button.less";
+	@import "principes.less";
+	@import "footer.less";
+	@import "form.less";
+
+/* BOOTSTRAP */
+	@import "../css/login.css";
+
+/* FONTS */
+	@import 'https://fonts.googleapis.com/css?family=Pacifico';
+	@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+
+/* Déclarations Couleurs : */
+	@blue: #3e5164;
+	@orange: #ef974d;
+	@yellow: #ffd591;
+	@pink: #f18693;
+	@green: #4bb5aa;
+	@black: #000000;
+	@white: #ffffff;
+
+html {
+	margin: auto;
+	height: 100%; width: 100%;
+}
+body {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	display: flex; flex-direction: column;
+	justify-content: center;
+	font-family: 'Ubuntu', sans-serif;
+}
+.encart {
+	background-color: @green;
+	height: 20em;
+}
+/* TEXT */
+	.container, .content{
+		font-family: 'Ubuntu', sans-serif;
+		width: 100%;
+	}
+	.visibilite {
+		font-style: italic;
+		font-weight: bold;
+	}
+	h2.titres {
+		color: @green;
+		font-family: 'Pacifico', cursive;
+	}
+/* PAGE ACCUEIL */
+	h2.bandeau {
+		background-color: #3e5164;
+		padding: 2%;
+		margin-top: 1em;
+		margin-bottom: 0;
+	}
+	#titre_bd_terminees {
+		color: @orange;
+	}
+	section.bd_terminees p {
+		color : @green;
+	}
+	div.legendes {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin: auto;
+		height: 100%;
+		background-color: @white;
+	}
+	div.bloc_case {
+		width: 30%;
+	}
+	div.etats_case {
+		padding: 2%; margin: auto;	
+		text-align: left;
+		width: 80%; height: 90%;
+		float: right;
+	}

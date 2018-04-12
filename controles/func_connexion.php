@@ -20,7 +20,6 @@
       $message = "Saisie incorrecte";
     }
     $requete->closeCursor();
-    header('Location:index.php');
   }
   echo $message;
 ?>

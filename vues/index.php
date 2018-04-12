@@ -1,15 +1,20 @@
 <?php
 	// Connexion à la base de données :
-	include ("../modeles/connexion_bdd.php");
+	include "../modeles/connexion_bdd.php";
 	// Configuration langues :
-	include ("../controles/lang_config.php");
+	include "../controles/lang_config.php";
+
+	require "../controles/less.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _ACCUEIL ;?></title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/css/style.css">
+	<!-- Less -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+	<link rel="stylesheet/less" type="text/css" href="/styles/css/style.less">
 </head>
 <body>
 	<!-- Menu -->

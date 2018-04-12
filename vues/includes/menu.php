@@ -33,7 +33,7 @@
 				<?php
 					if (isset($_SESSION['user'])) {
 						$connecte = 1;
-						include ('dropdown_profil.php');
+						include ('modals/dropdown_profil.php');
 					} else {
 						include ('modals/connexion.php');
 					}
