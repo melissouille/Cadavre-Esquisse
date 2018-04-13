@@ -12,7 +12,7 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-  <div class="boutons" id="bouton_connexion">
+  <div class="boutons">
     <a href="#" data-toggle="modal" data-target="#login-modal"><?php echo _CONNEXION ;?></a>
   </div>
 

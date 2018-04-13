@@ -29,7 +29,7 @@
 			<li><a href="contact.php">
 				<?php echo _CONTACT ;?>
 			</a></li>
-			<li>
+			<li id="bouton_connexion">
 				<?php
 					if (isset($_SESSION['user'])) {
 						$connecte = 1;

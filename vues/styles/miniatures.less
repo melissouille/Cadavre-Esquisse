@@ -1,38 +1,44 @@
-article h2 {
-	color: @green;
-	background-color: none;
+div.miniature {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-article button {
-	width: 80%;
-	height: 20%;
-	opacity: 0;
-	background-color: rgb(0,0,0);
-	border: none;
-	margin-top: 50%;
-}
-article button a {
-	color: @white;
-}
-article button:hover {
-	opacity: 1;
+div.contener_bd {
+  width: 210px;
 }
 div.image {
-
-	width: 9em;
-	height: 12em;
+	width: 200px;
+	height: 300px;
 	background-color: @blue;
 	margin: auto;
 }
-/* Si terminée = border: 0.4em solid @yellow; */
-article {
-	width: 11em;
-	display: inline-block;
+div.image .fanion {
+	position: relative;
+	bottom: 1px;
+	right : 49px;
 }
 
+div.terminee {
+	border: 0.4em solid @yellow;
+}
 div.description {
 	color : @green;
 	display: flex;
 	flex-direction: column;
 	text-align: left;
 	padding: 2%;
+}
+div.boutonLire {
+	width: 80%;
+	height: 20%;
+	opacity: 0;
+	background-color: @black;
+	border: none;
+	margin-top: 50%;
+}
+div.boutonLire a {
+	color: @white;
+}
+div.boutonLire:hover {
+	opacity: 1;
 }

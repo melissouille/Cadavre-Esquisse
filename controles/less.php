@@ -2,7 +2,7 @@
 <?php 
 require 'lessc.inc.php';
 try {
-	lessc::ccompile('../vues/styles/less/style.less', '../vues/styles/css/style.css');
+	lessc::ccompile('../vues/styles/style.less', '../vues/styles/style.css');
 }
 catch (exception $ex) {
 	exit('lessc fatal error:<br />'.$ex->getMessage());

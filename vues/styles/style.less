@@ -8,7 +8,7 @@
 	@import "form.less";
 
 /* BOOTSTRAP */
-	@import "../css/login.css";
+	@import "login.less";
 
 /* FONTS */
 	@import 'https://fonts.googleapis.com/css?family=Pacifico';
@@ -23,38 +23,71 @@
 	@black: #000000;
 	@white: #ffffff;
 
+/* Déclarations Fonts */
+	.pacifico {
+		font-family: 'Pacifico', cursive;
+	} 
+	.ubuntu {
+		font-family: 'Ubuntu', sans-serif;
+	}
+
+/* Style */
+	.stylenone {
+		list-style: none;
+		text-decoration: none;
+		color: @white;
+		&:hover { 
+			list-style: none;
+			text-decoration: none;
+			color: @white;
+		}
+	}
+	.center {
+		text-align: center;
+		margin: auto; padding: auto;
+		vertical-align: middle;
+	}
+
 html {
 	margin: auto;
 	height: 100%; width: 100%;
 }
 body {
-	width: 100%;
+	width: 100%; heigth: 100%;
 	margin: auto;
 	text-align: center;
 	display: flex; flex-direction: column;
 	justify-content: center;
-	font-family: 'Ubuntu', sans-serif;
+	.ubuntu;
 }
-.encart {
-	background-color: @green;
-	height: 20em;
+.container, .content{
+	width: 100%; height: 100%;
 }
-/* TEXT */
-	.container, .content{
-		font-family: 'Ubuntu', sans-serif;
-		width: 100%;
-	}
-	.visibilite {
-		font-style: italic;
-		font-weight: bold;
-	}
-	h2.titres {
-		color: @green;
-		font-family: 'Pacifico', cursive;
-	}
+.titres {
+	color: @green;
+	.pacifico;
+}
+
+.visibilite {
+	font-style: italic;
+	font-weight: bold;
+}
+
+
 /* PAGE ACCUEIL */
+	header {
+		background-color: @green;
+		height: 500px;
+	}
+	header .bienvenue {
+		position: relative;
+		top: 300px;
+		.pacifico;
+		color: @white;
+		font-size: 3em;
+	}
 	h2.bandeau {
-		background-color: #3e5164;
+		background-color: @blue;
 		padding: 2%;
 		margin-top: 1em;
 		margin-bottom: 0;
@@ -66,19 +99,29 @@ body {
 		color : @green;
 	}
 	div.legendes {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		margin: auto;
-		height: 100%;
+		width: 70%;
+		padding: 20px 0px; margin: auto;
+		display: flex; flex-direction: row;
+		justify-content: space-around;
 		background-color: @white;
 	}
-	div.bloc_case {
-		width: 30%;
-	}
 	div.etats_case {
-		padding: 2%; margin: auto;	
 		text-align: left;
-		width: 80%; height: 90%;
-		float: right;
+		width: 500px;
+	}
+	div.legendes_text {
+		width: 350px;
+		position: relative;
+		left: 90px; bottom: 90px;
+	}
+	.fanion {
+		display: inline-block;
+		height: 0; width: 0;
+		border-right:100px solid transparent;
+	}
+	.vide {
+		border-top: 100px solid @green;
+	}
+	.reserve {
+		border-top: 100px solid @orange;
 	}

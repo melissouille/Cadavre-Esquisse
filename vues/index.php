@@ -23,13 +23,13 @@
 	</div>
 
 	<div class="content">
-		<section>
+		<header>
 			<div class="encart">
+				<div class="bienvenue">
+					<p><?php echo _P_BIENVENUE ;?></p>
+				</div>
 			</div>
-			<div class="bienvenue">
-				<p><?php echo _P_BIENVENUE ;?></p>
-			</div>
-		</section>
+		</header>
 		<section>
 			<div class="lidee">
 				<h2 class="titres">
@@ -49,8 +49,13 @@
 				<?php echo _T_BDTERMINEES ;?>
 			</h2>
 			<p><?php echo _BDTERMINEES ;?></p>
-
-			<?php include ("includes/miniatureBD.php"); ?>
+			<div class="<?php $etat = "terminee"; ?> miniature">
+			<?php 
+				include '../controles/miniature_config.php';
+			?>
+			</div>
+			
+			
 
 			<div class="boutons">
 				<a href="#" id="voir_terminees">
@@ -63,21 +68,27 @@
 				<?php echo _T_BDENCOURS ;?>
 			</h2>
 			<div class="legendes">
-				<div class="bloc_case">
-					<div id="case_reservee" class="etats_case">
+				<div id="case_reservee" class="etats_case">
+					<div class="fanion reserve"></div>
+					<div class="legendes_text">
 						<h3><?php echo _CASERESERVEE ;?></h3>
 						<p><?php echo _P_CASERESERVEE ;?></p>
 					</div>
 				</div>
-				<div class="bloc_case">
-					<div id="case_disponible" class="etats_case">
+				<div id="case_disponible" class="etats_case">
+					<div class="fanion vide"></div>
+					<div class="legendes_text">
 						<h3><?php echo _CASEDISPO ;?></h3>
 						<p><?php echo _P_CASEDISPO ;?></p>
 					</div>
 				</div>
 			</div>
 
-			<?php include ("includes/miniatureBD.php"); ?>
+			<div class="<?php $etat = 'encours'; ?> miniature">
+				<?php 
+					include '../controles/miniature_config.php'; 
+				?>
+			</div>
 
 			<div class="boutons">
 				<a href="#" id="voir_encours">
