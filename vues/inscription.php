@@ -1,10 +1,6 @@
 <?php
 	// Configuration langues :
 	include ("../controles/lang_config.php");
-
-	session_start();
-	// Connexion à la base de données :
-	include ("../controles/func_inscription.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,18 +9,23 @@
 	<title>S'inscrire</title>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<!-- Less -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
-	<link rel="stylesheet/less" type="text/css" href="/styles/style.less"></head>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+		<link rel="stylesheet/less" type="text/css" href="/styles/style.less">
+	<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 <body>
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
-<div class="container">
+<div class="content">
 	<fieldset>
 		<legend>Inscription</legend>
-		<form id="registerForm" method="POST" action="../controles/func_inscription.php" novalidate="novalidate">
+		<form id="registerForm" method="POST" action="../controles/inscription_config.php" novalidate="novalidate">
 			
 			<label for="avatar"><abbr title="Taille max : 50Ko">Choisissez votre avatar :</abbr></label>
 			<input type="file" name="avatar" id="avatar" /><br />
@@ -47,9 +48,7 @@
 			<p>
 				<span>Les champs prédédés d'un * sont obligatoires.</span>
 			</p>
-			<div class="boutons">
-				<button type="submit" name="submit" value="inscription">Valider Inscription</button>
-			</div>
+			<button type="submit" name="submit" class="boutons" value="inscription">Valider Inscription</button>
 		</form>
 	</fieldset>
 </div>

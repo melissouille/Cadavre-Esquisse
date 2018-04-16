@@ -20,6 +20,7 @@
       $message = "Saisie incorrecte";
     }
     $requete->closeCursor();
+    header ("Location: $_SERVER[HTTP_REFERER]" );
   }
   echo $message;
 ?>

@@ -3,6 +3,7 @@
 	include ("../modeles/connexion_bdd.php");
 	// Configuration langues :
 	include ("../controles/lang_config.php");
+	require "../controles/less.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,17 +12,24 @@
 	<title>Création d'une BD</title>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<!-- Less -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
-	<link rel="stylesheet/less" type="text/css" href="/styles/style.less"></head>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+		<link rel="stylesheet/less" type="text/css" href="/styles/style.less">
+	<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 <body>
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
-	<div class="content">
-		<fieldset>
-			<form>
+	<?php 
+		if (isset($_SESSION['id'])) {
+			?>
+			<fieldset>
+			<form method="post" action="../controles/creationBD_config.php">
 				<div id="choix_titre">
 					<h2><?php echo _T_CREATION ;?></h2>
 					<br>
@@ -111,11 +119,23 @@
 				<div class="valider">
 					<h4><?php echo _CHOIX_VALIDER ;?></h4>
 					<div class="boutons">
-						<input type="button" name="valider" id="valide_crea" value="<?php echo _VALIDER_ET_COMMENCER ;?>" />
+						<button type="submit" name="valider" id="valide_crea" value="valider">
+							<?php echo _VALIDER_ET_COMMENCER ;?>
+						</button>
 					</div>
 				</div>
 			</form>
-		</fieldset>
+			</fieldset>
+			<?php
+		} else {
+			?>
+			<p> Veuillez-vous connecter pour créer une bd.</p>
+			<?php
+		}
+	?>
+
+	<div class="content">
+		
 	</div>	
 	<!-- Pied de page -->
 	<?php include ("includes/footer.php");?>

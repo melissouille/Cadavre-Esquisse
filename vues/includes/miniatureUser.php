@@ -1,4 +1,5 @@
 <div id="content_user">
 	<p>Pseudo</p>
-	<p>Nombre de case réalisées : "Chiffre" de cases réalisées</p>
+	<p>participations BD</p>
+	<p> cases réalisées</p>
 </div>';

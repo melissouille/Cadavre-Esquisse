@@ -3,7 +3,7 @@
 	include "../modeles/connexion_bdd.php";
 	// Configuration langues :
 	include "../controles/lang_config.php";
-
+	// Configuration Less :
 	require "../controles/less.php";
 ?>
 <!DOCTYPE html>
@@ -13,23 +13,22 @@
 	<title><?php echo _ACCUEIL ;?></title>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<!-- Less -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
-	<link rel="stylesheet/less" type="text/css" href="/styles/style.less">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+		<link rel="stylesheet/less" type="text/css" href="/styles/style.less">
+	<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<!-- Menu -->
 	<div id="menu">
-		<?php include("includes/menu.php");?>
+		<?php include'includes/menu.php';?>
 	</div>
 
+	<?php include 'includes/header.php';?>
+	
 	<div class="content">
-		<header>
-			<div class="encart">
-				<div class="bienvenue">
-					<p><?php echo _P_BIENVENUE ;?></p>
-				</div>
-			</div>
-		</header>
 		<section>
 			<div class="lidee">
 				<h2 class="titres">
