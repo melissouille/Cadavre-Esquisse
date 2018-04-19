@@ -27,7 +27,7 @@
 		<legend>Inscription</legend>
 		<form id="registerForm" method="POST" action="../controles/inscription_config.php" novalidate="novalidate">
 			
-			<label for="avatar"><abbr title="Taille max : 50Ko">Choisissez votre avatar :</abbr></label>
+			<label for="avatar"><abbr title="Taille max : 50Ko"><?php echo _AVATAR ;?></abbr></label>
 			<input type="file" name="avatar" id="avatar" /><br />
 
 			<label for="username"><abbr title="required">Un Pseudo ?*</abbr></label>

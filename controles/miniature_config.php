@@ -1,26 +1,31 @@
-<?php 
-$requete=$bdd->prepare("SELECT id, titre, droits, nb_participant, couverture, url FROM bandesdessinees WHERE etat=:etat");
-$requete->bindValue(":etat", $etat, PDO::PARAM_STR);
-$requete->execute();
-while ($donnees=$requete->fetch()) {
-	$titre = $donnees['titre'];
+<?php
+// $etatBD ok
+$requeteBD=$bdd->prepare("SELECT id, title, droits, participants, couverture, url, etat FROM bandesdessinees WHERE etat=:etatBD");
+$requeteBD->bindValue(":etatBD", $etatBD, PDO::PARAM_STR);
+$requeteBD->execute();
+while ($donnees=$requeteBD->fetch()) {
+	$titre = $donnees['title'];
 	$droits = $donnees['droits'];
-	$participants = $donnees['nb_participant'];
+	$participants = $donnees['participants'];
 	$couverture = $donnees['couverture'];
 	$url = $donnees['url'];
 	$id_bd = $donnees['id'];
+	$etat = $donnees['etat'];
 
 	if ($droits != 'Privée') {
-		if ($etat = 'encours') {
-			$query=$bdd->prepare("SELECT etatC FROM cases WHERE id_bd =:id_bd");
-			$query->bindValue(":id_bd", $id_bd, PDO::PARAM_STR);
-			$query->execute();
-			$data=$query->fetch();
-			$etatC = $data['etatC'];
-			$query->closeCursor();
+		if ($etat == 'terminee') {
+			$etatC= '';
+			include 'includes/miniatureBD.php';
+		} elseif ($etat == 'encours') {
+			$requeteCase=$bdd->prepare("SELECT etatC FROM cases WHERE id_bd =:id_bd");
+			$requeteCase->bindValue(":id_bd", $id_bd, PDO::PARAM_STR);
+			$requeteCase->execute();
+			$donneesCase=$requeteCase->fetch();
+			$etatC = $donneesCase['etatC'];
+			include 'includes/miniatureBD.php';
+			$requeteCase->closeCursor();
 		}
-		include 'includes/miniatureBD.php';
 	}
 }
-$requete->closeCursor();
+$requeteBD->closeCursor();
 ?>

@@ -3,7 +3,6 @@
 	include ("../modeles/connexion_bdd.php");
 	// Configuration langues :
 	include ("../controles/lang_config.php");
-	// Affichage information lié à l'id
 ?>
 <!DOCTYPE html>
 <html>

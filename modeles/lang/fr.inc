@@ -83,24 +83,30 @@
 /* EXPLORER.PHP */
 	define("_T_PARCOURIR", "Parcourez les différentes BD terminées ou en cours de création !");
 	define("_BARRE_RECHERCHE", "Rechercher une bd, un auteur…");
-/* CREATION_BD.PHP */
-	define("_T_CREATION", "Vous êtes en train de créer une BD");
-	define("_CHAMP_DE_TITRE", "Titre de votre BD");
-	define("_SPAN_TITRE", "Vous pourrez le modifier à tout moment");
-	define("_CHOIX_ETAT", "Choisissez l’état de votre BD");
+/* FORMULAIRES */
+	/* CREATION_BD.PHP */
+		define("_T_CREATION", "Vous êtes en train de créer une BD");
+		define("_LABEL_TITRE", "Choisissez un titre");
+		define("_CHAMP_TITRE", "Titre de votre BD");
+		define("_SPAN_TITRE", "Vous pourrez le modifier à tout moment");
 
-	define("_CHOIX_POTES", "Vous avez choisit la BD “Entre potes”");
-	define("_CHOIX_POTES_CONSIGNES", "Veuillez saisir le nom des participants :");
-	define("_CHAMP_RECHERCHE", "Frédéric Lambda");
-	define("_CHOIX_TEMPS", "Temps de réalisation d’une case :");
-	define("_CHOIX_TEMPS_CONSIGNES", "Là c’est à vous de voir ! Entre la spontanéité ou le travail soigné. Ceci s’applique à l’ensemble des participants de la BD");
-	define("_1JOUR", " jour");
-	define("_JOURS", " jours");
-	define("_SEMAINE", " semaine");
+		define("_LABEL_DROIT", "Choisissez l’état de votre BD");
+		define("_LABEL_POTES", "Vous avez choisit la BD “Entre potes”");
+		define("_SPAN_POTES", "Veuillez saisir le nom des participants :");
+		define("_CHAMP_RECHERCHE", "Frédéric Lambda");
 
-	define("_CHOIX_PAGE", "Nombre de page de la BD");
-	define("_CHOIX_PAGE_CONSIGNES", "Définissez le nombre de page de votre PROJEEEET !!!");
-	define("_CHOIX_VALIDER", "Comme c’est vous qui créé la BD, c’est à vous de commencer !");
+		define("_LABEL_TEMPS", "Temps de réalisation d’une case :");
+		define("_SPAN_TEMPS", "Là c’est à vous de voir ! Entre la spontanéité ou le travail soigné. Ceci s’applique à l’ensemble des participants de la BD");
+		define("_1HEURE", " heure");
+		define("_HEURES", " heures");
+		define("_1JOUR", " jour");
+		define("_JOURS", " jours");
+		define("_SEMAINE", " semaine");
+
+		define("_LABEL_PAGE", "Nombre de page de la BD");
+		define("_SPAN_PAGE", "Définissez le nombre de page de votre PROJEEEET !!!");
+		define("_LABEL_VALIDER", "Comme c’est vous qui créé la BD, c’est à vous de commencer !");
+
 /* NOTIFICATIONS */
 	define("_ATTENTE_INVIT", "Invitation en attente");
 	define("_MSG_ATTENTE_INVIT", " vous invite cordialement à participer à sa BD");
@@ -145,4 +151,8 @@ define("_RESERVER_CASE_FAIT", "Vous avez réservé cette case !");
 define("_INDICATION_PARTICIPER_NOTIF", "Vous recevrez un mail lorsqu’une case sera disponible");
 
 define("_OUBLI_MDP", "Mot de passe oublié");
+
+/* INSCRIPTION */
+
+define("_AVATAR", "Choisissez votre avatar :");
 ?>

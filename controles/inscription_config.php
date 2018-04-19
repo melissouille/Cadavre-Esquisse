@@ -147,7 +147,7 @@ include ("../modeles/connexion_bdd.php");
 			// Définition des variables de SESSION :
 
 			$requete->closeCursor();
-			header('Location:index.php');
+			header('Location:../vues/index.php');
 		} 
 	}
 

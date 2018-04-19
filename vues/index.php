@@ -48,34 +48,34 @@
 				<?php echo _T_BDTERMINEES ;?>
 			</h2>
 			<p><?php echo _BDTERMINEES ;?></p>
-			<div class="<?php $etat = "terminee"; ?> miniature">
-			<?php 
-				include '../controles/miniature_config.php';
-			?>
+			<div class="miniature">
+				<?php 
+					$etatBD='terminee';
+					include '../controles/miniature_config.php';
+				?>
 			</div>
 			
-			
-
 			<div class="boutons">
 				<a href="#" id="voir_terminees">
 					<?php echo _TOUTVOIR ;?>
 				</a>
 			</div>
 		</section>
+
 		<section class="bd_encours">
 			<h2 class="bandeau titres" id="titre_bd_encours">
 				<?php echo _T_BDENCOURS ;?>
 			</h2>
-			<div class="legendes">
+			<div class="indications">
 				<div id="case_reservee" class="etats_case">
-					<div class="fanion reserve"></div>
+					<div class="fanion" id="reserve"></div>
 					<div class="legendes_text">
 						<h3><?php echo _CASERESERVEE ;?></h3>
 						<p><?php echo _P_CASERESERVEE ;?></p>
 					</div>
 				</div>
 				<div id="case_disponible" class="etats_case">
-					<div class="fanion vide"></div>
+					<div class="fanion" id="vide"></div>
 					<div class="legendes_text">
 						<h3><?php echo _CASEDISPO ;?></h3>
 						<p><?php echo _P_CASEDISPO ;?></p>
@@ -83,8 +83,9 @@
 				</div>
 			</div>
 
-			<div class="<?php $etat = 'encours'; ?> miniature">
+			<div class="miniature">
 				<?php 
+					$etatBD = 'encours';
 					include '../controles/miniature_config.php'; 
 				?>
 			</div>

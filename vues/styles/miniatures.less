@@ -1,26 +1,43 @@
+/* MINIATURES */
 div.miniature {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 div.contener_bd {
-  width: 210px;
+	width: 210px;
 }
 div.image {
-	width: 200px;
-	height: 300px;
-	background-color: @blue;
+	width: 198px; height: 280px;
+	background: @blue;
+	border: 5px solid @blue;
 	margin: auto;
 }
-div.image .fanion {
-	position: relative;
-	bottom: 1px;
-	right : 49px;
+
+/* Si l'état de la BD est 'terminee' */
+div#terminee {
+	border-color: @orange;
 }
 
-div.terminee {
-	border: 0.4em solid @yellow;
+div.etats_case {
+	text-align: left;
+	width: 500px;
 }
+
+.fanion {
+	display: inline-block;
+	height: 0; width: 0;
+	position: relative;
+	bottom: 6px; right : 49px;
+	border-right: 100px solid transparent;
+}
+#vide {
+	border-top: 100px solid @green;
+}
+#reserve {
+	border-top: 100px solid @orange;
+}
+
 div.description {
 	color : @green;
 	display: flex;
@@ -41,4 +58,16 @@ div.boutonLire a {
 }
 div.boutonLire:hover {
 	opacity: 1;
+}
+div.indications {
+	width: 70%;
+	padding: 20px 0px; margin: auto;
+	display: flex; flex-direction: row;
+	justify-content: space-around;
+	background-color: @white;
+}
+div.legendes_text {
+	width: 350px;
+	position: relative;
+	left: 90px; bottom: 90px;
 }

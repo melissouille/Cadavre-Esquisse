@@ -1,21 +1,15 @@
-<ul class="profil">
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<div class="dropdown">
+   <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <?php echo $_SESSION['user']; ?>
-      <span class="glyphicon glyphicon-user pull-right"></span>
-    </a>
+    
+    </button>
 
-    <ul class="dropdown-menu">
-      <li><a href="#">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-      <li class="divider"></li>
-      <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
-      <li class="divider"></li>
-      <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
-      <li class="divider"></li>
-      <li><a href="#">Favourites Snippets <span class="glyphicon glyphicon-heart pull-right"></span></a></li>
-      <li class="divider"></li>
-      <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
-    </ul>
-  </li>
-</ul>
-
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="notifications.php">Notifications</a>
+      <a class="dropdown-item" href="bandedessinees.php">Bande Dessinées</a>
+      <a class="dropdown-item" href="cases.php">Cases</a>
+      <a class="dropdown-item" href="parametre_user.php">Paramètres</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="../controles/deconnexion.php">Déconnexion</a>
+    </div>
+</div>
