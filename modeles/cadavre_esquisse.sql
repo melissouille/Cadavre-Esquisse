@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 19 avr. 2018 à 14:56
+-- Généré le :  ven. 20 avr. 2018 à 08:24
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -57,21 +57,28 @@ CREATE TABLE IF NOT EXISTS `bandesdessinees` (
 --
 
 INSERT INTO `bandesdessinees` (`id`, `id_user`, `title`, `droits`, `pages`, `url`, `date_creation`, `etat`, `couverture`, `participants`, `cases`, `commentaires`, `temps_real`, `duree_real`, `commentaire`, `note`) VALUES
-(2, 0, 'BD test 1', 'Ouverte à tous', NULL, '', '2018-04-13', 'terminee', NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 0, 'BD test 2', 'Privée', NULL, '', '2018-04-13', 'terminee', NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 0, 'BD test 3', 'Entre pote', NULL, '', '2018-04-11', 'encours', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 0, 'BD test 5', 'Entre pote', NULL, '', '2018-04-02', 'terminee', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 0, 'BD test 6', 'Ouverte à tous', NULL, '', '2018-04-02', 'encours', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 5, 'BD test 1', 'Ouverte à tous', 4, NULL, '2018-04-17', 'encours', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(16, 5, 'testtemps', NULL, 2, NULL, '2018-04-17', 'encours', NULL, NULL, NULL, NULL, '12h', NULL, NULL, NULL),
-(17, 5, 'testurl', NULL, 1, 'www.cadavreesquisse.com/testurl', '2018-04-17', 'encours', NULL, NULL, NULL, NULL, '1h', NULL, NULL, NULL),
-(18, 3, 'exemple1', 'Entre pote', 10, 'www.cadavreesquisse.com/exemple1', '2018-04-19', 'terminee', NULL, NULL, NULL, NULL, '4j', NULL, NULL, NULL),
-(19, 3, 'exemple2', 'Ouverte à tous', 7, 'www.cadavreesquisse.com/exemple2', '2018-04-19', 'terminee', NULL, NULL, NULL, NULL, '6j', NULL, NULL, NULL),
-(20, 5, 'exemple3', 'Entre pote', 10, NULL, NULL, 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 4, 'exemple4', 'Entre pote', 5, NULL, NULL, 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 4, 'exemple5', 'Entre pote', 1, NULL, NULL, 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 3, 'exemple6', 'Ouverte à tous', 9, NULL, NULL, 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 4, 'exemple7', 'Ouverte à tous', 8, NULL, NULL, 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, NULL, 'exemple1', 'Entre pote', 10, NULL, '2018-04-09', 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 4, 'exemple2', 'Entre pote', 10, NULL, '2018-04-09', 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 3, 'exemple3', 'Privée', NULL, '', '2018-04-13', 'terminee', NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 3, 'exemple4', 'Entre pote', NULL, '', '2018-04-11', 'encours', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 3, 'exemple5', 'Ouverte à tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 3, 'exemple6', 'Ouverte à tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 4, 'exemple7', 'Ouverte à tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 3, 'exemple8', 'Ouverte à tous', NULL, '', '2018-04-13', 'encours', NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 4, 'exemple9', 'Ouverte à tous', NULL, '', '2018-04-02', 'encours', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, 3, 'exemple10', 'Ouverte à tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 5, 'exemple11', 'Entre pote', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 3, 'exemple12', 'Ouverte à tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 4, 'exemple13', 'Ouverte à tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 5, 'exemple14', 'Ouverte à tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 5, 'exemple15', 'Ouverte à tous', 4, NULL, '2018-04-17', 'encours', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(18, 3, 'exemple18', 'Entre pote', 10, 'www.cadavreesquisse.com/exemple1', '2018-04-19', 'terminee', NULL, NULL, NULL, NULL, '4j', NULL, NULL, NULL),
+(19, 3, 'exemple19', 'Ouverte à tous', 7, 'www.cadavreesquisse.com/exemple2', '2018-04-19', 'terminee', NULL, NULL, NULL, NULL, '6j', NULL, NULL, NULL),
+(20, 5, 'exemple20', 'Entre pote', 10, NULL, NULL, 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, 4, 'exemple21', 'Entre pote', 5, NULL, NULL, 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, 4, 'exemple22', 'Entre pote', 1, NULL, '2018-04-20', 'encours', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, 3, 'exemple23', 'Ouverte à tous', 9, NULL, '2018-04-13', 'encours', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, 4, 'exemple24', 'Ouverte à tous', 8, NULL, '2018-04-09', 'encours', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -94,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `cases` (
   `duree` time DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `cases`
@@ -105,10 +112,15 @@ INSERT INTO `cases` (`id`, `id_bd`, `id_user`, `url`, `etatC`, `image`, `format`
 (2, 4, 3, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 2, 5, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
 (4, 3, 5, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 8, 4, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
 (10, 15, 4, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
-(11, 16, 3, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 16, 4, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL);
+(13, 18, 3, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 19, 4, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 20, 5, NULL, 'termine', NULL, NULL, NULL, NULL, NULL, NULL),
+(16, 21, 3, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
+(17, 22, 4, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
+(18, 23, 5, NULL, 'termine', NULL, NULL, NULL, NULL, NULL, NULL),
+(19, 24, 5, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
+(20, 8, 3, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

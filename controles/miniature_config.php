@@ -22,7 +22,10 @@ while ($donnees=$requeteBD->fetch()) {
 			$requeteCase->execute();
 			$donneesCase=$requeteCase->fetch();
 			$etatC = $donneesCase['etatC'];
-			include 'includes/miniatureBD.php';
+			if ($etatC != 'termine') {
+				include 'includes/miniatureBD.php';
+			}
+			
 			$requeteCase->closeCursor();
 		}
 	}
