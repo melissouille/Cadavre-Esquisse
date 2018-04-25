@@ -32,6 +32,7 @@
 	define("_P_CASERESERVEE", "Vous pouvez faire une demande de notification en cliquant sur “Participer à cette BD” pour être informé quand une case se libère.");
 	define("_P_CASEDISPO", "Consultez ici les dernières Bandes dessinées !
 	");
+
 /* BOUTONS */
 	define("_TOUTVOIR", "Tout voir");
 	define("_ENSAVOIRPLUS", "En savoir plus");
@@ -41,9 +42,38 @@
 	define("_ACCEPTER", "Accepter");
 	define("_REFUSER", "Refuser");
 	define("_PARTICIPER_NOTIF", "Participer à cette BD");
+
 /* MESSAGES ERREURS */
 	define("_ERREUR_CHAMPSVIDE", "Merci de remplir tous les champs");
+	define("_ERREUR_PSEUDOVIDE", "Merci de saisir un pseudo");
+	define("_ERREUR_MAILVIDE", "Merci de saisir un email");
+	define("_ERREUR_MDPVIDE", "Merci de saisir un mot de passe");
+	define("_ERREUR_TITREVIDE", "Merci de saisir un titre");
+	define("_ERREUR_ETATVIDE", "Merci de choisir un état");
+	define("_ERREUR_NBPAGEVIDE", "Merci de choisir un nombre de page");
+	define("_ERREUR_TEMPSVIDE", "Merci de choisir un temps de réalisation d'une case");
+
+
 	define("_ERREUR_SAISIEINCORRECTE", "Saisie incorrecte");
+	define("_ERREUR_PSEUDOPRIT", "Ce Pseudo est déjà prit");
+	define("_ERREUR_MAILPRIT", "Il existe déjà un compte avec cet email");
+
+	define("_ERREUR_FORMATPSEUDO", "Format du pseudo invalide");
+	define("_ERREUR_FORMATMAIL", "Format email invalide");
+	define("_ERREUR_FORMATMDP", "Format mot de passe invalide");
+	
+	define("_ERREUR_DESCRIPTION", "Merci de saisir une description");
+	define("_ERREUR_AVATARTRANSFERT", "Erreur transfert avatar");
+	define("_ERREUR_FICHIERLOURD","Fichier trop lourd");
+	define("_ERREUR_TAILLEIMG", "Taille image trop grande");
+	define("_ERREUR_EXTENSION", "Extension doit être : ");
+
+	define("_ERREUR_CONNECTPAGECREATION", "Veuillez-vous connecter pour créer une bd.");
+
+	define("_MSG_AUCUNRESULTAT", "Aucun résultat ne correspond à votre recherche");
+
+define("_BDENREGISTREE", "Bande dessinée enregistrée");
+
 /* CHOIX */
 	define("_TERMINEE", "Terminée");
 	define("_ENCOURS", "En cours");
@@ -129,6 +159,11 @@
 	define("_BLA", "Blablabla");
 	define("_TITRE", "Titre");
 	define("_MOTDEPASSE", "Mot de passe");
+	define("_NOTIFICATION", "Notifications");
+	define("_BANDES_DESSINEES", "Bandes Dessinées");
+	define("_CASES", "Cases");
+	define("_PARAMETRES", "Paramètres");
+	define("_DECONNEXION", "Déconnexion");
 
 define("_CONFIG_PARTICIPANTS", "Ajouter ou supprimer des participants");
 define("_PARTICIPATIONS_BD", "participations à une BD");

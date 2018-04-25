@@ -1,7 +1,5 @@
 <?php
-	// Connexion à la base de données :
-	include ("../modeles/connexion_bdd.php");
-	// Configuration langues :
+	include '../controles/bddconnect.php';
 	include ("../controles/lang_config.php");
 ?>
 <!DOCTYPE html>

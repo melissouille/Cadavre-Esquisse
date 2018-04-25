@@ -1,19 +1,26 @@
 <?php
-include ("../modeles/connexion_bdd.php");
-
 	//Stocker nombre d'erreur :
-	$er =0;
+	$er = 0;
+	$message = "";
 	 // Par défaut non inscrit :
 	$inscription =  0 ;
 
+
 	// Vérifications :
 	if (isset($_POST['submit'])) {
-		/* VARIABLES */
-		$username = $_POST['username'];
-		$email = $_POST['email'];
-		$password = $_POST['password'];
-		$description = $_POST['description'];
-		$date_inscription=date('Y-m-d');// Date du jour automatique
+
+		include 'bddconnect.php';
+		// formatage des requètes :
+		$queryname = "SELECT COUNT(*) AS nbr FROM utilisateurs WHERE name =:username";
+		$querymail = "SELECT COUNT(*) AS nbr FROM utilisateurs WHERE email =:email";
+		$querymdp = "";
+		
+		$username = secureVar($_POST['username']);
+		$email = secureVar($_POST['email']);
+		$password = secureVar($_POST['password']);
+		$description = secureVar($_POST['description']);
+		// Date du jour automatique
+		$date_inscription = date('Y-m-d');
 
 			/* A DEFINIR */
 			$role = "";
@@ -23,31 +30,26 @@ include ("../modeles/connexion_bdd.php");
 
 		/* TEST PSEUDO */
 			if (!empty($username) && isset($username)) {
-				// Supprime balises :
-				$username = strip_tags($username);
-				
 				// Pseudo entre 2 et 36 caractères alphanumériques + underscore + dot
 				if (preg_match('`^([a-zA-Z0-9-_.]{2,36})$`', $username)) {
 					
-					$requete = $bdd->prepare('SELECT COUNT(*) AS nbr FROM utilisateurs WHERE name =:username');
-					$requete->bindValue(':username',$username, PDO::PARAM_STR);
+					$requete = $bdd->prepare($queryuser);
+					$requete->bindParam(':username',$username);
 					$requete->execute();
 					$pseudo_libre=($requete->fetchColumn()==0)?1:0;
 					$requete->closeCursor();
 					// Si le nom d'utilisateur est déjà présent dans la base
 					if (!$pseudo_libre) {
-						echo "Ce Pseudo est déjà prit <br>";
+						$message = _ERREUR_PSEUDOPRIT;
 						$er++;
-					} else {
-						echo $username. " OK <br>";
 					}
 				}
 				else {
-					echo "Format du pseudo invalide <br>";
+					$message = _ERREUR_FORMATPSEUDO;
 					$er++;
 				}
 			} else {
-				echo "Merci de saisir un pseudo <br>";
+				$message = _ERREUR_PSEUDOVIDE;
 				$er++;
 			}
 		/* TEST EMAIL */
@@ -55,21 +57,21 @@ include ("../modeles/connexion_bdd.php");
 
 				if (preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $email)) {
 
-					$requete = $bdd->prepare('SELECT COUNT(*) AS nbr FROM utilisateurs WHERE email =:email');
-					$requete->bindValue(':email',$email, PDO::PARAM_STR);
+					$requete = $bdd->prepare($querymail);
+					$requete->bindParam(':email',$email);
 					$requete->execute();
 					$mail_libre=($requete->fetchColumn()==0)?1:0;
 					$requete->closeCursor();
 					if (!$mail_libre) {
-						echo "Il existe déjà un compte avec cet email";
+						$message = _ERREUR_MAILPRIT;
 						$er++;
 					}
 				} else {
-					echo "Format email invalide <br>";
+					$message = _ERREUR_FORMATMAIL;
 					$er++;
 				}
 			} else {
-				echo "Merci de saisir un email <br>";
+				$message = _ERREUR_MAILVIDE;
 				$er++;
 			}
 		/* TEST MOT DE PASSE */
@@ -78,22 +80,21 @@ include ("../modeles/connexion_bdd.php");
 				// Mot de passe sécurisé
 				if (preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}$#", $password)) {
 					// Crypter mot de passe
-					echo "MOT DE PASSE OK";
+					
 				} else {
-					echo "Format mot de passe invalide <br>";
+					$message = _ERREUR_FORMATMDP;
 					$er++;
 				}
 			} else {
-				echo "Merci de saisir un mot de passe <br>";
+				$message = _ERREUR_MDPVIDE;
 				$er++;
 			}
 		/* TEST DESCRIPTION
 			if (!empty($description) && isset($description)) {
-				// Enleve balises :
-				$description = strip_tags($description);
+				$description = secureVar($description);
 
 			} else {
-				echo "Merci de saisir une description <br>";
+				$message = _ERREUR_DESCRIPTION;
 				$er++;
 			}
 		*/
@@ -105,11 +106,11 @@ include ("../modeles/connexion_bdd.php");
 				$ext_valides = array('bmp', 'jpg', 'jpeg', 'gif', 'png');
 
 				if ($_FILES['avatar']['error'] > 0) {
-					echo "Erreur transfert avatar";
+					$message =  _ERREUR_AVATARTRANSFERT;
 					$er++;
 				}
 				if ($_FILES['avatar']['size'] > $maxsize) {
-					echo "Fichier trop lourd";
+					$message =  _ERREUR_FICHIERLOURD;
 					$er++;
 				}
 				// Récuperer les dimensions de l'image :
@@ -117,14 +118,14 @@ include ("../modeles/connexion_bdd.php");
 					// = tableau : [0]=width et [1]=height
 
 				if ($img_sizes[0] > $maxwidth || $img_sizes[1] > $maxheight) {
-					echo "Taille image trop grande";
+					$message = _ERREUR_TAILLEIMG;
 					$er++;
 				}
 				// Récupérer extension fichier :
 				$ext_upload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
 
 				if (!in_array($ext_upload,$ext_valides)) {
-					echo "Extension doit être : " .$ext_valides;
+					$message = _ERREUR_EXTENSION +$ext_valides;
 					$er++;
 				}
 			}
@@ -136,30 +137,21 @@ include ("../modeles/connexion_bdd.php");
 		*/
 
 		// S'il n'y a aucune erreur :
+		$queryinsert = "INSERT INTO utilisateurs (name,email,password) VALUES (:username, :email, :password)";
 		if ($er == 0) {
-			$requete=$bdd->prepare('INSERT INTO utilisateurs (name,email,password) VALUES (:username, :email, :password)');
-			$requete->bindValue(':username', $username, PDO::PARAM_STR);
-			$requete->bindValue(':email', $email, PDO::PARAM_STR);
-			$requete->bindValue(':password', $password, PDO::PARAM_STR);
-			//$requete->bindValue(':description', $description, PDO::PARAM_STR);
-			// $requete->bindValue(':date_inscription', $date_inscription, PDO::PARAM_STR);
+			$requete=$bdd->prepare($queryinsert);
+			$requete->bindParam(':username', $username);
+			$requete->bindParam(':email', $email);
+			$requete->bindParam(':password', $password);
+			//$requete->bindParam(':description', $description);
+			// $requete->bindParam(':date_inscription', $date_inscription);
 			$requete->execute();
-			// Définition des variables de SESSION :
 
 			$requete->closeCursor();
+			// Redirection page d'accueil
 			header('Location:../vues/index.php');
 		} 
 	}
-
-
-/* Ajout d'une entrée dans la table utilisateurs
-$requete = $bdd->exec('INSERT INTO utilisateurs(name, email, password) VALUES (:name, :email, :password)');
-Affectation variables 
-$requete->execute(array(
-	'name' => $username,
-	'email' => $email,
-	'password' => $password
-));*/
 
 // if ($er!=0) erreur(ERR_IS_CO);
 ?>

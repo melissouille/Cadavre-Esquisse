@@ -3,9 +3,9 @@
 
 		<div class="image" id="<?php echo $etatBD ;?>">
 			<span class="fanion" id="<?php echo $etatC ;?>"></span>
-			<img src="<?php echo $couverture ;?>">
-			<div class="boutonLire">
-				<a href="<?php echo $url ;?>">
+			<img src="<?php echo $couverture ;?>" width=198 height=280>
+			<div>
+				<a class="boutonLire" href="<?php echo $url ;?>">
 					<?php echo _LIRE ;?>
 				</a>
 			</div>

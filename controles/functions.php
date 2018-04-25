@@ -11,4 +11,14 @@ function erreur($err='')
 //constants.php :
 define('ERR_IS_CO','Vous ne pouvez pas accéder à cette page si vous n\'êtes pas connecté');
 */
+
+function secureVar($string) {
+	if (!empty($string)) {
+		$string = $string = addcslashes($string, '%_');
+		$string = strip_tags($string);
+	}
+	return $string;
+}
+
+$pageaccueil = "localhost/cadavre_esquisse/vues/index.php";
 ?>

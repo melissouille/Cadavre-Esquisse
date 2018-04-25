@@ -1,8 +1,6 @@
 <?php
-	// Connexion à la base de données :
-	include ("../modeles/connexion_bdd.php");
-	// Configuration langues :
-	include ("../controles/lang_config.php");
+	include '../controles/bddconnect.php';
+	include '../controles/lang_config.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,13 +8,7 @@
 	<meta charset="utf-8">
 	<title>Création d'une BD</title>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	<!-- Less -->
-		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
-		<link rel="stylesheet/less" type="text/css" href="/styles/style.less">
-	<!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<?php include 'includes/head.html' ;?>
 </head>
 <body>
 	<!-- Menu -->
@@ -35,8 +27,8 @@
 			<form id="createForm" method="POST" action="../controles/creationBD_config.php">
 
 				<div class="choixtitre">
-					<label for="titreBD"><?php echo _LABEL_TITRE ;?></label>
-					<input type="text" name="titre" id="titreBD" />
+					<label for="titre"><?php echo _LABEL_TITRE ;?></label>
+					<input type="text" name="titre" id="titre" />
 					<span class="consignes"><?php echo _SPAN_TITRE ;?></span>
 				</div>
 
@@ -96,7 +88,7 @@
 			<?php
 		} else {
 			?>
-			<p> Veuillez-vous connecter pour créer une bd.</p>
+			<p><?php echo _ERREUR_CONNECTPAGECREATION;?></p>
 			<?php
 		}
 	?>

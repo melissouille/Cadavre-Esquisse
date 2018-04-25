@@ -1,56 +1,61 @@
 <?php
 	session_start();
-	include ("../modeles/connexion_bdd.php");
-	//Stocker nombre d'erreur :
+include 'bddconnect.php';
+include 'functions.php';
+include 'lang_config.php';
+//Stocker nombre d'erreur :
 	$er=0;
 
 	if (isset($_POST['submit'])) {
 		/* les variables saisies */
-		$titre = $_POST['titre'];
-		$pages = $_POST['nb_pages'];
-		$temps = $_POST['temps'];
-		$droits = $_POST['droit'];
+		$titre = secureVar($_POST['titre']);
+		$pages = secureVar($_POST['nb_pages']);
+		$temps = secureVar($_POST['temps']);
+		$droits = secureVar($_POST['droit']);
 
 		/* les variables automatiques */
 		$date_creation = date('Y-m-d');
+		// état en cours par défaut à la création
 		$etat = 'encours';
 		$id_user = $_SESSION['id'];
 		$url = "www.cadavreesquisse.com/".$titre."";
 
 		/* les tests */
-		if (empty($titre) && !isset($titre)) {
-			echo "Merci de saisir un titre";
+		if (empty($titre) || !isset($titre)) {
+			$message = _ERREUR_TITREVIDE;
 			$er++;
 		}
-		if (empty($droits) && !isset($droits)) {
-			echo "Merci de choisir un état";
+		if (empty($droits) || !isset($droits)) {
+			$message = _ERREUR_ETATVIDE;
 			$er++;
 		}
 		if (!isset($pages)) {
-			echo "Merci de choisir un nombre de page";
+			$message = _ERREUR_NBPAGEVIDE;
 			$er++;
 		}
 		if (!isset($temps)) {
-			echo "Merci de choisir un temps de réalisation d'une case";
+			$message = _ERREUR_TEMPSVIDE;
 			$er++;
 		}
 
 		if ($er == 0) {
-			$requete=$bdd->prepare('
-				INSERT INTO bandesdessinees (title, droits, id_user, etat, date_creation, pages, temps_real, url) 
-				VALUES (:titre, :droits, :id_user, :etat, :date_creation, :pages, :temps, :url)');
-			$requete->bindValue(':titre', $titre, PDO::PARAM_STR);
-			$requete->bindValue(':droits', $droits, PDO::PARAM_STR);
-			$requete->bindValue(':id_user', $id_user, PDO::PARAM_INT);
-			$requete->bindValue(':url', $url, PDO::PARAM_STR);
-			// $requete->bindValue(':couverture', $couverture, PDO::PARAM_STR);
-			$requete->bindValue(':etat', $etat, PDO::PARAM_STR);
-			$requete->bindValue(':date_creation', $date_creation, PDO::PARAM_STR);
-			$requete->bindValue(':pages', $pages, PDO::PARAM_INT);
-			$requete->bindValue(':temps', $temps, PDO::PARAM_STR);
+			$query = "INSERT INTO bandesdessinees (title, droits, id_user, etat, date_creation, pages, temps_real, url) VALUES (:titre, :droits, :id_user, :etat, :date_creation, :pages, :temps, :url)";
+			$requete=$bdd->prepare($query);
+
+			$requete->bindParam(':titre', $titre);
+			$requete->bindParam(':droits', $droits);
+			$requete->bindParam(':id_user', $id_user);
+			$requete->bindParam(':url', $url);
+			// $requete->bindParam(':couverture', $couverture);
+			$requete->bindParam(':etat', $etat);
+			$requete->bindParam(':date_creation', $date_creation);
+			$requete->bindParam(':pages', $pages);
+			$requete->bindParam(':temps', $temps);
+
 			$requete->execute();
 			$requete->closeCursor();
-			echo "Bande dessinée enregistrée";
+			$message = _BDENREGISTREE;
 		}
+		echo $message;
 	}
 ?>
