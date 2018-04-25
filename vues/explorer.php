@@ -54,11 +54,13 @@
 				<p>
 					<?php echo _TRI_VUE ;?>
 				</p>
+				<span class="checkmark"></span>
 			</div>
+
 			<div id="liste_rechercher">
-				<h4>Résultats:</h4>
 				<?php include '../controles/recherche.php'; ?>
 			</div>
+			<span class="nbresults"><?php echo $resultat; ?></span>
 		</div>
 	</div>
 	

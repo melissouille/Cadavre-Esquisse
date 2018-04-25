@@ -16,7 +16,7 @@
 		<?php include("includes/menu.php");?>
 	</div>
 
-	<div class="content">
+	<div class="container" id="creation_bd">
 
 		<?php 
 		if (isset($_SESSION['id'])) { ?>
@@ -88,9 +88,12 @@
 			<?php
 		} else {
 			?>
-			<p><?php echo _ERREUR_CONNECTPAGECREATION;?></p>
-			<?php
-		}
+			<div class="unlog">
+				<p class="erreurConnect"><?php echo _ERREUR_CONNECTPAGECREATION;?></p>
+				<?php include ('modals/connexion.php'); ?>
+			</div>
+			<?php 
+			}
 	?>
 		
 	</div>	

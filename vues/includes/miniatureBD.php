@@ -1,4 +1,4 @@
-<article><!-- limiter à 6 -->
+<article>
 	<div class="contener_bd">
 
 		<div class="image" id="<?php echo $etatBD ;?>">
