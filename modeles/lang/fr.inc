@@ -116,9 +116,8 @@ define("_BDENREGISTREE", "Bande dessinée enregistrée");
 /* FORMULAIRES */
 	/* CREATION_BD.PHP */
 		define("_T_CREATION", "Vous êtes en train de créer une BD");
-		define("_LABEL_TITRE", "Choisissez un titre");
 		define("_CHAMP_TITRE", "Titre de votre BD");
-		define("_SPAN_TITRE", "Vous pourrez le modifier à tout moment");
+		define("_SPAN_TITRE", "vous pourrez le modifier à tout moment");
 
 		define("_LABEL_DROIT", "Choisissez l’état de votre BD");
 		define("_LABEL_POTES", "Vous avez choisit la BD “Entre potes”");

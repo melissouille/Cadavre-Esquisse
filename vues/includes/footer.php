@@ -1,4 +1,4 @@
-<footer>
+<footer style="display: none">
 	<ul>
 		<li><a href="about.php">
 			<?php echo _ABOUT ;?>
