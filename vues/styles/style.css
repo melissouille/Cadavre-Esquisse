@@ -55,78 +55,75 @@ div#menu,
   text-decoration: none;
   color: #ffffff;
 }
-div.miniature {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
 div.contener_bd {
   width: 210px;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-row-gap: 0;
 }
-div.image {
-  width: 198px;
-  height: 280px;
-  background: #3e5164;
-  border: 5px solid #3e5164;
-  margin: auto;
+div.description {
+  color: #4bb5aa;
+  text-align: left;
+  position: relative;
 }
-div#terminee {
-  border-color: #ef974d;
+a.boutonLire {
+  display: inline-block;
+  position: relative;
+  bottom: 200px;
+  background-color: #000000;
+  width: 150px;
+  height: 100px;
+  opacity: 0;
+  list-style: none;
+  text-decoration: none;
+  color: #ffffff;
+  margin: -100px;
+}
+a.boutonLire:hover {
+  list-style: none;
+  text-decoration: none;
+  color: #ffffff;
+}
+a.boutonLire:hover {
+  opacity: 0.8;
+}
+div#terminee img {
+  border: 5px solid #ef974d;
+}
+div.indications {
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  width: 70%;
+  padding: 20px 0px;
+  margin: 0 15%;
+  background-color: #ffffff;
 }
 div.etats_case {
   text-align: left;
-  width: 500px;
+  width: 70%;
+}
+div.legendes_text {
+  width: 100%;
+  position: relative;
+  bottom: 70px;
+  left: 60px;
 }
 .fanion {
   display: inline-block;
   height: 0;
   width: 0;
-  position: relative;
-  bottom: 6px;
-  right: 49px;
   border-right: 100px solid transparent;
+}
+span.fanion {
+  position: relative;
+  right: 49px;
+  top: 100px;
 }
 #vide {
   border-top: 100px solid #4bb5aa;
 }
 #reserve {
   border-top: 100px solid #ef974d;
-}
-div.description {
-  color: #4bb5aa;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  padding: 2%;
-}
-div.boutonLire {
-  width: 80%;
-  height: 20%;
-  opacity: 0;
-  background-color: #000000;
-  border: none;
-  margin-top: 50%;
-}
-div.boutonLire a {
-  color: #ffffff;
-}
-div.boutonLire:hover {
-  opacity: 1;
-}
-div.indications {
-  width: 70%;
-  padding: 20px 0px;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #ffffff;
-}
-div.legendes_text {
-  width: 350px;
-  position: relative;
-  left: 90px;
-  bottom: 90px;
 }
 .comment {
   display: block;
@@ -135,6 +132,8 @@ footer {
   width: 100%;
   background-color: #ffffff;
   margin-top: 1em;
+  position: fixed;
+  bottom: 0px;
 }
 footer ul {
   display: flex;
@@ -151,25 +150,6 @@ footer a {
 }
 footer a:hover {
   font-weight: bold;
-}
-form#registerForm {
-  display: inline-block;
-  text-align: left;
-  width: 100%;
-}
-fieldset {
-  position: absolute;
-  top: 50px;
-  margin: 10px;
-}
-form span {
-  font-size: 12px;
-}
-abbr {
-  text-decoration: none;
-}
-label {
-  background-color: #4bb5aa;
 }
 .modal {
   z-index: 1041;
@@ -299,25 +279,33 @@ a.dropdown-item:hover {
   padding: auto;
   vertical-align: middle;
 }
-body {
-  width: 100%;
-  heigth: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'Ubuntu', sans-serif;
-}
-.content {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  margin: auto;
-  padding: auto;
-  vertical-align: middle;
+.zeromarges {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .titres {
   color: #4bb5aa;
   font-family: 'Pacifico', cursive;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+div.container {
+  font-family: 'Ubuntu', sans-serif;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+section {
+  width: 100% !important;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  vertical-align: middle;
 }
 .boutons {
   text-align: center;
@@ -360,7 +348,7 @@ body {
   border: #4bb5aa;
 }
 .encart {
-  background-color: #4bb5aa;
+  background: #4bb5aa;
   height: 500px;
   z-index: 0;
 }
@@ -370,6 +358,9 @@ body {
   font-family: 'Pacifico', cursive;
   color: #ffffff;
   font-size: 3em;
+}
+div.lidee {
+  width: 100%;
 }
 h2.bandeau {
   background-color: #3e5164;
@@ -381,11 +372,303 @@ h2.bandeau {
   color: #ef974d;
 }
 section.bd_terminees p {
+  color: #f18693;
+}
+div.miniature {
+  display: grid;
+  grid-template-columns: repeat(3,300px);
+  grid-gap: 20px;
+  margin: 2% 20%;
+}
+form#registerForm {
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+}
+#creation_bd {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #3e5164;
+  opacity: 1;
+}
+#creation_bd .unlog p.erreurConnect {
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  vertical-align: middle;
+  padding-top: 80px;
+  font-size: 1.2em;
+}
+#creation_bd .unlog button {
+  width: 12%;
+  height: 50px;
+  margin: 2% 44%;
+  color: #3e5164;
+}
+#creation_bd .unlog button:hover {
+  font-weight: bold;
+}
+#createForm {
+  padding-top: 60px;
+  background: rgba(0,0,0,0.1);
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  vertical-align: middle;
+}
+#createForm h2 {
+  font-family: 'Pacifico', cursive;
+  color: #ffffff;
+  font-size: 2em;
+  text-align: center;
+}
+#createForm .numero {
+  display: inline-block;
+  position: relative;
+  right: 4%;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 1.5em;
+  border: 2px solid #f18693;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background: rgba(0,0,0,0.1);
+}
+#createForm #choixtitre,
+#createForm #choixdroit,
+#createForm #choixtemps,
+#createForm #choixpage {
+  padding: 2%;
+}
+#createForm #choixdroit,
+#createForm #choixpage {
+  background: #3e5164;
+}
+#createForm #choixtitre label {
+  padding: 1em;
+}
+#createForm #choixtitre label,
+#createForm #choixtitre input {
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  vertical-align: middle;
+}
+#createForm #choixtitre span,
+#createForm #choixtitre input {
+  font-weight: 100;
+}
+#createForm #choixtitre input {
+  font-family: 'Pacifico', cursive;
+  color: #3e5164;
+  font-size: 1.4em;
+  margin: 0.5em;
+}
+#createForm #choixdroit {
+  position: relative;
+}
+#createForm #choixdroit #includechoix {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#createForm #choixdroit .choix {
+  width: 20%;
+}
+#createForm #choixdroit .choix label {
+  height: 100%;
+}
+#createForm #choixdroit .choix label h4 {
+  margin: 0;
+  padding: 0.3em;
+}
+#createForm #choixdroit .choix label h4.privee {
+  background: #f18693;
+}
+#createForm #choixdroit .choix label h4.tous {
+  background: #4bb5aa;
+}
+#createForm #choixdroit .choix label h4.potes {
+  background: #ffd591;
+}
+#createForm #choixdroit .choix label p {
+  background: #ffffff;
+  color: #3e5164;
+  font-weight: 100;
+  height: 70%;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  vertical-align: middle;
+  padding: 0.4em;
+}
+#createForm #choixdroit .choix label span.visibilite {
+  font-weight: bold;
+  font-style: italic;
+}
+#createForm #choixdroit .choix input {
+  position: relative;
+  bottom: 8%;
+}
+#createForm #choixpotes {
+  display: inline-block;
+  background: rgba(0,0,0,0.2);
+  padding: 2% 0%;
+}
+#createForm #choixpotes label {
+  width: 100%;
+}
+#createForm #choixpotes .consignes {
+  display: inline-block;
+  text-align: left;
+  widht: 100%;
+  padding: 2% 0%;
+}
+#createForm #choixpotes .consignes h4 {
+  font-size: 1.4em;
+}
+#createForm #choixpotes .consignes p {
+  font-weight: 100;
+  font-size: 1.2em;
+}
+#createForm #choixpotes .consignes span {
+  position: absolute;
+  left: -400px;
+}
+#createForm #choixpotes input {
+  margin: 1% 0%;
+  padding: 0.4em;
+  width: 40%;
+  color: #3e5164;
+  font-size: 1.1em;
+}
+#createForm #choixpotes .checkbox {
+  display: inline-block;
+}
+form#searchForm {
+  padding-top: 100px;
+  width: 100%;
+  background: #3e5164;
+}
+form#searchForm h2 {
+  color: #ffffff;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  vertical-align: middle;
+  padding: 1%;
+}
+#box {
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  vertical-align: middle;
+}
+#box label {
+  background: none;
   color: #4bb5aa;
 }
-div.choixpotes {
+#box input {
+  width: 60%;
+}
+#filtres {
+  text-align: left;
+  position: relative;
+  left: 70%;
+}
+#filtres label {
+  background: none;
+  color: #ffffff;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.2em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#filtres input {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+#filtres span.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #4bb5aa;
+}
+#filtres label:hover input ~ span.checkmark {
+  opacity: 0.8;
+}
+#filtres label input:checked ~ span.checkmark {
+  background-color: #ef974d;
+}
+#results {
+  width: 60%;
+  margin: 0% 20%;
+  padding-top: 5%;
+}
+#results div.tri {
+  width: 28%;
+  display: block;
+  position: relative;
+  padding-right: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#results div.tri p {
+  font-weight: bold;
+}
+#results div.tri span.checkmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #4bb5aa;
+}
+#results span.nbresults {
+  position: absolute;
+  top: 540px;
+  right: 20%;
+}
+#results #liste_rechercher {
+  padding-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(3,300px);
+}
+#results #liste_rechercher .fanion,
+#results #liste_rechercher .boutonLire {
   display: none;
 }
-input#potes:checked ~ .choixpotes {
-  display: block;
+#content_user {
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  vertical-align: middle;
+}
+#content_user img {
+  border-radius: 100px;
+}
+#content_user h3 {
+  color: #4bb5aa;
+  font-family: 'Pacifico', cursive;
+}
+#content_user p {
+  display: none;
 }

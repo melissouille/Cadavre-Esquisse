@@ -50,6 +50,10 @@ section {
 	width: 100% !important;
 	.center;
 }
+img.avatar {
+	width: 100px; height: 100px;
+	border-radius: 100px;
+}
 /* BOUTONS */
 	.boutons {
 		.center;
@@ -170,7 +174,7 @@ form#registerForm {
 			background: @blue;
 		}
 		#choixtitre {
-			label {100
+			label {
 				padding: 1em;
 			}
 			label, input {
@@ -230,8 +234,196 @@ form#registerForm {
 					bottom: 8%;
 				}
 			}
-
 		}
+		#choixpotes {
+			display:inline-block;
+			background: rgba(0,0,0,0.2);
+			padding: 2% 0%;
+			label {
+				width: 100%;
+			}
+			.consignes {
+				display:inline-block;
+				text-align: left;
+				widht: 100%;
+				padding: 2% 0%;
+				h4 {
+					font-size: 1.4em;
+				}
+				p {
+					font-weight: 100;
+					font-size: 1.2em;
+				}
+				span {
+					position: absolute;
+					left: -400px;
+				}
+			}
+			input {
+				margin: 1% 0%;
+				padding: 0.4em;
+				width: 40%;
+				color: @blue;
+				font-size: 1.1em;
+			}
+			.checkbox {
+				position: relative;
+				right: 100px;
+				display:inline-block;
+				label {		
+				    padding-right: 50px;
+				    height: 100px;
+				    cursor: pointer;
+				    font-size: 1.2em;
+				    -webkit-user-select: none;
+				    -moz-user-select: none;
+				    -ms-user-select: none;
+				    user-select: none;
+				}
+				img {
+					position: absolute;
+					left:0; top:0;
+				}
+				h4, p {
+					width: 300px; height: 50px;
+					text-align: left;
+					padding-left: 100px;				
+				}
+				h4 {
+					padding-top: 20px;
+				}
+				p {
+					padding-bottom: 20px;
+				}
+				input {
+					opacity: 0;
+					position: absolute;
+					cursor: pointer;
+				}
+				.close {
+					position: absolute;
+				    top: 0px; right: 0;
+					height: 100px; width: 100px;
+			    	background: none;
+			    	border: none;
+			    	color: @white;
+			    	font-size: 5em;
+			    	font-weight: 100;
+			    	opacity: 0;
+				}
+				label:hover input ~ .close {
+					opacity: 0.8;
+				}
+			}
+		}
+		#choixtemps {
+			label {
+				width: 60%;
+			}
+			p {
+				text-align: left;
+				font-weight: 100;
+				width: 60%;
+				margin-left: 20%;
+			}
+		}
+		.slidecontainer {
+			padding: 20px;
+			width: 60%;
+			margin: 0% 20%;
+		}
+		.slider {
+			-webkit-appearance: none;
+		    width: 100%;
+		    margin: 18px 0;
+		    border-radius: 5px;  
+		    background: transparent;
+		    opacity: 1;
+		    -webkit-transition: .2s;
+		    transition: opacity .2s;
+		    &:focus {
+		    	outline: none;
+		    }
+		}
+		.slider::-webkit-slider-thumb {
+		    -webkit-appearance: none;
+		    appearance: none;
+		    width: 25px;
+		    height: 25px;
+		    border: 1px solid @green;
+		    border-radius: 50%; 
+		    background: @white;
+		    cursor: pointer;
+		}
+		
+		.slider::-webkit-slider-runnable-track {
+			width: 100%;
+			height: 8.4px;
+			cursor: pointer;
+			box-shadow: 1px 1px 1px @black, 0px 0px 1px #0d0d0d;
+			background: #3071a9;
+			border-radius: 1.3px;
+			border: 0.2px solid @blue;
+		}
+		.slider:focus::-webkit-slider-runnable-track {
+			background: #367ebd;
+		}
+		/* For Firefox */*
+			.slider::-moz-range-thumb {
+			    width: 25px;
+			    height: 25px;
+			    border: 1px solid @green;
+			    border-radius: 50%;
+			    background: @white;
+			    opacity: 1;
+			    cursor: pointer;
+			}
+			.slider::-moz-range-track {
+				width: 100%;
+				height: 8.4px;
+				ursor: pointer;
+				box-shadow: 1px 1px 1px @black, 0px 0px 1px #0d0d0d;
+				background: @blue;
+				border-radius: 1.3px;
+				border: 0.2px solid #010101;
+			}
+
+
+		/* For IE */
+			.slider::-ms-track {
+				width: 100%;
+				cursor: pointer;
+				background: transparent; 
+				border-color: transparent;
+				color: transparent;
+			}
+			.slider::-ms-track {
+				width: 100%;
+				height: 8.4px;
+				cursor: pointer;
+				background: transparent;
+				border-color: transparent;
+				border-width: 16px 0;
+				color: transparent;
+			}
+			.slider::-ms-fill-lower {
+				background: #2a6495;
+				border: 0.2px solid #010101;
+				border-radius: 2.6px;
+				box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+			}
+			.slider:focus::-ms-fill-lower {
+				background: #3071a9;
+			}
+			.slider::-ms-fill-upper {
+				background: #3071a9;
+				border: 0.2px solid #010101;
+				border-radius: 2.6px;
+				box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+			}
+			.slider:focus::-ms-fill-upper {
+				background: #367ebd;
+			}
 
 	}
 
@@ -333,9 +525,6 @@ form#registerForm {
 	}
 #content_user {
 	.center;
-	img {
-		border-radius: 100px;
-	}
 	h3 {
 		.titres;
 	}

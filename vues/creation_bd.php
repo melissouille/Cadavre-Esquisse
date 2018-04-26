@@ -9,17 +9,6 @@
 	<title>Création d'une BD</title>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<?php include 'includes/head.html' ;?>
-		<script>
-		$('input:radio').click(function() {
-			$("input:radio").toggle('slow', function() {
-				if (document.getElementByName("droit").val() != "potes") {
-					document.getElementById('choixpotes').style.visibilite="hidden";
-				} else {
-					document.getElementById('choixpotes').style.visibilite="visible";
-				}
-			});
-		});
-	</script>
 </head>
 <body>
 	<!-- Menu -->
@@ -32,9 +21,7 @@
 		<?php 
 		if (isset($_SESSION['id'])) { ?>
 			
-		<fieldset id="createForm">
-			
-			<form method="POST" action="../controles/creationBD_config.php">
+			<form method="POST" id="createForm">
 
 				<div id="choixtitre">
 					<h2><?php echo _T_CREATION ;?></h2>
@@ -87,46 +74,47 @@
 						</div>
 					</div>
 				</div>
-				<div id="choixpotes">
-					<label for="potes">
-						<?php echo _LABEL_POTES ;?>
-						<span class="consignes">
-							<?php echo _SPAN_POTES ;?>
-						</span>
-						<input type="text" name="potes" id="searchpotes" value="<?php echo _CHAMP_RECHERCHE ;?>" />
+				<div id="choixpotes" style="display: none">
+					<div id="box">
+						<label for="rechercheUser">
+							<h4><span class="numero">*</span><?php echo _LABEL_POTES ;?></h4>
+							<p><?php echo _SPAN_POTES ;?></p>
+						</label>
 						<br>
-						<div class="checkbox">
-							<input type="checkbox" name="potes" value="">
-							<label>
-								<span class="avatar"></span>
-								<span class="nom"></span>
-								<span class="cases"></span>
-							</label>
-						</div>
-					</label>
+						<input type="search" name="rechercheUser" id="rechercheUser" autocomplete="off" placeholder="<?php echo _CHAMP_RECHERCHE ;?>">
+						<button type="submit" name="ajouter" value="ajouter">Ajouter</button>
+					</div>
+
+					<div class="checkbox">
+						<?php
+						require '../controles/ajoutparticipants.php';
+						?>
+					</div>
 				</div>
 
 				<div id="choixtemps">
 					<label for="temps">
 						<h3><span class="numero">2</span><?php echo _LABEL_TEMPS ;?></h3>
 
-						<span class="consignes">
+						<p class="consignes">
 							<?php echo _SPAN_TEMPS ;?>
-						</span>
-						<select name="temps">
-							<option value="" selected></option>
-							<option value="1h">1<?php echo _1HEURE ;?></option>					
-							<option value="3h">3<?php echo _HEURES ;?></option>
-							<option value="6h">6<?php echo _HEURES ;?></option>
-							<option value="12h">12<?php echo _HEURES ;?></option>
-							<option value="1j">1<?php echo _1JOUR ;?></option>
-							<option value="2j">2<?php echo _JOURS ;?></option>
-							<option value="3j">3<?php echo _JOURS ;?></option>
-							<option value="4j">4<?php echo _JOURS ;?></option>
-							<option value="5j">5<?php echo _JOURS ;?></option>
-							<option value="6j">6<?php echo _JOURS ;?></option>
-							<option value="1s">1<?php echo _SEMAINE ;?></option>
-						</select>
+						</p>
+						<div class="slidecontainer">
+							<input type="range" name="temps" list="durees" class="slider" value="1h">
+							<datalist id="durees">
+								<option value="1h" label="1h"></option>		
+								<option value="3h"></option>
+								<option value="6h"></option>
+								<option value="12h"></option>
+								<option value="1j"></option>
+								<option value="2j"></option>
+								<option value="3j"></option>
+								<option value="4j"></option>
+								<option value="5j"></option>
+								<option value="6j"></option>
+								<option value="1s" label="1<?php echo _SEMAINE ;?>"></option>
+							</datalist>
+						</div>
 					</label>
 				</div>
 
@@ -137,31 +125,31 @@
 						<span class="consignes">
 							<?php echo _SPAN_PAGE ;?> 
 						</span>
-						<select name="nb_pages">
-							<option value="" selected></option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-						</select>
-					</label>
-				</div>
+						<div class="slidecontainer">
+							<input type='range' min="1" max="10" name="nb_pages" value="1" class="slider" id="rangepage" list="datalistpages">
+							<datalist id="datalistpages">
+							<option value="1" label="1"></option>
+							<option value="2"></option>
+							<option value="3"></option>
+							<option value="4"></option>
+							<option value="5" label="5"></option>
+							<option value="6"></option>
+							<option value="7"></option>
+							<option value="8"></option>
+							<option value="9"></option>
+							<option value="1s" label="10"></option>
+						</datalist>
+						</div>
 
-				<div class="valider">
-					<label for="submit"><?php echo _LABEL_VALIDER ;?>
-						<button type="submit" name="submit" value="valider">
-							<?php echo _VALIDER_ET_COMMENCER ;?>
-						</button>
 					</label>
 				</div>
 			</form>
-			</fieldset>
+			<div class="valider">
+				<?php echo _LABEL_VALIDER ;?>
+				<button type="submit" name="valider" formaction="../controles/creationBD_config.php" form="createForm">
+					<?php echo _VALIDER_ET_COMMENCER ;?>
+				</button>
+			</div>
 			<?php
 		} else {
 			?>
@@ -176,5 +164,24 @@
 	</div>	
 	<!-- Pied de page -->
 	<?php include ("includes/footer.php");?>
+
+	<script>
+		$(document).ready(function() {
+			$('input[name="droit"]').click(function() {
+				if ($(this).attr('id') == "potes") {
+					$("#choixpotes").show('slow');
+				} else {
+					$("#choixpotes").hide('slow');
+				}		
+			});
+		});
+		$(function() {
+			$("#rechercheUser").on('input', function() {
+				$("#rechercheUser").autocomplete({
+					source: '../controles/autocompleteUser.php?term='+$("#rechercheUser").val()
+				});
+			});
+		});
+	</script>
 </body>
 <html>
