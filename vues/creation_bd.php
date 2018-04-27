@@ -11,12 +11,13 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
-	<div class="container" id="creation_bd">
+	<div id="container" class="creation_bd">
 
 		<?php 
 		if (isset($_SESSION['id'])) { ?>
@@ -73,9 +74,7 @@
 							<input type="radio" name="droit" value="privee" id="privee" />
 						</div>
 					</div>
-				</div>
-				<div id="choixpotes" style="display: none">
-					<div id="box">
+					<div id="choixpotes" style="display: none">
 						<label for="rechercheUser">
 							<h4><span class="numero">*</span><?php echo _LABEL_POTES ;?></h4>
 							<p><?php echo _SPAN_POTES ;?></p>
@@ -83,12 +82,8 @@
 						<br>
 						<input type="search" name="rechercheUser" id="rechercheUser" autocomplete="off" placeholder="<?php echo _CHAMP_RECHERCHE ;?>">
 						<button type="submit" name="ajouter" value="ajouter">Ajouter</button>
-					</div>
 
-					<div class="checkbox">
-						<?php
-						require '../controles/ajoutparticipants.php';
-						?>
+						<div class="checkbox"></div>
 					</div>
 				</div>
 
@@ -144,26 +139,25 @@
 					</label>
 				</div>
 			</form>
+
 			<div class="valider">
-				<?php echo _LABEL_VALIDER ;?>
+				<h2 class="titres"><?php echo _LABEL_VALIDER ;?></h2>
 				<button type="submit" name="valider" formaction="../controles/creationBD_config.php" form="createForm">
 					<?php echo _VALIDER_ET_COMMENCER ;?>
 				</button>
 			</div>
 			<?php
 		} else {
-			?>
-			<div class="unlog">
-				<p class="erreurConnect"><?php echo _ERREUR_CONNECTPAGECREATION;?></p>
-				<?php include ('modals/connexion.php'); ?>
-			</div>
-			<?php 
-			}
-	?>
-		
+			include 'includes/noconnect.php';
+		}
+		?>
 	</div>	
+	
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 
 	<script>
 		$(document).ready(function() {
@@ -174,6 +168,12 @@
 					$("#choixpotes").hide('slow');
 				}		
 			});
+			$("#searchUserForm").submit(function () {
+				$.post("ajoutparticipants.php",$(this).serialize(),function(data){
+					$("div#checkbox").append(data);
+				});
+				return false; // pour ne pas recharger la page 
+			}); 
 		});
 		$(function() {
 			$("#rechercheUser").on('input', function() {

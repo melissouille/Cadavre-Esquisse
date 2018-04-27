@@ -15,12 +15,13 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include'includes/menu.php';?>
 	</div>
 
-	<div class="container">
+	<div id="container">
 		<?php include 'includes/header.php';?>
 		<section>
 			<div class="lidee">
@@ -92,7 +93,9 @@
 	</div>
 
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
-
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 </body>
 </html>

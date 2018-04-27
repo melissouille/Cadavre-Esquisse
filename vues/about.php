@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +7,19 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
-	<?php include("includes/menu.php");?>
+	<div id="menu">
+		<?php include'includes/menu.php';?>
+	</div>
 
+	<div id="container">
+	</div>
 
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 </body>
 <html>

@@ -1,0 +1,93 @@
+form#searchForm {
+	padding-top: 100px;
+	width: 100%;
+	background: @blue;
+	h2 {
+		color: @white;
+		.center; padding : 1%;
+	}
+}
+#box {
+	.center;
+	label {
+		background: none;
+		color: @green;
+	}
+	input {
+		width: 60%;
+	}
+}
+#filtres {
+	text-align: left;
+	position: relative;
+	left: 70%;
+	label {
+		background: none;
+		color: @white;
+		display: block;
+	    position: relative;
+	    padding-left: 35px;
+	    margin-bottom: 12px;
+	    cursor: pointer;
+	    font-size: 1.2em;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	}
+	input {
+		opacity: 0;
+		position: absolute;
+		cursor: pointer;
+	}
+	span.checkmark {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+		height: 25px; width: 25px;
+    	background-color: @green;
+	}
+	label:hover input ~ span.checkmark {
+		opacity: 0.8;
+	}
+	label input:checked ~ span.checkmark {
+		background-color: @orange;
+	}
+}
+#results {
+	width: 60%;
+	margin: 0% 20%; padding-top: 5%;
+	div.tri {
+		width: 28%;
+		display: block;
+	    position: relative;
+	    padding-right: 35px;
+	    cursor: pointer;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+		p {
+			font-weight: bold;
+		}
+		span.checkmark {
+			position: absolute;
+		    top: 0;
+		    right: 0;
+			height: 25px; width: 25px;
+	    	background-color: @green;
+		}
+	}
+	span.nbresults {
+		position: absolute;
+		top: 540px; right: 20%;
+	}
+	#liste_rechercher {
+		padding-top: 5%;
+		display: grid;
+		grid-template-columns: repeat(3, 300px);
+		.fanion, .boutonLire {
+			display:none;
+		}
+	}
+}

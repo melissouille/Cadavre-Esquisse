@@ -11,12 +11,20 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
+	<div id="menu">
 	<?php include("../includes/menu.php");?>
+	</div>
 
-
+	<div id="container">
+		
+	</div>
 	<!-- Pied de page -->
-	<?php include ("../includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 </body>
 <html>
 <!-- Envoi fichier form :

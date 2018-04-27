@@ -19,6 +19,10 @@
 
 			include 'includes/participants.php';	
 			$requete->closeCursor();
+		} else {
+			echo "champs vide";
 		}
+	} else {
+		return false;
 	}
 ?>

@@ -5,7 +5,7 @@ include 'functions.php';
 include 'lang_config.php';
 //Stocker nombre d'erreur :
 	$er=0;
-
+	// boolean aléatoire = couverture1 ou couverture2
 	if (isset($_POST['valider'])) {
 		/* les variables saisies */
 		$titre = secureVar($_POST['titre']);

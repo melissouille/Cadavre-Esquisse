@@ -11,12 +11,13 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
-	<div class="content">
+	<div id="container">
 		<h2><?php echo _T_PARAM_BD ;?></h2>
 		<div class="titre">
 			<h3><?php echo _TITRE;?> :</h3>
@@ -46,6 +47,9 @@
 	</div>
 
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 </body>
 <html>
