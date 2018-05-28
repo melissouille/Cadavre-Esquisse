@@ -13,3 +13,12 @@
 	<input type="checkbox" name="participants" value="<?php echo $id_participants; ?>" class="hidden" checked>
 	<span class="close">&times;</span>
 </label>
+<script type="text/javascript">
+	/*
+	Si déselectionné
+	if (input[name='participants']:uncheck) {
+		alors la valeur nulle
+		input[name='participants'].attr('value') = "";
+	}
+	*/
+</script>

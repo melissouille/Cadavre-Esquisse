@@ -11,13 +11,20 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+<<<<<<< HEAD
 <div id="main">
+=======
+>>>>>>> parent of b59ca4a... update 27/04
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
+<<<<<<< HEAD
 	<div id="container" class="explorer">
+=======
+	<div class="container">
+>>>>>>> parent of b59ca4a... update 27/04
 		<form id="searchForm" method="post">
 			<h2><?php echo _T_PARCOURIR ;?></h2><!-- pour mise en forme jquery ui id="box" -->
 			<div id="box">
@@ -59,6 +66,7 @@
 	</div>
 	
 	<!-- Pied de page -->
+<<<<<<< HEAD
 	<div id="footer">
 		<?php include ("includes/footer.php");?>
 	</div>
@@ -66,6 +74,18 @@
 </div>
 
 	<script src="../controles/autocompletes/autocomplete.js">
+=======
+	<?php include ("includes/footer.php");?>
+
+	<script>
+		$(function() {
+			$("#recherche").on('input', function() {
+				$("#recherche").autocomplete({
+					source: '../controles/autocomplete.php?term='+$("#recherche").val()
+				});
+			});
+		});
+>>>>>>> parent of b59ca4a... update 27/04
 	</script>
 </body>
 <html>

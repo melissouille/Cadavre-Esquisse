@@ -11,20 +11,18 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
-	<div id="main">
 	<!-- Menu -->
-	<div id="menu">
 	<?php include("../includes/menu.php");?>
-	</div>
 
+<<<<<<< HEAD
 	<div id="container" class="parametre_user">
 		
 	</div>
+=======
+
+>>>>>>> parent of b59ca4a... update 27/04
 	<!-- Pied de page -->
-	<div id="footer">
-		<?php include ("includes/footer.php");?>
-	</div>
-	</div>
+	<?php include ("../includes/footer.php");?>
 </body>
 <html>
 <!-- Envoi fichier form :

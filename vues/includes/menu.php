@@ -12,7 +12,7 @@
 		<li><a href="explorer.php">
 			<?php echo _EXPLORER ;?>
 		</a></li>
-		<li><a href="participerBD.php">
+		<li><a href="#">
 			<?php echo _PARTICIPERBD ;?>
 		</a></li>
 		<li><a href="creation_bd.php">

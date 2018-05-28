@@ -1,36 +1,35 @@
 <?php
-$sqlBD = "SELECT id, title, droits, participants, couverture, url, etat FROM bandesdessinees WHERE etat=:etatBD AND droits!='privee' LIMIT 6";
-$sqlCase = "SELECT etatC FROM cases WHERE id_bd =:id_bd";
+$queryBD = "SELECT id, title, droits, participants, couverture, url, etat FROM bandesdessinees WHERE etat=:etatBD AND droits!='privee' LIMIT 6";
+$queryCase = "SELECT etatC FROM cases WHERE id_bd =:id_bd";
 
-$reqBD=$bdd->prepare($sqlBD);
-$reqBD->bindParam(":etatBD", $etatBD);
-$reqBD->execute();
-while ($data=$reqBD->fetch()) {
-	$titre = $data['title'];
-	$droits = $data['droits'];
-	$participants = $data['participants'];
-	$couverture = $data['couverture'];
-	$url = $data['url'];
-	$id_bd = $data['id'];
-	$etat = $data['etat'];
+$requeteBD=$bdd->prepare($queryBD);
+$requeteBD->bindParam(":etatBD", $etatBD);
+$requeteBD->execute();
+while ($donnees=$requeteBD->fetch()) {
+	$titre = $donnees['title'];
+	$droits = $donnees['droits'];
+	$participants = $donnees['participants'];
+	$couverture = $donnees['couverture'];
+	$url = $donnees['url'];
+	$id_bd = $donnees['id'];
+	$etat = $donnees['etat'];
 
 	if ($droits != 'privee') {
 		if ($etat == 'terminee') {
 			$etatC= '';
 			include 'includes/miniatureBD.php';
 		} elseif ($etat == 'encours') {
-			$reqCase=$bdd->prepare($sqlCase);
-			$reqCase->bindParam(":id_bd", $id_bd);
-			$reqCase->execute();
-			$dataCase=$reqCase->fetch();
-			$etatC = $dataCase['etatC'];
-			// quand la premiere case est remplie
+			$requeteCase=$bdd->prepare($queryCase);
+			$requeteCase->bindParam(":id_bd", $id_bd);
+			$requeteCase->execute();
+			$donneesCase=$requeteCase->fetch();
+			$etatC = $donneesCase['etatC'];
 			if ($etatC != 'termine') {
 				include 'includes/miniatureBD.php';
 			}
-			$reqCase->closeCursor();
+			$requeteCase->closeCursor();
 		}
 	}
 }
-$reqBD->closeCursor();
+$requeteBD->closeCursor();
 ?>

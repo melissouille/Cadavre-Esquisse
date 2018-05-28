@@ -11,13 +11,12 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
-	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
-	<div id="container" class="creation_bd">
+	<div class="container" id="creation_bd">
 
 		<?php 
 		if (isset($_SESSION['id'])) { ?>
@@ -74,7 +73,9 @@
 							<input type="radio" name="droit" value="privee" id="privee" />
 						</div>
 					</div>
-					<div id="choixpotes" style="display: none">
+				</div>
+				<div id="choixpotes" style="display: none">
+					<div id="box">
 						<label for="rechercheUser">
 							<h4><span class="numero">*</span><?php echo _LABEL_POTES ;?></h4>
 							<p><?php echo _SPAN_POTES ;?></p>
@@ -82,10 +83,18 @@
 						<br>
 						<input type="search" name="rechercheUser" id="rechercheUser" autocomplete="off" placeholder="<?php echo _CHAMP_RECHERCHE ;?>">
 						<button type="submit" name="ajouter" value="ajouter">Ajouter</button>
+					</div>
 
+<<<<<<< HEAD
 						<div class="checkbox">
 						
 						</div>
+=======
+					<div class="checkbox">
+						<?php
+						require '../controles/ajoutparticipants.php';
+						?>
+>>>>>>> parent of b59ca4a... update 27/04
 					</div>
 				</div>
 
@@ -132,25 +141,30 @@
 					</label>
 				</div>
 			</form>
-
 			<div class="valider">
-				<h2 class="titres"><?php echo _LABEL_VALIDER ;?></h2>
+				<?php echo _LABEL_VALIDER ;?>
 				<button type="submit" name="valider" formaction="../controles/creationBD_config.php" form="createForm">
 					<?php echo _VALIDER_ET_COMMENCER ;?>
 				</button>
 			</div>
 			<?php
 		} else {
-			include 'includes/noconnect.php';
-		}
-		?>
+			?>
+			<div class="unlog">
+				<p class="erreurConnect"><?php echo _ERREUR_CONNECTPAGECREATION;?></p>
+				<?php include ('modals/connexion.php'); ?>
+			</div>
+			<?php 
+			}
+	?>
+		
 	</div>	
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of b59ca4a... update 27/04
 	<!-- Pied de page -->
-	<div id="footer">
-		<?php include ("includes/footer.php");?>
-	</div>
-	</div>
+	<?php include ("includes/footer.php");?>
 
 	<script>
 		// JQUERY 
@@ -162,6 +176,7 @@
 					$("#choixpotes").hide('slow');
 				}		
 			});
+<<<<<<< HEAD
 			$("#searchUserForm").submit(function () {
 				$.post("ajoutparticipants.php",$(this).serialize(),function(data){
 					$("div#checkbox").append(data);
@@ -181,6 +196,13 @@
 				$('#rangepage').on('input', function() {
 					var $set = $(this).val();
 					$(this).next().text($set);
+=======
+		});
+		$(function() {
+			$("#rechercheUser").on('input', function() {
+				$("#rechercheUser").autocomplete({
+					source: '../controles/autocompleteUser.php?term='+$("#rechercheUser").val()
+>>>>>>> parent of b59ca4a... update 27/04
 				});
 			});
 

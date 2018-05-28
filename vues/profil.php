@@ -11,13 +11,17 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
-	<div id="main">
+	
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
+<<<<<<< HEAD
 	<div id="container" class="pageprofil">
+=======
+	<div class="content">
+>>>>>>> parent of b59ca4a... update 27/04
 		<p><a href="notifications.php">Notifications</a></p>
 		<section>
 			<article class="profil">
@@ -70,9 +74,6 @@
 	</div>
 
 	<!-- Pied de page -->
-	<div id="footer">
-		<?php include ("includes/footer.php");?>
-	</div>
-	</div>
+	<?php include ("includes/footer.php");?>
 </body>
 <html>

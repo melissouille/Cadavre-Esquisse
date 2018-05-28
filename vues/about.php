@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,19 +10,16 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
-	<div id="main">
 	<!-- Menu -->
-	<div id="menu">
-		<?php include'includes/menu.php';?>
-	</div>
+	<?php include("includes/menu.php");?>
 
+<<<<<<< HEAD
 	<div id="container" class="about">
 	</div>
+=======
+>>>>>>> parent of b59ca4a... update 27/04
 
 	<!-- Pied de page -->
-	<div id="footer">
-		<?php include ("includes/footer.php");?>
-	</div>
-	</div>
+	<?php include ("includes/footer.php");?>
 </body>
 <html>

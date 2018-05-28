@@ -11,13 +11,16 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
-	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
+<<<<<<< HEAD
 	<div id="container" class="parametre_bd">
+=======
+	<div class="content">
+>>>>>>> parent of b59ca4a... update 27/04
 		<h2><?php echo _T_PARAM_BD ;?></h2>
 		<div class="titre">
 			<h3><?php echo _TITRE;?> :</h3>
@@ -47,9 +50,6 @@
 	</div>
 
 	<!-- Pied de page -->
-	<div id="footer">
-		<?php include ("includes/footer.php");?>
-	</div>
-	</div>
+	<?php include ("includes/footer.php");?>
 </body>
 <html>

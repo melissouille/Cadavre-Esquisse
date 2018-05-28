@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 	include "../controles/lang_config.php";
 ?>
@@ -32,3 +33,5 @@
 	</div>
 </body>
 </html>
+=======
+>>>>>>> parent of b59ca4a... update 27/04

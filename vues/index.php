@@ -13,13 +13,16 @@
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
-	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include'includes/menu.php';?>
 	</div>
 
+<<<<<<< HEAD
 	<div id="container" class="index">
+=======
+	<div class="container">
+>>>>>>> parent of b59ca4a... update 27/04
 		<?php include 'includes/header.php';?>
 		<section class="lidee">
 			<h2><?php echo _T_PRINCIPE ;?></h2>
@@ -86,9 +89,7 @@
 	</div>
 
 	<!-- Pied de page -->
-	<div id="footer">
-		<?php include ("includes/footer.php");?>
-	</div>
-	</div>
+	<?php include ("includes/footer.php");?>
+
 </body>
 </html>
