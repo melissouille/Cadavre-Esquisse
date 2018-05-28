@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _PROFIL ;?></title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.less">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
@@ -17,7 +17,7 @@
 		<?php include("includes/menu.php");?>
 	</div>
 
-	<div id="container">
+	<div id="container" class="notifications">
 		<div class="invitations">
 			<h3><?php echo _ATTENTE_INVIT ;?> :</h3>
 			<div class="avatar"></div>

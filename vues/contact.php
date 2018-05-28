@@ -8,7 +8,7 @@ include '../controles/bddconnect.php';
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _CONTACT ;?></title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.less">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
@@ -18,7 +18,7 @@ include '../controles/bddconnect.php';
 		<?php include("includes/menu.php");?>
 	</div>
 
-	<div id="container">
+	<div id="container" class="contact">
 		<fieldset>
 			<legend><?php echo _CONTACT ;?> :</legend>
 			<form method="POST" action="../controles/formContact.php" form="contact">

@@ -3,15 +3,13 @@
 	include '../controles/bddconnect.php';
 	// Configuration langues :
 	include "../controles/lang_config.php";
-	// Configuration Less :
-	require "../controles/less.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _ACCUEIL ;?></title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.less">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
@@ -21,24 +19,19 @@
 		<?php include'includes/menu.php';?>
 	</div>
 
-	<div id="container">
+	<div id="container" class="index">
 		<?php include 'includes/header.php';?>
-		<section>
-			<div class="lidee">
-				<h2 class="titres">
-					<?php echo _T_PRINCIPE ;?></h2>
-				<p><?php echo _PRINCIPE ;?></p>
-				<div class="guide">
-					<div class="boutons">
-						<a href="principe.php">
-							<?php echo _ENSAVOIRPLUS ;?>
-						</a>
-					</div>
-				</div>
+		<section class="lidee">
+			<h2><?php echo _T_PRINCIPE ;?></h2>
+			<p><?php echo _PRINCIPE ;?></p>
+			<div class="boutons">
+				<a href="principe.php">
+					<?php echo _ENSAVOIRPLUS ;?>
+				</a>
 			</div>
 		</section>
-		<section class="bd_terminees">
-			<h2 class="bandeau titres" id="titre_bd_terminees">
+		<section class="terminees">
+			<h2 class="bandeau">
 				<?php echo _T_BDTERMINEES ;?>
 			</h2>
 			<p><?php echo _BDTERMINEES ;?></p>
@@ -56,8 +49,8 @@
 			</div>
 		</section>
 
-		<section class="bd_encours">
-			<h2 class="bandeau titres" id="titre_bd_encours">
+		<section class="encours">
+			<h2 class="bandeau">
 				<?php echo _T_BDENCOURS ;?>
 			</h2>
 			<div class="indications">

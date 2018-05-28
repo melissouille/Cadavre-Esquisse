@@ -11,11 +11,11 @@
 			</div>
 		</div>
 		<div class="description">
-			<h3 class="titres"><?php echo $titre ;?></h3>
-				<p class="etat">
-					<span><?php echo $droits ;?></span>
-				</p>
-				<p class="participants"><span><?php echo $participants ;?></span> <?php echo _NB_PARTICIPANTS ;?></p>
+			<h3><?php echo $titre ;?></h3>
+			<p class="etat">
+				<span><?php echo $droits ;?></span>
+			</p>
+			<p class="participants"><span><?php echo $participants ;?></span><?php echo _NB_PARTICIPANTS ;?></p>
 		</div>
 	</div>
 </article>

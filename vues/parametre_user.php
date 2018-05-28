@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Paramètre Auteur</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.less">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
@@ -17,7 +17,7 @@
 	<?php include("../includes/menu.php");?>
 	</div>
 
-	<div id="container">
+	<div id="container" class="parametre_user">
 		
 	</div>
 	<!-- Pied de page -->

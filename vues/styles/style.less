@@ -1,63 +1,43 @@
-/* CASCADES */
-	/*includes*/
-	@import "menu.less";
-	@import "miniatures.less";
-	@import "footer.less";
-	@import "loginmodal.less";
+/*INCLUDES*/
+	@import "includes/menu.less";
+	@import "includes/miniatures.less";
+	@import "includes/footer.less";
+	@import "includes/loginmodal.less";
+	@import "includes/button.less";
 	
-	/*pages*/
-	@import "principes.less";
-	@import "profil.less";
-	@import "explorer.less";
-	@import "accueil.less";
+/*PAGES*/
+	@import "pages/accueil.less";
+	@import "pages/creation.less";
+	@import "pages/explorer.less";
+	@import "pages/principes.less";
+	@import "pages/profil.less";
 
 /* STYLES */
 	@import "fonts.less";
 	@import "colors.less";
-
-/* Style */
-	.stylenone {
-		list-style: none;
-		text-decoration: none;
-		color: @white;
-		&:hover { 
-			list-style: none;
-			text-decoration: none;
-			color: @white;
-		}
-	}
-	.center {
-		text-align: center;
-		margin: auto; padding: auto;
-		vertical-align: middle;
-	}
-	.zeromarges {
-		margin: 0 !important;
-		padding: 0 !important;
-	}
-	.titres {
-		color: @green;
-		.pacifico;
-	}
+	@import "styleclass.less";
 
 html, body{
 	width: 100%; height: 100%;
 	.zeromarges;
 }
 #main {
-	position: relative;
-	min-height: 100%;
-	width: 100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100%; min-width: 100%;
+	.zeromarges;
 	.ubuntu;
+	background: @blue;
 }
 #container {
-	width:100% !important;
-	padding: 50px 0px 400px 0px;
-
+	width: 1280px;
+	.center;
 }
 section {
-	width: 100% !important;
+	width: 100%;
 	.center;
+	padding: 50px 0px;
 }
 img.avatar {
 	width: 100px; height: 100px;
@@ -66,383 +46,14 @@ img.avatar {
 #content_user {
 	.center;
 	h3 {
-		.titres;
+		.titreVert;
 	}
 	p {
 		display: none;
 	}
 }
-/* BOUTONS */
-	.boutons {
-		.center;
-		display: inline-block;
-		width: 10%; height: 50px;
-		background: @green;
-		border: @green;
-		padding: 12px 0px;
-		a {
-			.stylenone; .center;
-		}
-		&:hover {
-			font-weight: bold;
-		}
-	}
-	/* Bouton connexion */
-	.bouton_connexion {
-		display: inline-block;
-		.center;
-		width: 100%; height: 100%;
-		background: @green;
-		border: @green;
-	}
-	
 form#registerForm {
 	display: inline-block;
 	text-align: left;
 	width: 100%;
 }
-
-/* CREATION BD */
-	.creation_bd {
-		.ubuntu; height: 100%;
-		background-color: @blue;
-		opacity: 1;
-		.unlog {
-			p.erreurConnect {
-				.center;
-				padding-top: 80px;
-				font-size: 1.2em;
-			}
-			button {
-				width: 12%; height: 50px;
-				margin: 2% 44%;
-				color: @blue;
-				&:hover {
-					font-weight: bold;
-				}
-			}
-		}
-	}
-	#createForm {
-		padding-top: 60px;
-		background: rgba(0,0,0,0.1);
-		width: 100%;
-		color: @white;
-		.center;
-		h2 {
-			.pacifico;
-			color: @white;
-			font-size: 2em;
-			text-align: center;
-		}
-		h3 {
-
-		}
-		.numero {
-			display: inline-block;
-			position: relative;
-			right: 4%;
-			.center;
-			font-weight: bold;
-			font-size: 1.5em;
-			border: 2px solid @pink;
-			width: 50px; height: 50px;
-			border-radius: 50px;
-			background: rgba(0,0,0,0.1);
-		}
-		#choixtitre, #choixdroit, #choixtemps, #choixpage {
-			.zeromarges;
-			width: 100%;
-
-		}
-		#choixdroit, #choixpage {
-			background: @blue;
-		}
-		#choixtitre {
-			label {
-				padding: 2%;
-			}
-			label, input {
-				width: 60%;
-				.center;
-			}
-			span, input {
-				font-weight: 100;
-			}
-			input {
-				.pacifico;
-				color: @blue;
-				font-size: 1.4em;
-				margin: 0.5em;
-			}
-		}
-		#choixdroit {
-			position:relative;
-			h3 {
-				padding: 2% 0%;
-			}
-			#includechoix {
-				display: flex;
-				flex-direction: row;
-				justify-content: space-around;
-				padding: 2% 0%;
-			}
-
-			.choix {
-				width: 20%;
-				label {
-					height: 100%;
-					h4 {
-						margin: 0; padding: 0.3em;
-					}
-					h4.privee {
-						background: @pink;
-					}
-					h4.tous {
-						background: @green;
-					}
-					h4.potes{
-						background: @yellow;
-					}
-					p {
-						background: @white;
-						color: @blue;
-						font-weight: 100;
-						height: 70%;
-						.center;
-						padding: 0.4em;
-					}
-					span.visibilite {
-						font-weight: bold;
-						font-style: italic;
-					}	
-				}
-				input {
-					position: relative;
-					bottom: 8%;
-				}
-			}
-		}
-		#choixtemps {
-			background-color: @blue;
-			padding: 0;
-			label {
-				background: rgba(0,0,0,0.1);
-				display:inline-block;
-				width: 100%; height: 100%;
-				padding: 2% 0%;
-			}
-			p {
-				text-align: left;
-				font-weight: 100;
-				width: 60%;
-				margin-left: 20%;
-			}
-		}
-		.slidecontainer {
-			padding: 20px;
-			width: 60%;
-			margin: 0% 20%;
-		}
-		.slider {
-			-webkit-appearance: none;
-		    width: 100%;
-		    margin: 18px 0;
-		    border-radius: 5px;  
-		    background: transparent;
-		    opacity: 1;
-		    -webkit-transition: .2s;
-		    transition: opacity .2s;
-		    &:focus {
-		    	outline: none;
-		    }
-		}
-		.slider::-webkit-slider-thumb {
-		    -webkit-appearance: none;
-		    appearance: none;
-		    width: 25px;
-		    height: 25px;
-		    border: 1px solid @green;
-		    border-radius: 50%; 
-		    background: @white;
-		    cursor: pointer;
-		}
-		
-		.slider::-webkit-slider-runnable-track {
-			width: 100%;
-			height: 8.4px;
-			cursor: pointer;
-			box-shadow: 1px 1px 1px @black, 0px 0px 1px @black;
-			background: #3071a9;
-			border-radius: 1.3px;
-			border: 0.2px solid @blue;
-		}
-		.slider:focus::-webkit-slider-runnable-track {
-			background: @green;
-		}
-		/* For Firefox */*
-			.slider::-moz-range-thumb {
-			    width: 25px;
-			    height: 25px;
-			    border: 1px solid @green;
-			    border-radius: 50%;
-			    background: @white;
-			    opacity: 1;
-			    cursor: pointer;
-			}
-			.slider::-moz-range-track {
-				width: 100%;
-				height: 8.4px;
-				ursor: pointer;
-				box-shadow: 1px 1px 1px @black, 0px 0px 1px @black;
-				background: @black;
-				opacity: 0.1;
-				border-radius: 1.3px;
-				border: 0.2px solid @black;
-			}
-		/* For IE */
-			.slider::-ms-track {
-				width: 100%;
-				cursor: pointer;
-				background: transparent; 
-				border-color: transparent;
-				color: transparent;
-			}
-			.slider::-ms-track {
-				width: 100%;
-				height: 8.4px;
-				cursor: pointer;
-				background: transparent;
-				border-color: transparent;
-				border-width: 16px 0;
-				color: transparent;
-			}
-			.slider::-ms-fill-lower {
-				background: @black;
-				border: 0.2px solid @black;
-				border-radius: 2.6px;
-				box-shadow: 1px 1px 1px @black, 0px 0px 1px @black;
-			}
-			.slider:focus::-ms-fill-lower {
-				background: #3071a9;
-			}
-			.slider::-ms-fill-upper {
-				background: @green;
-				border: 0.2px solid @black;
-				border-radius: 2.6px;
-				box-shadow: 1px 1px 1px @black, 0px 0px 1px @black;
-			}
-			.slider:focus::-ms-fill-upper {
-				background: @green;
-			}
-	}
-	#choixpotes {
-		display: inline-block;
-		background: rgba(0,0,0,0.2);
-		padding: 2% 0%;
-		width: 100%;
-		margin-top: 100px;
-
-		label {
-			width: 100%;
-		}
-		.consignes {
-			display:inline-block;
-			text-align: left;
-			widht: 100%;
-			padding: 2% 0%;
-			h4 {
-				font-size: 1.4em;
-			}
-			p {
-				font-weight: 100;
-				font-size: 1.2em;
-			}
-			span {
-				position: absolute;
-				left: -400px;
-			}
-		}
-		input {
-			margin: 1% 0%;
-			padding: 0.4em;
-			width: 40%;
-			color: @blue;
-			font-size: 1.1em;
-		}
-		.checkbox {
-			position: relative;
-			right: 100px;
-			display:inline-block;
-			label {		
-			    padding-right: 50px;
-			    height: 100px;
-			    cursor: pointer;
-		    	font-size: 1.2em;
-			    -webkit-user-select: none;
-			    -moz-user-select: none;
-			    -ms-user-select: none;
-			    user-select: none;
-			}
-			img {
-				position: absolute;
-				left:0; top:0;
-			}
-			h4, p {
-				width: 300px; height: 50px;
-				text-align: left;
-				padding-left: 100px;				
-			}
-			h4 {
-				padding-top: 20px;
-			}
-			p {
-				padding-bottom: 20px;
-			}
-			input {
-				opacity: 0;
-				position: absolute;
-				cursor: pointer;
-			}
-			.close {
-				position: absolute;
-			    top: 0px; right: 0;
-				height: 100px; width: 100px;
-		    	background: none;
-		    	border: none;
-		    	color: @white;
-		    	font-size: 5em;
-		    	font-weight: 100;
-		    	opacity: 0;
-			}
-			label:hover input ~ .close {
-				opacity: 0.8;
-			}
-		}		
-	}
-	.valider {
-		display: inline-block;
-		width: 100%;
-		background: @blue;
-		.center;
-		padding: 5%;
-		h2 {
-			color: @white;
-			padding: 1% 33%;
-		}
-		button {
-			border:none;
-			box-shadow: 1px 1px 1px @white;
-			width: 35%;
-			font-size: 2em;
-			padding: 0.2em;
-			color: @blue;
-			font-weight: bold;
-			&:hover {
-				border: none;
-				box-shadow: 0.5px 0.5px 0.5px @blue;
-			}
-		}
-	}
-
-/*PAGE BD*/

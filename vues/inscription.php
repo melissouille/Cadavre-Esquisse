@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>S'inscrire</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.less">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
@@ -17,14 +17,11 @@
 		<?php include("includes/menu.php");?>
 	</div>
 
-<div id="container">
+<div id="container" class="inscription">
 	<fieldset>
 		<legend>Inscription</legend>
 		<form id="registerForm" method="POST" action="../controles/inscription_config.php" novalidate="novalidate">
 			
-			<label for="avatar"><abbr title="Taille max : 50Ko"><?php echo _AVATAR ;?></abbr></label>
-			<input type="file" name="avatar" id="avatar" /><br />
-
 			<label for="username"><abbr title="required">Un Pseudo ?*</abbr></label>
 			<input type="text" id="username" name="username"/><br>
 
@@ -35,7 +32,7 @@
 			<input type="password" id="password" name="password"><br>
 
 			<label for="description"><abbr title="required">Description *</abbr></label>
-			<input type="text" id="description" name="description"><br>
+			<input type="textarea" id="description" name="description"><br>
 
 			<label><abbr title="saisir une url">Un site perso ?</abbr></label>
 			<input type="url" name="website"><br>

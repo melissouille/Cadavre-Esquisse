@@ -1,0 +1,52 @@
+.principes {
+	display: inline-block;
+	background: @white;
+	padding: 100px;
+	width: 100%;
+	h2 {
+		.titreVert;
+		font-size: 3em;
+		padding: 40px;
+	}
+	p, li {
+		font-size: 1.2em;
+		color: @blue;
+	}
+	li {
+		.stylenone;
+		color: @blue;
+		&:hover {
+			color:@blue;
+		}
+	}
+	section {
+		padding-top: 50px;
+	}
+}
+.comment {
+	width: 650px;
+	div {
+		width: 100%; height: 150px;
+		margin-top: 20px;
+		position: relative;
+		display:inline-block;
+		img {
+			position:absolute;
+			top: 25px;
+		}
+		.left {
+			left: 0;
+		}
+		.right {
+			right: 0;
+		}
+		p {
+			width:auto; height: 50px;
+			position: absolute;
+			top: 50px;
+			padding: 12px 10px;
+
+		}
+	}
+	
+}

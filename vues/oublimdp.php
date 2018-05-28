@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>S'inscrire</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.less">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
@@ -17,7 +17,7 @@
 		<?php include("includes/menu.php");?>
 	</div>
 
-<div class="container">
+<div id="container" class="motdepasse">
 	
 </div>
 

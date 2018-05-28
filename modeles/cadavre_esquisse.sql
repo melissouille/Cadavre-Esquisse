@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 20 avr. 2018 à 08:24
+-- Généré le :  mer. 02 mai 2018 à 08:52
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -23,6 +23,46 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `cadavre_esquisse` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `cadavre_esquisse`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `assoc_bd_cases`
+--
+
+DROP TABLE IF EXISTS `assoc_bd_cases`;
+CREATE TABLE IF NOT EXISTS `assoc_bd_cases` (
+  `id_bd` int(11) NOT NULL,
+  `id_case` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `assoc_bd_user`
+--
+
+DROP TABLE IF EXISTS `assoc_bd_user`;
+CREATE TABLE IF NOT EXISTS `assoc_bd_user` (
+  `id_bd` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `assoc_bd_user`
+--
+
+INSERT INTO `assoc_bd_user` (`id_bd`, `id_user`) VALUES
+(3, 3),
+(4, 3),
+(5, 3),
+(6, 3),
+(8, 3),
+(10, 3),
+(12, 3),
+(18, 3),
+(19, 3),
+(23, 3);
 
 -- --------------------------------------------------------
 
@@ -57,26 +97,26 @@ CREATE TABLE IF NOT EXISTS `bandesdessinees` (
 --
 
 INSERT INTO `bandesdessinees` (`id`, `id_user`, `title`, `droits`, `pages`, `url`, `date_creation`, `etat`, `couverture`, `participants`, `cases`, `commentaires`, `temps_real`, `duree_real`, `commentaire`, `note`) VALUES
-(1, NULL, 'exemple1', 'potes', 10, NULL, '2018-04-09', 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 4, 'exemple2', 'potes', 10, NULL, '2018-04-09', 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 3, 'exemple3', 'privee', NULL, '', '2018-04-13', 'terminee', NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 3, 'exemple4', 'potes', NULL, '', '2018-04-11', 'encours', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 3, 'exemple5', 'tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 3, 'exemple6', 'tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 4, 'exemple7', 'tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 3, 'exemple8', 'tous', NULL, '', '2018-04-13', 'encours', NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 4, 'exemple9', 'tous', NULL, '', '2018-04-02', 'encours', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, 3, 'exemple10', 'tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, 5, 'exemple11', 'potes', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 3, 'exemple12', 'tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 4, 'exemple13', 'tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 5, 'exemple14', 'tous', 10, NULL, '2018-04-10', 'terminee', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 5, 'exemple15', 'tous', 4, NULL, '2018-04-17', 'encours', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 3, 'exemple18', 'potes', 10, 'www.cadavreesquisse.com/exemple1', '2018-04-19', 'terminee', NULL, NULL, NULL, NULL, '4j', NULL, NULL, NULL),
-(19, 3, 'exemple19', 'tous', 7, 'www.cadavreesquisse.com/exemple2', '2018-04-19', 'terminee', NULL, NULL, NULL, NULL, '6j', NULL, NULL, NULL),
-(20, 5, 'exemple20', 'potes', 10, NULL, NULL, 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 4, 'exemple21', 'potes', 5, NULL, NULL, 'terminee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 4, 'exemple22', 'potes', 1, NULL, '2018-04-20', 'encours', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(1, NULL, 'exemple1', 'potes', 10, NULL, '2018-04-09', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 4, 'exemple2', 'potes', 10, NULL, '2018-04-09', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 3, 'exemple3', 'privee', 10, '', '2018-04-13', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 2, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 3, 'exemple4', 'potes', 5, '', '2018-04-11', 'encours', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 3, 'exemple5', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 3, 'exemple6', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 4, 'exemple7', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 3, 'exemple8', 'tous', 2, '', '2018-04-13', 'encours', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 2, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 4, 'exemple9', 'tous', 3, '', '2018-04-02', 'encours', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 1, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, 3, 'exemple10', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 5, 'exemple11', 'potes', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 3, 'exemple12', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 4, 'exemple13', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 5, 'exemple14', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 5, 'exemple15', 'tous', 4, NULL, '2018-04-17', 'encours', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(18, 3, 'exemple18', 'potes', 10, 'www.cadavreesquisse.com/exemple1', '2018-04-19', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, '4j', NULL, NULL, NULL),
+(19, 3, 'exemple19', 'tous', 7, 'www.cadavreesquisse.com/exemple2', '2018-04-19', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, '6j', NULL, NULL, NULL),
+(20, 5, 'exemple20', 'potes', 10, NULL, NULL, 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, 4, 'exemple21', 'potes', 5, NULL, NULL, 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, 4, 'exemple22', 'potes', 1, '', '2018-04-20', 'encours', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
 (23, 3, 'exemple23', 'tous', 9, NULL, '2018-04-13', 'encours', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (24, 4, 'exemple24', 'tous', 8, NULL, '2018-04-09', 'encours', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
@@ -150,36 +190,36 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
 DROP TABLE IF EXISTS `utilisateurs`;
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) COLLATE utf8_bin NOT NULL,
+  `name` varchar(36) COLLATE utf8_bin NOT NULL,
   `email` varchar(100) COLLATE utf8_bin NOT NULL,
-  `password` varchar(32) COLLATE utf8_bin NOT NULL,
-  `date_inscription` date DEFAULT NULL,
-  `url` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `avatar` varchar(500) COLLATE utf8_bin DEFAULT NULL COMMENT 'url',
-  `description` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `website` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `facebook` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `instagram` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `twitter` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `role` enum('admin','user','public') COLLATE utf8_bin DEFAULT NULL,
+  `password` varchar(535) COLLATE utf8_bin NOT NULL,
+  `date_inscription` date NOT NULL,
+  `url` varchar(535) COLLATE utf8_bin NOT NULL,
+  `avatar` varchar(535) COLLATE utf8_bin NOT NULL DEFAULT 'localhost/cadavre_esquisse/img/cde-avatar-type.jpg' COMMENT 'url',
+  `description` varchar(535) COLLATE utf8_bin NOT NULL,
+  `website` varchar(535) COLLATE utf8_bin DEFAULT NULL,
+  `facebook` varchar(535) COLLATE utf8_bin DEFAULT NULL,
+  `instagram` varchar(535) COLLATE utf8_bin DEFAULT NULL,
+  `twitter` varchar(535) COLLATE utf8_bin DEFAULT NULL,
+  `role` enum('admin','user','public') COLLATE utf8_bin NOT NULL DEFAULT 'user',
   `bd_cree` int(11) DEFAULT NULL,
-  `bd_join` int(11) DEFAULT NULL,
+  `bdjoin` int(11) DEFAULT NULL,
   `case_cree` int(11) DEFAULT NULL,
   `like` int(11) DEFAULT NULL,
   `commentaire` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `nom` (`name`),
-  KEY `name` (`name`)
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `id_2` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+COMMIT;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id`, `name`, `email`, `password`, `date_inscription`, `url`, `avatar`, `description`, `website`, `facebook`, `instagram`, `twitter`, `role`, `bd_cree`, `bd_join`, `case_cree`, `like`, `commentaire`) VALUES
-(3, 'test1', 'test1@mail.com', 'Test.1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'test2', 'test2@mail.com', 'Test.2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 'test3', 'test3@mail.com', 'Test.3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `utilisateurs` (`id`, `name`, `email`, `password`, `date_inscription`, `url`, `avatar`, `description`, `website`, `facebook`, `instagram`, `twitter`, `role`, `bd_cree`, `bdjoin`, `case_cree`, `like`, `commentaire`) VALUES
+(3, 'test1', 'test1@mail.com', 'Test.1', NULL, NULL, 'http://localhost/cadavre_esquisse/img/cde-avatar-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Contraintes pour les tables déchargées

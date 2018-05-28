@@ -22,7 +22,7 @@ if (isset($_POST['rechercher']) && !empty($_POST['recherche'])) {
 			AND id_user!=:id_login
 		GROUP BY id";
 	$sqlCase = "SELECT etatC FROM cases WHERE id_bd =:id_bd";
-	$queryBD = "
+	$sqlBD = "
 		SELECT DISTINCT id, title, droits, participants, couverture, url, etat 
 		FROM bandesdessinees 
 		WHERE id=:id_bd 

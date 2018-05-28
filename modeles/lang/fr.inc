@@ -27,7 +27,8 @@
 	
 /* PARAGRAPHES */
 	define("_P_BIENVENUE", "Bienvenue sur la plateforme de Bande dessinée collaborative");
-	define("_PRINCIPE", "Créez une bd à plusieurs, une case chacun, chacun son tour !");
+	define("_PRINCIPE", "Créez une bd à plusieurs,<br>
+	une case chacun, chacun son tour !");
 	define("_BDTERMINEES", "Consultez ici les dernières Bandes dessinées !");
 	define("_P_CASERESERVEE", "Vous pouvez faire une demande de notification en cliquant sur “Participer à cette BD” pour être informé quand une case se libère.");
 	define("_P_CASEDISPO", "Consultez ici les dernières Bandes dessinées !
@@ -104,7 +105,11 @@ define("_BDENREGISTREE", "Bande dessinée enregistrée");
 
 	define("_TRI_VUE", "Trier par nombre de vues");
 /* PRINCIPE.PHP */
-	define("_P_PRINCIPE", "Comme son nom l’indique à peu près, “Cadavre esquisse” s’inspire du principe du cadavre exquis transposé à la Bande dessinée. Dessinez une première case de BD et c’est au monde entier d’imaginer la suite !");
+	define("_P_PRINCIPE", "Comme son nom l’indique à peu près, “Cadavre esquisse”<br>
+	s’inspire du principe du cadavre exquis transposé à la Bande dessinée.
+	<br>
+	<br>
+	Dessinez une première case de BD et c’est au monde entier d’imaginer la suite !");
 	define("_COMMENT", "Comment ça fonctionne ?");
 	define("_P_ICONE1", "Créez un nouveau projet ou réservez une case d’un projet en cours");
 	define("_P_ICONE2", "Définissez la forme de la case à réaliser et téléchargez le template");

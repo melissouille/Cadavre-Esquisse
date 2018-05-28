@@ -40,7 +40,7 @@
 				$reqCase->execute();
 				$dataCase=$reqCase->fetch();
 				$etatC = $dataCase['etatC'];
-
+				include 'includes/miniatureBD.php';
 				if ($etatC != 'termine') {
 					include 'includes/miniatureBD.php';
 				}

@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _EXPLORER ;?></title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.less">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
@@ -17,7 +17,7 @@
 		<?php include("includes/menu.php");?>
 	</div>
 
-	<div id="container">
+	<div id="container" class="participer">
 		<form id="searchForm" method="post">
 			<h2 class="titres"><?php echo _T_PARTICIPER ;?></h2><!-- pour mise en forme jquery ui id="box" -->
 			<div id="box">
@@ -76,7 +76,7 @@
 		<?php include ("includes/footer.php");?>
 	</div>
 	</div>
-	<script src="../controles/autocomplete.js">
+	<script src="../controles/autocompletes/autocomplete.js">
 	</script>
 </body>
 <html>
