@@ -1,26 +1,24 @@
 <?php
 	include '../controles/bddconnect.php';
 	include ("../controles/lang_config.php");
+	session_start();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _PARAM_BD ;?></title>
-	<link rel="stylesheet" type="text/css" href="styles/style.less">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
-<<<<<<< HEAD
-	<div id="container" class="parametre_bd">
-=======
-	<div class="content">
->>>>>>> parent of b59ca4a... update 27/04
+	<div id="container">
 		<h2><?php echo _T_PARAM_BD ;?></h2>
 		<div class="titre">
 			<h3><?php echo _TITRE;?> :</h3>
@@ -50,6 +48,9 @@
 	</div>
 
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 </body>
 <html>

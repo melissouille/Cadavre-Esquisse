@@ -1,6 +1,3 @@
-<?php
-	session_start();
-?>
 <nav class="menu-nav">
 	<ul class="menu-bandeau">
 		<li><a href="index.php">
@@ -12,7 +9,7 @@
 		<li><a href="explorer.php">
 			<?php echo _EXPLORER ;?>
 		</a></li>
-		<li><a href="#">
+		<li><a href="participerBD.php">
 			<?php echo _PARTICIPERBD ;?>
 		</a></li>
 		<li><a href="creation_bd.php">

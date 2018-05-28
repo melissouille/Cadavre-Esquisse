@@ -5,7 +5,7 @@ include 'functions.php';
 include 'lang_config.php';
 //Stocker nombre d'erreur :
 	$er=0;
-
+	// boolean aléatoire = couverture1 ou couverture2
 	if (isset($_POST['valider'])) {
 		/* les variables saisies */
 		$titre = secureVar($_POST['titre']);
@@ -18,10 +18,10 @@ include 'lang_config.php';
 		// état en cours par défaut à la création
 		$etat = 'encours';
 		// couverture par défaut :
-		$couverture = "localhost/cadavre_esquisse/img/cde-apercubd-type.jpg";
+		$couverture = "http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg";
 		
 		$id_user = $_SESSION['id'];
-		$url = "localhost/cadavre_esquisse/".$titre."";
+		$url = "www.cadavreesquisse.com/".$titre."";
 		$participants = 1;
 
 		/* les tests */
@@ -32,55 +32,54 @@ include 'lang_config.php';
 		if (empty($droits) || !isset($droits)) {
 			$message = _ERREUR_ETATVIDE;
 			$er++;
-		}
-		/* elseif ($droits == "pote") {
+		} elseif ($droits == "pote") {
 			// on récupère valeur checkbox 
 			if (isset($_POST['participants']) && !empty($_POST['participants'])) {
 				
 			}
-		} */
-		if (!isset($temps)) {
-			$message = _ERREUR_TEMPSVIDE;
-			$er++;
-		}
+		} 
+
 		if (!isset($pages)) {
 			$message = _ERREUR_NBPAGEVIDE;
 			$er++;
 		}
-		
+		if (!isset($temps)) {
+			$message = _ERREUR_TEMPSVIDE;
+			$er++;
+		}
 
 		if ($er == 0) {
-			$sql = "
+			$query = "
 			INSERT INTO bandesdessinees (title, droits, id_user, url, couverture, etat, date_creation, pages, temps_real, participants)
 			VALUES (:titre, :droits, :id_user, :url, :couverture, :etat, :date_creation, :pages, :temps, :participants);
 			SELECT id FROM bandesdessinees WHERE title = :titre;";
-			$req=$bdd->prepare($sql);
+			$requete=$bdd->prepare($query);
 
-			$req->bindParam(':titre', $titre);
-			$req->bindParam(':droits', $droits);
-			$req->bindParam(':id_user', $id_user);
-			$req->bindParam(':url', $url);
-			$req->bindParam(':couverture', $couverture);
-			$req->bindParam(':etat', $etat);
-			$req->bindParam(':date_creation', $date_creation);
-			$req->bindParam(':pages', $pages);
-			$req->bindParam(':temps', $temps);
-			$req->bindParam(':participants', $participants);
+			$requete->bindParam(':titre', $titre);
+			$requete->bindParam(':droits', $droits);
+			$requete->bindParam(':id_user', $id_user);
+			$requete->bindParam(':url', $url);
+			$requete->bindParam(':couverture', $couverture);
+			$requete->bindParam(':etat', $etat);
+			$requete->bindParam(':date_creation', $date_creation);
+			$requete->bindParam(':pages', $pages);
+			$requete->bindParam(':temps', $temps);
+			$requete->bindParam(':participants', $participants);
 
-			$req->execute();
+			$requete->execute();
 
-			$data = $req->fetch();
-			$id_bd = $data['id'];
+			$donnees = $requete->fetch();
+			$id_bd = $donnees['id'];
 
 			// Table d'association
-			$sqlassoc = "INSERT INTO assoc_bd_user(id_bd,id_user) VALUES (:id_bd, :id_user)";
-			$reqAssoc=$bdd->prepare($sqlassoc);
+			$assoc = "INSERT INTO assoc_bd_user(id_bd,id_user) VALUES (:id_bd, :id_user)";
+			$reqAssoc=$bdd->prepare($assoc);
 			$reqAssoc->bindParam(':id_bd', $id_bd);
 			$reqAssoc->bindParam(':id_user', $id_user);
 			$reqAssoc->execute();
 
 			$reqAssoc->closeCursor();
-			$req->closeCursor();
+			$requete->closeCursor();
 			$message = _BDENREGISTREE;
 		}
 		echo $message;

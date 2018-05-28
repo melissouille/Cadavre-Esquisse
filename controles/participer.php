@@ -1,6 +1,5 @@
 <?php
 include 'functions.php';
-
 $message = "";
 $resultat = "";
 $id_login = $_SESSION['id'];
@@ -22,7 +21,7 @@ if (isset($_POST['rechercher']) && !empty($_POST['recherche'])) {
 			AND id_user!=:id_login
 		GROUP BY id";
 	$sqlCase = "SELECT etatC FROM cases WHERE id_bd =:id_bd";
-	$sqlBD = "
+	$queryBD = "
 		SELECT DISTINCT id, title, droits, participants, couverture, url, etat 
 		FROM bandesdessinees 
 		WHERE id=:id_bd 
@@ -48,7 +47,37 @@ if (isset($_POST['rechercher']) && !empty($_POST['recherche'])) {
 				
 		// Affiche tous les résultats
 		elseif (!isset($_POST['checkbox'])) {
-			
+			$queryBD = "SELECT DISTINCT id, title, droits, participants, couverture, url, etat FROM bandesdessinees WHERE id=:id_bd AND droits='tous' GROUP BY id";
+			$reqBDsansfiltre = $bdd->prepare($queryBD);
+			$reqBDsansfiltre->bindParam(':id_bd', $id_bd);
+			$reqBDsansfiltre->execute();
+
+			if ($reqBD->rowCount() != 0) {
+				$resultatBD = $reqBDsansfiltre->rowCount(). ' resultat <br>';
+				while ($donnees = $reqBDsansfiltre->fetch()) {
+					$titre = $donnees['title'];
+					$participants = $donnees['participants'];
+					$couverture = $donnees['couverture'];
+					$url = $donnees['url'];
+					$droits = $donnees['droits'];
+					$etatBD = $donnees['etat'];
+
+					// pour les fanions
+					$id_bd = $donnees['id'];
+					$reqCase=$bdd->prepare($sqlCase);
+					$reqCase->bindParam(":id_bd", $id_bd);
+					$reqCase->execute();
+					$cases=$reqCase->fetch();
+					$etatC = $cases['etatC'];
+
+					include 'includes/miniatureBD.php';
+
+					$reqCase->closeCursor();
+				}
+			} else {
+				$message = _MSG_AUCUNRESULTAT;
+			}
+			$reqBDsansfiltre->closeCursor();
 		}		
 	}
 	$reqBD->closeCursor();

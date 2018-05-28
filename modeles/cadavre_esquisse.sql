@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 02 mai 2018 à 08:52
+-- Généré le :  lun. 28 mai 2018 à 12:42
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -35,6 +35,18 @@ CREATE TABLE IF NOT EXISTS `assoc_bd_cases` (
   `id_bd` int(11) NOT NULL,
   `id_case` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `assoc_bd_cases`
+--
+
+INSERT INTO `assoc_bd_cases` (`id_bd`, `id_case`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(5, 4),
+(6, 10),
+(7, 13);
 
 -- --------------------------------------------------------
 
@@ -212,24 +224,13 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   UNIQUE KEY `name` (`name`),
   KEY `id_2` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-COMMIT;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`id`, `name`, `email`, `password`, `date_inscription`, `url`, `avatar`, `description`, `website`, `facebook`, `instagram`, `twitter`, `role`, `bd_cree`, `bdjoin`, `case_cree`, `like`, `commentaire`) VALUES
-(3, 'test1', 'test1@mail.com', 'Test.1', NULL, NULL, 'http://localhost/cadavre_esquisse/img/cde-avatar-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `commentaires`
---
-ALTER TABLE `commentaires`
-  ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`id_case`) REFERENCES `cases` (`id`);
+(1, 'admin', 'mailtemporaire@mail.com', 'uM#1F70ZL7vAjwZr', '2018-04-02', '', 'localhost/cadavre_esquisse/img/cde-avatar-type.jpg', '', NULL, NULL, NULL, NULL, 'admin', NULL, NULL, NULL, NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -26,43 +26,42 @@ a.boutonLire {
 	}
 }
 /* Si l'état de la BD est 'terminee' */
-div#terminee img{
+#terminee img{
   border: 5px solid @orange;
 }
-div.indications {
+.indications {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	width: 70%;
 	padding: 20px 0px;
 	margin: 0 15%;
 	background-color: @white;
-}
 
-div.etats_case {
-	text-align: left;
-	width: 70%;
+	.etats_case {
+		text-align: left;
+		width: 70%;
+		.fanion {
+			display: inline-block;
+			height: 0; width: 0;
+			border-right: 100px solid transparent;
+		}
+		.legendes_text {
+			width: 100%;
+			position: relative;
+			bottom: 70px; left: 60px;
+		}
+	}
 }
-
-div.legendes_text {
-	width: 100%;
-	position: relative;
-	bottom: 70px; left: 60px;
-}
-.fanion {
-	display: inline-block;
-	height: 0; width: 0;
-	border-right: 100px solid transparent;
-}
-
-span.fanion {
-	position: relative;
-	right : 49px; top: 100px;
-}
-
 #vide {
 	border-top: 100px solid @green;
 }
 #reserve {
 	border-top: 100px solid @orange;
 }
+.image span.fanionminiature {
+	position: relative;
+	right : 49px; top: 100px;
+}
+
+
 

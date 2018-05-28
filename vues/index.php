@@ -1,28 +1,21 @@
 <?php
-	// Connexion à la base de données :
-	include '../controles/bddconnect.php';
-	// Configuration langues :
-	include "../controles/lang_config.php";
+	include 'includes/general_includes.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _ACCUEIL ;?></title>
-	<link rel="stylesheet" type="text/css" href="styles/style.less">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include'includes/menu.php';?>
 	</div>
 
-<<<<<<< HEAD
 	<div id="container" class="index">
-=======
-	<div class="container">
->>>>>>> parent of b59ca4a... update 27/04
 		<?php include 'includes/header.php';?>
 		<section class="lidee">
 			<h2><?php echo _T_PRINCIPE ;?></h2>
@@ -89,7 +82,11 @@
 	</div>
 
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	
+	</div>
 
 </body>
 </html>

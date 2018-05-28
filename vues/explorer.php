@@ -1,32 +1,23 @@
 <?php
-	include '../controles/bddconnect.php';
-	include ("../controles/lang_config.php");
+	include 'includes/general_includes.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _EXPLORER ;?></title>
-	<link rel="stylesheet" type="text/css" href="styles/style.less">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
-<<<<<<< HEAD
-<div id="main">
-=======
->>>>>>> parent of b59ca4a... update 27/04
+	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
-		<?php include("includes/menu.php");?>
+		<?php include 'includes/menu.php';?>
 	</div>
 
-<<<<<<< HEAD
 	<div id="container" class="explorer">
-=======
-	<div class="container">
->>>>>>> parent of b59ca4a... update 27/04
 		<form id="searchForm" method="post">
-			<h2><?php echo _T_PARCOURIR ;?></h2><!-- pour mise en forme jquery ui id="box" -->
+			<h2><?php echo _T_PARCOURIR ;?></h2>
 			<div id="box">
 				<label for="recherche"><?php echo _BARRE_RECHERCHE ;?></label><br>
 				<input type="text" name="recherche" id="recherche" autocomplete="off">
@@ -50,11 +41,15 @@
 					<span class="checkmark"></span>
 				</label>
 			</div>
+
 			<input type="submit" name="rechercher" class="hidden">
 		</form>
+		<!-- Affichage des résultats -->
 		<div id="results">
 			<div class="tri">
-				<p><?php echo _TRI_VUE ;?></p>
+				<p>
+					<?php echo _TRI_VUE ;?>
+				</p>
 				<span class="checkmark"></span>
 			</div>
 
@@ -66,26 +61,12 @@
 	</div>
 	
 	<!-- Pied de page -->
-<<<<<<< HEAD
 	<div id="footer">
 		<?php include ("includes/footer.php");?>
 	</div>
+	</div>
 
-</div>
-
-	<script src="../controles/autocompletes/autocomplete.js">
-=======
-	<?php include ("includes/footer.php");?>
-
-	<script>
-		$(function() {
-			$("#recherche").on('input', function() {
-				$("#recherche").autocomplete({
-					source: '../controles/autocomplete.php?term='+$("#recherche").val()
-				});
-			});
-		});
->>>>>>> parent of b59ca4a... update 27/04
+	<script src="../controles/autocomplete.js">
 	</script>
 </body>
 <html>

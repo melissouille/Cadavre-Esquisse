@@ -13,3 +13,10 @@ $(function() {
 		});
 	});
 });
+$(function() {
+	$("#rechercheencours").on('input', function() {
+		$("#rechercheencours").autocomplete({
+			source: '../controles/autocompleteEnCours.php?term='+$("#rechercheencours").val()
+		});
+	});
+});

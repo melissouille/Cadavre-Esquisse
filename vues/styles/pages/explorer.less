@@ -20,7 +20,7 @@
 		}
 	}
 	#filtres {
-		width: 810px; height: 200px;
+		width: 810px; height: 30px;
 		margin: 20px 240px;
 		label {
 			background: none;
@@ -28,15 +28,15 @@
 			color: @white;
 			width: 200px;
 			display: block;
-		    position: relative;
-		    padding-left: 25px;
-		    margin-bottom: 12px;
-		    cursor: pointer;
-		    font-size: 1.2em;
-		    -webkit-user-select: none;
-		    -moz-user-select: none;
-		    -ms-user-select: none;
-		    user-select: none;
+		  position: relative;
+		  padding-left: 25px;
+		  margin-bottom: 12px;
+		  cursor: pointer;
+		  font-size: 1.2em;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
 		}
 		input {
 			opacity: 0;
@@ -59,7 +59,9 @@
 }
 #results {
 	background: @white;
-	width: 1000px; height: 100%;
+	width: 1000px; 
+	/* changer height ici pour la taille de la div des résultats */
+	height: auto;
 	padding: 10px;
 	position: relative;
 	.center;

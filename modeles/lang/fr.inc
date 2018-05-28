@@ -27,12 +27,17 @@
 	
 /* PARAGRAPHES */
 	define("_P_BIENVENUE", "Bienvenue sur la plateforme de Bande dessinée collaborative");
-	define("_PRINCIPE", "Créez une bd à plusieurs,<br>
-	une case chacun, chacun son tour !");
+	define("_PRINCIPE", "Créez une bd à plusieurs, une case chacun, chacun son tour !");
 	define("_BDTERMINEES", "Consultez ici les dernières Bandes dessinées !");
 	define("_P_CASERESERVEE", "Vous pouvez faire une demande de notification en cliquant sur “Participer à cette BD” pour être informé quand une case se libère.");
 	define("_P_CASEDISPO", "Consultez ici les dernières Bandes dessinées !
 	");
+	define("_P_FOOTER", "Cette plateforme est notre bien commun et elle est vouée à évoluer.<br>
+	Nous avons beaucoup d'autres idées pour l'améliorer et il ne manque<br>
+	plus que les votres. N'hésitez pas à nous faire part de vos suggestions,<br>
+	idées et remarques. Nous en prendrons note et nous ne le ferons jamais.<br>
+	<br>
+	Mais faites le quand même s'il vous plaît.");
 
 /* BOUTONS */
 	define("_TOUTVOIR", "Tout voir");
@@ -43,6 +48,7 @@
 	define("_ACCEPTER", "Accepter");
 	define("_REFUSER", "Refuser");
 	define("_PARTICIPER_NOTIF", "Participer à cette BD");
+	define("_NOUS_CONTACTER", "Nous contacter");
 
 /* MESSAGES ERREURS */
 	define("_ERREUR_CHAMPSVIDE", "Merci de remplir tous les champs");
@@ -92,15 +98,13 @@ define("_BDENREGISTREE", "Bande dessinée enregistrée");
 	define("_VISIBLE_PARTICIPANT", "Visible uniquement par les participants");
 
 	define("_CASERESERVEE", "Case réservée");
+	define("_CASERESERVEES", "Case réservées");
 	define("_CASEDISPO", "Case disponible");
+	define("_CASEDISPOS", "Case disponibles");
 
 	define("_TRI_VUE", "Trier par nombre de vues");
 /* PRINCIPE.PHP */
-	define("_P_PRINCIPE", "Comme son nom l’indique à peu près, “Cadavre esquisse”<br>
-	s’inspire du principe du cadavre exquis transposé à la Bande dessinée.
-	<br>
-	<br>
-	Dessinez une première case de BD et c’est au monde entier d’imaginer la suite !");
+	define("_P_PRINCIPE", "Comme son nom l’indique à peu près, “Cadavre esquisse” s’inspire du principe du cadavre exquis transposé à la Bande dessinée. Dessinez une première case de BD et c’est au monde entier d’imaginer la suite !");
 	define("_COMMENT", "Comment ça fonctionne ?");
 	define("_P_ICONE1", "Créez un nouveau projet ou réservez une case d’un projet en cours");
 	define("_P_ICONE2", "Définissez la forme de la case à réaliser et téléchargez le template");
@@ -115,6 +119,9 @@ define("_BDENREGISTREE", "Bande dessinée enregistrée");
 	define("_P_REGLE5", "Différentes formes de case existent, certaines contraignent la forme de case suivante.");
 	define("_P_REGLE6", "Vous avez un temps définit pour réaliser votre case. Auquel cas la case sera de nouveau disponible.");
 	define("_P_REGLE7", "Vous pouvez participer autant de fois que vous le souhaitez à une bd");
+/* PARTICIPER A UNE BD */
+define("_T_PARTICIPER", "Choisissez une BD à laquelle vous voudriez participer :");
+
 /* EXPLORER.PHP */
 	define("_T_PARCOURIR", "Parcourez les différentes BD terminées ou en cours de création !");
 	define("_BARRE_RECHERCHE", "Rechercher une bd, un auteur…");

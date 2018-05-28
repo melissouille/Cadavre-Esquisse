@@ -1,22 +1,22 @@
 <?php
-	include '../controles/bddconnect.php';
-	include '../controles/lang_config.php';
+	include 'includes/general_includes.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Création d'une BD</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.less">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
-	<div class="container" id="creation_bd">
+	<div id="container" class="creation_bd">
 
 		<?php 
 		if (isset($_SESSION['id'])) { ?>
@@ -73,9 +73,7 @@
 							<input type="radio" name="droit" value="privee" id="privee" />
 						</div>
 					</div>
-				</div>
-				<div id="choixpotes" style="display: none">
-					<div id="box">
+					<div id="choixpotes" style="display: none">
 						<label for="rechercheUser">
 							<h4><span class="numero">*</span><?php echo _LABEL_POTES ;?></h4>
 							<p><?php echo _SPAN_POTES ;?></p>
@@ -83,18 +81,8 @@
 						<br>
 						<input type="search" name="rechercheUser" id="rechercheUser" autocomplete="off" placeholder="<?php echo _CHAMP_RECHERCHE ;?>">
 						<button type="submit" name="ajouter" value="ajouter">Ajouter</button>
-					</div>
 
-<<<<<<< HEAD
-						<div class="checkbox">
-						
-						</div>
-=======
-					<div class="checkbox">
-						<?php
-						require '../controles/ajoutparticipants.php';
-						?>
->>>>>>> parent of b59ca4a... update 27/04
+						<div class="checkbox"></div>
 					</div>
 				</div>
 
@@ -106,10 +94,20 @@
 							<?php echo _SPAN_TEMPS ;?>
 						</p>
 						<div class="slidecontainer">
-							<input type="range" name="temps" class="slider" min="0" max ="9" step="1" >
-							<input type="text" id="inputduree" name="ionrange" value="">
-							<output name="resultduree"></output>
-							<div id="outputduree"></div>
+							<input type="range" name="temps" list="durees" class="slider" value="1h">
+							<datalist id="durees">
+								<option value="1h" label="1h"></option>		
+								<option value="3h"></option>
+								<option value="6h"></option>
+								<option value="12h"></option>
+								<option value="1j"></option>
+								<option value="2j"></option>
+								<option value="3j"></option>
+								<option value="4j"></option>
+								<option value="5j"></option>
+								<option value="6j"></option>
+								<option value="1s" label="1<?php echo _SEMAINE ;?>"></option>
+							</datalist>
 						</div>
 					</label>
 				</div>
@@ -122,52 +120,45 @@
 							<?php echo _SPAN_PAGE ;?> 
 						</span>
 						<div class="slidecontainer">
-							<input type='range' min="1" max="10" name="nb_pages" step="1" class="slider" id="rangepage" list="datalistpages">
-							<output name="resultpages"></output>
+							<input type='range' min="1" max="10" name="nb_pages" value="1" class="slider" id="rangepage" list="datalistpages">
 							<datalist id="datalistpages">
-								<option value="1" label="1">1</option>
-								<option value="2"></option>
-								<option value="3"></option>
-								<option value="4"></option>
-								<option value="5" label="5">5</option>
-								<option value="6"></option>
-								<option value="7"></option>
-								<option value="8"></option>
-								<option value="9"></option>
-								<option value="10" label="10">10</option>
+							<option value="1" label="1"></option>
+							<option value="2"></option>
+							<option value="3"></option>
+							<option value="4"></option>
+							<option value="5" label="5"></option>
+							<option value="6"></option>
+							<option value="7"></option>
+							<option value="8"></option>
+							<option value="9"></option>
+							<option value="1s" label="10"></option>
 						</datalist>
 						</div>
 
 					</label>
 				</div>
 			</form>
+
 			<div class="valider">
-				<?php echo _LABEL_VALIDER ;?>
+				<h2 class="titres"><?php echo _LABEL_VALIDER ;?></h2>
 				<button type="submit" name="valider" formaction="../controles/creationBD_config.php" form="createForm">
 					<?php echo _VALIDER_ET_COMMENCER ;?>
 				</button>
 			</div>
 			<?php
 		} else {
-			?>
-			<div class="unlog">
-				<p class="erreurConnect"><?php echo _ERREUR_CONNECTPAGECREATION;?></p>
-				<?php include ('modals/connexion.php'); ?>
-			</div>
-			<?php 
-			}
-	?>
-		
+			include 'includes/noconnect.php';
+		}
+		?>
 	</div>	
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of b59ca4a... update 27/04
+	
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 
 	<script>
-		// JQUERY 
 		$(document).ready(function() {
 			$('input[name="droit"]').click(function() {
 				if ($(this).attr('id') == "potes") {
@@ -176,66 +167,20 @@
 					$("#choixpotes").hide('slow');
 				}		
 			});
-<<<<<<< HEAD
 			$("#searchUserForm").submit(function () {
 				$.post("ajoutparticipants.php",$(this).serialize(),function(data){
 					$("div#checkbox").append(data);
 				});
 				return false; // pour ne pas recharger la page 
-			});
-			$(function() {
-				$("#rechercheUser").on('input', function() {
-					$("#rechercheUser").autocomplete({
-						source: '../controles/autocompleteUser.php?term='+$("#rechercheUser").val()
-					});
-				});
-			});
-			/* Pour afficher valeur range des pages :*/
-			$(function() {
-				$('#rangepage').next().text('');
-				$('#rangepage').on('input', function() {
-					var $set = $(this).val();
-					$(this).next().text($set);
-=======
+			}); 
 		});
 		$(function() {
 			$("#rechercheUser").on('input', function() {
 				$("#rechercheUser").autocomplete({
 					source: '../controles/autocompleteUser.php?term='+$("#rechercheUser").val()
->>>>>>> parent of b59ca4a... update 27/04
 				});
 			});
-
-			$("#inputduree").ionRangeSlider(function(){
-				type: "single",
-				values: ['1','3','6','12','24','48']
-			});
-			var slider = $("#inputduree").data("ionRangeSlider");
-			slider.update({
-				values : ['1','3','6','12','24','48','72','94','120','144','168']
-			});
 		});
-
-		/* JS
-		function step() {
-			var droit = document.querySelector('input[name=droit]:checked').value;
-			if (droit == 'tous' ) {
-				var heures = [1,3,6,12,24,48];
-				return heures;
-			} else {
-				var heures = [1,3,6,12,24,48,72,94,120,144,168];
-				return heures;
-			}
-			var heures = [1,3,6,12,24,48,72,94,120,144,168];
-			var input = document.getElementById('inputduree');
-			var output = document.getElementById('outputduree');
-			input.oninput = function() {
-				output.innerHTML = heures[this.value];
-			};
-			input.oninput();
-		};
-		*/
-		
 	</script>
 </body>
 <html>

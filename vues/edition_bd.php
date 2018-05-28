@@ -7,30 +7,16 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _PAGE_BD ;?></title>
-<<<<<<< HEAD
-	<link rel="stylesheet" type="text/css" href="styles/style.less">
-	<?php include 'includes/head.html' ;?>
-=======
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	<!-- Less -->
-		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
-		<link rel="stylesheet/less" type="text/css" href="/styles/style.less">
-	<!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
->>>>>>> parent of b59ca4a... update 27/04
+	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
-<<<<<<< HEAD
-	<div id="container" class="edition_bd">
-=======
-	<div class="content">
->>>>>>> parent of b59ca4a... update 27/04
+	<div id="container">
 		<div>
 			<h2 class="titres"><i>Titre BD</i></h2>
 		</div>
@@ -58,7 +44,10 @@
 		</div>
 	</div>
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 </body>
 <html>
 

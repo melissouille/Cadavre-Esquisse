@@ -7,25 +7,25 @@
 <head>
 	<meta charset="utf-8">
 	<title>S'inscrire</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.less">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
 		<?php include("includes/menu.php");?>
 	</div>
 
-<<<<<<< HEAD
-<div id="container" class="motdepasse">
-=======
-<div class="content">
->>>>>>> parent of b59ca4a... update 27/04
+<div class="container">
 	
 </div>
 
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 </body>
 </html>
 

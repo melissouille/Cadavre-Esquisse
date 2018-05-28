@@ -1,25 +1,25 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _ABOUT; ?></title>
-	<link rel="stylesheet" type="text/css" href="styles/style.less">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
+	<div id="main">
 	<!-- Menu -->
-	<?php include("includes/menu.php");?>
-
-<<<<<<< HEAD
-	<div id="container" class="about">
+	<div id="menu">
+		<?php include'includes/menu.php';?>
 	</div>
-=======
->>>>>>> parent of b59ca4a... update 27/04
+
+	<div id="container">
+	</div>
 
 	<!-- Pied de page -->
-	<?php include ("includes/footer.php");?>
+	<div id="footer">
+		<?php include ("includes/footer.php");?>
+	</div>
+	</div>
 </body>
 <html>

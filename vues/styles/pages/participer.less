@@ -1,0 +1,126 @@
+.participer {
+	width: 1280px; height: 100%;
+	position: relative;
+	#searchForm {
+		padding-top: 100px;
+		width: 1280px; height: 350px;
+		h2 {
+			.titreBlanc;
+			.center;
+			padding : 10px;
+		}
+		h2, #box input {
+			width: 810px;
+		}
+		#box {
+			.center;
+			label {
+				background: none;
+				color: @green;
+			}
+		}
+		#filtres {
+			width: 810px; height: 30px;
+			margin: 20px 240px;
+			label {
+				background: none;
+				float: left;
+				color: @white;
+				width: 300px;
+				text-align: left;
+				display: block;
+			  position: relative;
+			  padding-left: 25px;
+			  margin-bottom: 12px;
+			  cursor: pointer;
+			  font-size: 1.2em;
+			  -webkit-user-select: none;
+			  -moz-user-select: none;
+			  -ms-user-select: none;
+			  user-select: none;
+			}
+			input {
+				opacity: 0;
+				position: absolute;
+				cursor: pointer;
+			}
+			span.checkmark {
+				position: absolute;
+			    top: 0; left: 0;
+				height: 25px; width: 25px;
+		    	background-color: @orange;
+			}
+			label:hover input ~ span.checkmark {
+				opacity: 0.8;
+			}
+			label input:checked ~ span.checkmark {
+				background-color: @green;
+			}
+
+			/* Modification taille indications fanions */
+			.text {
+				padding: 0px 10px;
+			}
+			.fanionfiltre {
+				display: inline-block;
+				height: 0; width: 0;
+				border-left: 30px solid transparent;
+				position: relative;
+				bottom: 25px; 
+
+			}
+			#vide {
+				border-top: 30px solid @green;
+				left: 145px;
+			}
+			#reserve {
+				border-top: 30px solid @orange;
+				left: 130px;
+			}
+		}
+	}
+#results {
+	background: @white;
+	width: 1000px; 
+	/* changer height ici pour la taille de la div des résultats */
+	height: auto;
+	padding: 10px;
+	position: relative;
+	.center;
+
+	.tri {
+		width: 28%;
+		display: block;
+	    position: relative;
+	    padding-right: 35px;
+	    cursor: pointer;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+		p {
+			font-weight: bold;
+		}
+		span.checkmark {
+			position: absolute;
+		    top: 0;
+		    right: 0;
+			height: 25px; width: 25px;
+	    	background-color: @green;
+		}
+	}
+	span.nbresults {
+		position: absolute;
+		top: 0; right: 0;
+		padding: 10px;
+	}
+	#liste_rechercher {
+		padding-top: 5%;
+		display: grid;
+		grid-template-columns: repeat(3, 300px);
+		.fanion, .boutonLire {
+			display:none;
+		}
+	}
+}
+}
