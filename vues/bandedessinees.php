@@ -1,13 +1,11 @@
 <?php
-	include "../controles/lang_config.php";
-	require "../controles/less.php";
+	include 'includes/general_includes.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title><?php echo _PAGE_BD ;?></title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>

@@ -129,120 +129,15 @@
 			margin-left: 20%;
 		}
 	}
-	.slidecontainer {
-		padding: 20px;
-		width: 60%;
-		margin: 0% 20%;
-		div#outputduree {
-			display: inline-block;
-			color: @white;
-		}
-	}
-	.slider {
-		-webkit-appearance: none;
-	    width: 100%;
-	    margin: 18px 0;
-	    border-radius: 5px;  
-	    background: transparent;
-	    opacity: 1;
-	    -webkit-transition: .2s;
-	    transition: opacity .2s;
-	    &:focus {
-	    	outline: none;
-	    }
-	}
-	.slider::-webkit-slider-thumb {
-	    -webkit-appearance: none;
-	    appearance: none;
-	    width: 25px;
-	    height: 25px;
-	    border: 1px solid @green;
-	    border-radius: 50%; 
-	    background: @white;
-	    cursor: pointer;
-	}
-	.slider::-webkit-slider-runnable-track {
-		width: 100%;
-		height: 8.4px;
-		cursor: pointer;
-		box-shadow: 1px 1px 1px @black, 0px 0px 1px @black;
-		background: #3071a9;
-		border-radius: 1.3px;
-		border: 0.2px solid @blue;
-	}
-	.slider:focus::-webkit-slider-runnable-track {
-		background: @green;
-	}
-	/* For Firefox */*
-		.slider::-moz-range-thumb {
-		    width: 25px;
-		    height: 25px;
-		    border: 1px solid @green;
-		    border-radius: 50%;
-		    background: @white;
-		    opacity: 1;
-		    cursor: pointer;
-		}
-		.slider::-moz-range-track {
-			width: 100%;
-			height: 8.4px;
-			ursor: pointer;
-			box-shadow: 1px 1px 1px @black, 0px 0px 1px @black;
-			background: @black;
-			opacity: 0.1;
-			border-radius: 1.3px;
-			border: 0.2px solid @black;
-		}
-	/* For IE */
-		.slider::-ms-track {
-			width: 100%;
-			cursor: pointer;
-			background: transparent; 
-			border-color: transparent;
-			color: transparent;
-		}
-		.slider::-ms-track {
-			width: 100%;
-			height: 8.4px;
-			cursor: pointer;
-			background: transparent;
-			border-color: transparent;
-			border-width: 16px 0;
-			color: transparent;
-		}
-		.slider::-ms-fill-lower {
-			background: @black;
-			border: 0.2px solid @black;
-			border-radius: 2.6px;
-			box-shadow: 1px 1px 1px @black, 0px 0px 1px @black;
-		}
-		.slider:focus::-ms-fill-lower {
-			background: #3071a9;
-		}
-		.slider::-ms-fill-upper {
-			background: @green;
-			border: 0.2px solid @black;
-			border-radius: 2.6px;
-			box-shadow: 1px 1px 1px @black, 0px 0px 1px @black;
-		}
-		.slider:focus::-ms-fill-upper {
-			background: @green;
-		}
-}
-#choixpotes {
-	display: inline-block;
-	background: rgba(0,0,0,0.2);
-	padding: 2% 0%;
-	width: 100%;
-	margin-top: 100px;
-	label {
-		width: 100%;
-	}
-	.consignes {
-		display:inline-block;
-		text-align: left;
-		widht: 100%;
+	#choixpotes {
+		display: inline-block;
+		background: rgba(0,0,0,0.2);
 		padding: 2% 0%;
+		width: 100%;
+		margin-top: 100px;
+		label {
+			width: 100%;
+		}
 		h4 {
 			font-size: 1.4em;
 		}
@@ -254,63 +149,53 @@
 			position: absolute;
 			left: -400px;
 		}
-	}
-	input {
-		margin: 1% 0%;
-		padding: 0.4em;
-		width: 40%;
-		color: @blue;
-		font-size: 1.1em;
-	}
-	.checkbox {
-		position: relative;
-		right: 100px;
-		display:inline-block;
-		label {		
-		    padding-right: 50px;
-		    height: 100px;
-		    cursor: pointer;
-	    	font-size: 1.2em;
-		    -webkit-user-select: none;
-		    -moz-user-select: none;
-		    -ms-user-select: none;
-		    user-select: none;
-		}
-		img {
-			position: absolute;
-			left:0; top:0;
-		}
-		h4, p {
-			width: 300px; height: 50px;
-			text-align: left;
-			padding-left: 100px;			
-		}
-		h4 {
-			padding-top: 20px;
-		}
-		p {
-			padding-bottom: 20px;
-		}
 		input {
-			opacity: 0;
-			position: absolute;
-			cursor: pointer;
+			margin: 1% 0%;
+			padding: 0.4em;
+			width: 40%;
+			color: @blue;
+			font-size: 1.1em;
 		}
-		.close {
-			position: absolute;
-		    top: 0px; right: 0;
-			height: 100px; width: 100px;
-	    	background: none;
-	    	border: none;
-	    	color: @white;
-	    	font-size: 5em;
-	    	font-weight: 100;
-	    	opacity: 0;
-		}
-		label:hover input ~ .close {
-			opacity: 0.8;
-		}
-	}		
+		ul.checkbox {
+			display:inline-block;
+			padding: 0px;
+			width: 500px;
+			text-align: left;
+			vertical-align: middle;
+			font-size: 1.3em;
+			li {
+				cursor: pointer;
+			  position: relative;
+			  padding: 12px 8px;
+			  list-style-type: none;
+			  font-size: 1.2em;
+			  transition: 0.2s;
+			  /* make the list items unselectable */
+			  -webkit-user-select: none;
+			  -moz-user-select: none;
+			  -ms-user-select: none;
+			  user-select: none;
+			  &:hover {
+				  background: @blue;
+				}
+				.close {
+					color: white;
+					.center;
+					width: 56px; height: 56px;
+					padding: 10px 8px;
+					font-size: 1.5em;
+					position: absolute;
+					left: 445px;
+					top: 0;
+
+				}
+				.close:hover {
+					background: rgba(0,0,0,0.2);
+					color: white;
+				}
+			}
+		}		
+	}
 }
 .valider {
 	display: inline-block;

@@ -6,7 +6,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Création d'une BD</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<?php include 'includes/head.html' ;?>
 </head>
 <body>
@@ -73,16 +72,8 @@
 							<input type="radio" name="droit" value="privee" id="privee" />
 						</div>
 					</div>
-					<div id="choixpotes" style="display: none">
-						<label for="rechercheUser">
-							<h4><span class="numero">*</span><?php echo _LABEL_POTES ;?></h4>
-							<p><?php echo _SPAN_POTES ;?></p>
-						</label>
-						<br>
-						<input type="search" name="rechercheUser" id="rechercheUser" autocomplete="off" placeholder="<?php echo _CHAMP_RECHERCHE ;?>">
-						<button type="submit" name="ajouter" value="ajouter">Ajouter</button>
-
-						<div class="checkbox"></div>
+					<div id="choixpotes" style="display: block">
+						<?php include '../controles/choixparticipants.php';?>
 					</div>
 				</div>
 
@@ -93,21 +84,23 @@
 						<p class="consignes">
 							<?php echo _SPAN_TEMPS ;?>
 						</p>
-						<div class="slidecontainer">
-							<input type="range" name="temps" list="durees" class="slider" value="1h">
-							<datalist id="durees">
-								<option value="1h" label="1h"></option>		
-								<option value="3h"></option>
-								<option value="6h"></option>
-								<option value="12h"></option>
-								<option value="1j"></option>
-								<option value="2j"></option>
-								<option value="3j"></option>
-								<option value="4j"></option>
-								<option value="5j"></option>
-								<option value="6j"></option>
-								<option value="1s" label="1<?php echo _SEMAINE ;?>"></option>
-							</datalist>
+						<div id="sliderange">
+							<!--
+							<input type='range' min="1" max="168" name="nb_pages" value="1" class="slider" id="rangetemps">
+							-->
+							<select id="durees">
+								<option value="1" label="1h">1 heures</option>		
+								<option value="3">3 heures</option>
+								<option value="6">6 heures</option>
+								<option value="12">12 heures</option>
+								<option value="24">1 jours</option>
+								<option value="48">2 jours</option>
+								<option value="72">3 jours</option>
+								<option value="96">4 jours</option>
+								<option value="120">5 jours</option>
+								<option value="144">6 jours</option>
+								<option value="168" label="7j">7 jours</option>
+							</select>
 						</div>
 					</label>
 				</div>
@@ -115,26 +108,12 @@
 				<div id="choixpage">
 					<label for="nb_pages">
 						<h3><span class="numero">3</span><?php echo _LABEL_PAGE ;?></h3>
-
 						<span class="consignes">
 							<?php echo _SPAN_PAGE ;?> 
 						</span>
 						<div class="slidecontainer">
-							<input type='range' min="1" max="10" name="nb_pages" value="1" class="slider" id="rangepage" list="datalistpages">
-							<datalist id="datalistpages">
-							<option value="1" label="1"></option>
-							<option value="2"></option>
-							<option value="3"></option>
-							<option value="4"></option>
-							<option value="5" label="5"></option>
-							<option value="6"></option>
-							<option value="7"></option>
-							<option value="8"></option>
-							<option value="9"></option>
-							<option value="1s" label="10"></option>
-						</datalist>
+							<input type='range' min="1" max="10" name="nb_pages" value="1" class="slider" id="rangepage">
 						</div>
-
 					</label>
 				</div>
 			</form>
@@ -166,19 +145,6 @@
 				} else {
 					$("#choixpotes").hide('slow');
 				}		
-			});
-			$("#searchUserForm").submit(function () {
-				$.post("ajoutparticipants.php",$(this).serialize(),function(data){
-					$("div#checkbox").append(data);
-				});
-				return false; // pour ne pas recharger la page 
-			}); 
-		});
-		$(function() {
-			$("#rechercheUser").on('input', function() {
-				$("#rechercheUser").autocomplete({
-					source: '../controles/autocompleteUser.php?term='+$("#rechercheUser").val()
-				});
 			});
 		});
 	</script>
