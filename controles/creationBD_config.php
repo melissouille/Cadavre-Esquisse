@@ -3,43 +3,58 @@
 include 'bddconnect.php';
 include 'functions.php';
 include 'lang_config.php';
-//Stocker nombre d'erreur :
-	$er=0;
-	// boolean aléatoire = couverture1 ou couverture2
+//STOCKER LES ERREURS :
+	$er = 0;
+	$message = "";
+
 	if (isset($_POST['valider'])) {
-		/* les variables saisies */
+
+		// LES VARIABLES AUTOMATIQUES
+		$id_user = $_SESSION['id'];
 		$id_bd = rand();
+		// boolean aléatoire = couverture1 ou couverture2
+		$hasardcouverture = rand(1,2);
+		switch ($hasardcouverture) {
+			case 1:
+				$couverture = "http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg";
+				break;
+			case 2:
+				$couverture = "";
+				break;
+		}
+		$date_creation = date('Y-m-d');
+		$etat = 'encours';
+
+		// Création de la page de la bande dessinée //
+		$url = "www.cadavreesquisse.com/".$titre."";
+		
+
+		// LES VARIABLES SAISIES
 		$titre = secureVar($_POST['titre']);
 		$pages = secureVar($_POST['nb_pages']);
 		$temps = secureVar($_POST['temps']);
 		$droits = secureVar($_POST['droit']);
 
-		/* les variables automatiques */
-		$date_creation = date('Y-m-d');
-		// état en cours par défaut à la création
-		$etat = 'encours';
-		// couverture par défaut :
-		$couverture = "http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg";
 		
-		$id_user = $_SESSION['id'];
 
-		// Création de la page de la bande dessinée //
-		$url = "www.cadavreesquisse.com/".$titre."";
-		
-		$participants = 1;
-
-		/* les tests */
+	// LES TESTS
 		if (empty($titre) || !isset($titre)) {
 			$message = _ERREUR_TITREVIDE;
 			$er++;
 		}
+
 		if (empty($droits) || !isset($droits)) {
 			$message = _ERREUR_ETATVIDE;
 			$er++;
-		} elseif ($droits == "pote") {
-			// on récupère valeur checkbox 
-			if (isset($_POST['participants']) && !empty($_POST['participants'])) {
-				
+		} 
+		elseif ($droits == "pote") {
+
+			if (isset($_POST['checkboxNodeList'])) {
+
+				include 'verifications/participants.php';
+
+			} else {
+				$nbparticipant = 1;
 			}
 		} 
 
@@ -50,13 +65,15 @@ include 'lang_config.php';
 		if (!isset($temps)) {
 			$message = _ERREUR_TEMPSVIDE;
 			$er++;
+		} else {
+			$pages = $_POST['nb_pages'];
 		}
-
-		// Base de données //
+ 
+		// BASE DE DONNEES
 		if ($er == 0) {
 			$sql = "
 			INSERT INTO bandesdessinees (id, title, droits, id_user, url, couverture, etat, date_creation, pages, temps_real, participants)
-			VALUES (:id_bd, :titre, :droits, :id_user, :url, :couverture, :etat, :date_creation, :pages, :temps, :participants)";
+			VALUES (:id_bd, :titre, :droits, :id_user, :url, :couverture, :etat, :date_creation, :pages, :temps, :nbparticipants)";
 
 			// Création entrée dans table bandesdessinees //
 			$req=$bdd->prepare($sql);
@@ -71,7 +88,7 @@ include 'lang_config.php';
 			$req->bindParam(':date_creation', $date_creation);
 			$req->bindParam(':pages', $pages);
 			$req->bindParam(':temps', $temps);
-			$req->bindParam(':participants', $participants);
+			$req->bindParam(':nbparticipants', $nbparticipants);
 
 			$req->execute();
 			$message = "Temps de " .$temps. "<br>

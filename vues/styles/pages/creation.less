@@ -112,7 +112,74 @@
 				bottom: 8%;
 			}
 		}
+		#choixpotes {
+			display: inline-block;
+			background: rgba(0,0,0,0.2);
+			padding: 2% 0%;
+			width: 100%;
+			margin-top: 100px;
+			label {
+				width: 100%;
+			}
+			h4 {
+				font-size: 1.4em;
+			}
+			p {
+				font-weight: 100;
+				font-size: 1.2em;
+			}
+			span {
+				position: absolute;
+				left: -400px;
+			}
+			input {
+				margin: 1% 0%;
+				padding: 0.4em;
+				width: 40%;
+				color: @blue;
+				font-size: 1.1em;
+			}
+			div.checkbox {
+				display:inline-block;
+				padding: 0px;
+				width: 500px;
+				text-align: left;
+				vertical-align: middle;
+				font-size: 1.3em;
+				label.nodelist {
+					cursor: pointer;
+				  position: relative;
+				  padding: 12px 8px;
+				  list-style-type: none;
+				  font-size: 1.2em;
+				  transition: 0.2s;
+				  /* make the list items unselectable */
+				  -webkit-user-select: none;
+				  -moz-user-select: none;
+				  -ms-user-select: none;
+				  user-select: none;
+				  &:hover {
+					  background: @blue;
+					}
+					.close {
+						color: white;
+						.center;
+						width: 56px; height: 56px;
+						padding: 10px 8px;
+						position: absolute;
+						left: 445px;
+						font-size: 1.5em;
+						top: 0;
+						&:hover {
+							background: rgba(0,0,0,0.2);
+							color: @white;
+						}
+					}
+				}
+			}		
+		}
 	}
+
 	#choixtemps {
 		background-color: @blue;
 		padding: 0;
@@ -129,73 +196,140 @@
 			margin-left: 20%;
 		}
 	}
-	#choixpotes {
-		display: inline-block;
-		background: rgba(0,0,0,0.2);
-		padding: 2% 0%;
-		width: 100%;
-		margin-top: 100px;
-		label {
-			width: 100%;
-		}
-		h4 {
-			font-size: 1.4em;
-		}
-		p {
-			font-weight: 100;
+
+	#choixpage {
+		#textInput {
+			background: @blue;
+			border: none;
+			.center;
 			font-size: 1.2em;
 		}
-		span {
-			position: absolute;
-			left: -400px;
+		#unepage, #dixpage {
+			position : relative;
 		}
-		input {
-			margin: 1% 0%;
-			padding: 0.4em;
-			width: 40%;
-			color: @blue;
-			font-size: 1.1em;
+		#unepage {
+			right: 300px; top : 50px;
 		}
-		ul.checkbox {
-			display:inline-block;
-			padding: 0px;
-			width: 500px;
-			text-align: left;
-			vertical-align: middle;
-			font-size: 1.3em;
-			li {
-				cursor: pointer;
-			  position: relative;
-			  padding: 12px 8px;
-			  list-style-type: none;
-			  font-size: 1.2em;
-			  transition: 0.2s;
-			  /* make the list items unselectable */
-			  -webkit-user-select: none;
-			  -moz-user-select: none;
-			  -ms-user-select: none;
-			  user-select: none;
-			  &:hover {
-				  background: @blue;
-				}
-				.close {
-					color: white;
-					.center;
-					width: 56px; height: 56px;
-					padding: 10px 8px;
-					font-size: 1.5em;
-					position: absolute;
-					left: 445px;
-					top: 0;
-
-				}
-				.close:hover {
-					background: rgba(0,0,0,0.2);
-					color: white;
-				}
-			}
+		#dixpage {
+			left: 170px; bottom: 10px;
 		}		
+		.slidecontainer {
+			
+			@track-color: rgba(255,255,255,0.2);
+			@thumb-color: @white;
+
+			@thumb-radius: 15px;
+			@thumb-height: 20px;
+			@thumb-width: 20px;
+			@thumb-shadow-size: 1px;
+			@thumb-shadow-blur: 1px;
+			@thumb-shadow-color: #111;
+			@thumb-border-width: 1px;
+			@thumb-border-color: @green;
+
+			@track-width: 600px;
+			@track-height: 10px;
+			@track-shadow-size: 1px;
+			@track-shadow-blur: 1px;
+			@track-shadow-color: @blue;
+			@track-border-width: 1px;
+			@track-border-color: rgba(0,0,0,0.1);
+
+			@track-radius: 5px;
+			@contrast: 5%;
+
+			.shadow(@shadow-size,@shadow-blur,@shadow-color) {
+			  box-shadow: @shadow-size @shadow-size @shadow-blur @shadow-color, 0px 0px @shadow-size lighten(@shadow-color,5%);
+			}
+
+			.track() {
+			  width: @track-width;
+			  height: @track-height;
+			  cursor: pointer;
+			  animate: 0.2s;
+			}
+
+			.thumb() {
+			  .shadow(@thumb-shadow-size,@thumb-shadow-blur,@thumb-shadow-color);
+			  border: @thumb-border-width solid @thumb-border-color;
+			  height: @thumb-height;
+			  width: @thumb-width;
+			  border-radius: @thumb-radius;
+			  background: @thumb-color;
+			  cursor: pointer;
+			}
+
+			input[type=range] {
+			  -webkit-appearance: none;
+			  margin: @thumb-height/2 0;
+			  width: @track-width;
+
+			  &:focus {
+			    outline: none;
+			  }
+
+			  &::-webkit-slider-runnable-track {
+			    .track();
+			    .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+			    background: @track-color;
+			    border-radius: @track-radius;
+			    border: @track-border-width solid @track-border-color;
+			  }
+			  
+			  &::-webkit-slider-thumb {
+			    .thumb();
+			    -webkit-appearance: none;
+			    margin-top: ((-@track-border-width * 2 + @track-height) / 2) - (@thumb-height / 2);
+			  }
+
+			  &:focus::-webkit-slider-runnable-track {
+			    background: lighten(@track-color, @contrast);
+			  }
+
+			  &::-moz-range-track {
+			    .track();
+			    .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+			    background: @track-color;
+			    border-radius: @track-radius;
+			     border: @track-border-width solid @track-border-color;
+			  }
+			  &::-moz-range-thumb {
+			     .thumb();
+			  }
+
+			  &::-ms-track {
+			    .track(); 
+			    background: transparent;
+			    border-color: transparent;
+			    border-width: @thumb-width 0;
+			    color: transparent;
+			  }
+
+			  &::-ms-fill-lower {
+			    background: darken(@track-color, @contrast);
+			    border: @track-border-width solid @track-border-color;
+			    border-radius: @track-radius*2;
+			    .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+			  }
+			  &::-ms-fill-upper {
+			    background: @track-color;
+			    border: @track-border-width solid @track-border-color;
+			    border-radius: @track-radius*2;
+			    .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+			  }
+			  &::-ms-thumb {
+			    .thumb();
+			  }
+			  &:focus::-ms-fill-lower {
+			    background: @track-color;
+			  }
+			  &:focus::-ms-fill-upper {
+			    background: lighten(@track-color, @contrast);
+			  }
+			}
+		}
 	}
+
 }
 .valider {
 	display: inline-block;
