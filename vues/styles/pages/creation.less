@@ -112,72 +112,7 @@
 				bottom: 8%;
 			}
 		}
-		#choixpotes {
-			display: inline-block;
-			background: rgba(0,0,0,0.2);
-			padding: 2% 0%;
-			width: 100%;
-			margin-top: 100px;
-			label {
-				width: 100%;
-			}
-			h4 {
-				font-size: 1.4em;
-			}
-			p {
-				font-weight: 100;
-				font-size: 1.2em;
-			}
-			span {
-				position: absolute;
-				left: -400px;
-			}
-			input {
-				margin: 1% 0%;
-				padding: 0.4em;
-				width: 40%;
-				color: @blue;
-				font-size: 1.1em;
-			}
-			div.checkbox {
-				display:inline-block;
-				padding: 0px;
-				width: 500px;
-				text-align: left;
-				vertical-align: middle;
-				font-size: 1.3em;
-				label.nodelist {
-					cursor: pointer;
-				  position: relative;
-				  padding: 12px 8px;
-				  list-style-type: none;
-				  font-size: 1.2em;
-				  transition: 0.2s;
-				  /* make the list items unselectable */
-				  -webkit-user-select: none;
-				  -moz-user-select: none;
-				  -ms-user-select: none;
-				  user-select: none;
-				  &:hover {
-					  background: @blue;
-					}
-					.close {
-						color: white;
-						.center;
-						width: 56px; height: 56px;
-						padding: 10px 8px;
-						position: absolute;
-						left: 445px;
-						font-size: 1.5em;
-						top: 0;
-						&:hover {
-							background: rgba(0,0,0,0.2);
-							color: @white;
-						}
-					}
-				}
-			}		
-		}
+
 	}
 
 	#choixtemps {
@@ -194,6 +129,59 @@
 			font-weight: 100;
 			width: 60%;
 			margin-left: 20%;
+		}
+		.dropdownlist {
+	    margin: 0; padding: 0;
+	    .center;
+	    font-size: 1.2em;
+	    width: 250px;
+
+	    select#temps {
+				font-size: inherit;
+				color: @blue;
+				padding: 5px;
+
+				option.duree {
+					font-size: 1em;
+				}
+			}
+		}
+		@supports (pointer-events: none) and ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
+			.dropdownlist {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				border: @white;
+			}
+			#temps {
+				width: 250px; height: 2em;
+				padding-right: 2.5em;
+				border: @white;
+				border-radius: 5px;
+				/* pour masquer le bouton */
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+			}
+			.dropdownlist:before, .dropdownlist:after {
+				content: "";
+				position: absolute;
+				pointer-events: none;
+			}
+			/* La flèche */
+			.dropdownlist:after {
+				content: "\25BC";
+				color: @blue;
+				height: 1.2em;
+				font-size: 0.8em;
+				line-height: 1;
+				right: 1em;
+				top: 50%; margin-top: -0.5em;
+			}
+			.dropdownlist:before {
+				width: 2em;
+				right: 0; top: 0; bottom: 0;
+			}
 		}
 	}
 
