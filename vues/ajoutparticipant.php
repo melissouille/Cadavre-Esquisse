@@ -16,28 +16,33 @@
 	</div>
 
 	<div id="container" class="ajoutparticipant">
-		<!--
-		<form method="POST" id="participantForm">
-				<label for="searchbaruser">
-					<h4><span class="numero">*</span><?php echo _LABEL_POTES ;?></h4>
-							<p><?php echo _SPAN_POTES ;?></p>
-				</label>
-				<br>
-				<input type="search" name="rechercheUser" id="searchbaruser" class="nameuser" autocomplete="off" placeholder="<?php echo _CHAMP_RECHERCHE ;?>">
-				<br>
-				<button type="button" name="ajouter" value="ajouter" id="ajouter">Ajouter</button>
-				<br>
-				<div class="checkbox">
-				</div>
 
-				<div class="valider">
-					<h2 class="titres"><?php echo _LABEL_VALIDER ;?></h2>
-					<button type="submit" name="valider" formaction="../controles/choixparticipants.php" form="participantForm">
-						<?php echo _VALIDER_ET_COMMENCER ;?>
-					</button>
-				</div>
+		<form method="POST" id="participantForm">
+			<label for="searchbaruser">
+				<h4><span class="numero">*</span><?php echo _LABEL_POTES ;?></h4>
+				<p><?php echo _SPAN_POTES ;?></p>
+			</label>
+			<br>
+			<input type="search" name="rechercheUser" id="searchbaruser" class="nameuser" autocomplete="off" placeholder="<?php echo _CHAMP_RECHERCHE ;?>">
+			<br>
+			<button type="button" name="ajouter" value="ajouter" id="ajouter">Ajouter</button>
+			<br>
+
+			<div class="checkbox">
+				<label class="nodelist" for="checkboxNodeList">
+					usertest1
+					<span class="close">×</span>
+					<input name="checkboxNodeList[]" value="usertest1" checked="true" class="hidden" type="checkbox">
+				</label>
+			</div>
+
+			<div class="valider">
+				<h2 class="titres"><?php echo _LABEL_VALIDER ;?></h2>
+				<button type="submit" name="valider" formaction="../controles/choixparticipants.php" form="participantForm">
+					<?php echo _VALIDER_ET_COMMENCER ;?>
+				</button>
+			</div>
 		</form>
-	-->
 	</div>
 
 	<!-- Pied de page -->
@@ -47,7 +52,7 @@
 	</div>
 
 	<script>
-		/* POUR LE CHOIX DES PARTICIPANTS
+		/* POUR LE CHOIX DES PARTICIPANTS*/
 		$(document).ready(function() {
 			$(function() {
 				$("#searchbaruser").on('input', function() {
@@ -97,7 +102,6 @@
 			  }
 			}
 		});
-	*/
 	</script>
 </body>
 </html>

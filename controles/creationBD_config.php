@@ -18,6 +18,7 @@
 
 		// LES VARIABLES AUTOMATIQUES
 		$id_user = $_SESSION['id'];
+		$id_bd = rand();
 		// boolean aléatoire = couverture1 ou couverture2
 		$hasardcouverture = rand(1,2);
 		switch ($hasardcouverture) {
@@ -39,6 +40,8 @@
 		if (empty($titre) || !isset($titre)) {
 			$message = _ERREUR_TITREVIDE;
 			$er++;
+		} else {
+			include 'verifications/titre.php';
 		}
 
 		if (empty($droits) || !isset($droits)) {
@@ -66,7 +69,8 @@
 			/* Créer un fichier pour la bd 
 			fopen('bd/'.$titre'.php', 'w+');
 			*/
-			if ($droits == 'pote') {
+			
+			if ($droits == 'potes') {
 				header('Location: http://localhost/cadavre-esquisse/vues/ajoutparticipant.php');
 			} 
 			if ($droits == 'tous' || $droits == 'privee') {

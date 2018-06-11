@@ -1,6 +1,8 @@
 <?php
   session_start();
   include 'functions.php';
+  include 'lang_config.php';
+  include 'bddconnect.php';
   
   $message = "";
 
@@ -8,26 +10,26 @@
       $message= _ERREUR_CHAMPSVIDE;
   } else {
 
-    include 'bddconnect.php';
-    $query = "SELECT password, id, role, name FROM utilisateurs WHERE name =:user AND password =:pwd";
+    
+    $sql = "SELECT password, id, role, name FROM utilisateurs WHERE name =:user AND password =:pwd";
 
     $user = secureVar($_POST['user']);
     $pwd = secureVar($_POST['pass']);
 
-    $requete=$bdd->prepare($query);
-    $requete->bindParam(':user', $user);
-    $requete->bindParam(':pwd', $pwd);
-    $requete->execute();
-    $donnees=$requete->fetch();
+    $req=$bdd->prepare($sql);
+    $req->bindParam(':user', $user);
+    $req->bindParam(':pwd', $pwd);
+    $req->execute();
+    $data=$req->fetch();
 
-    if ($donnees['password'] == $pwd) {
-      $_SESSION['user'] = $donnees['name'];
-      $_SESSION['id'] = $donnees['id'];
-      $_SESSION['role'] = $donnees['role'];
+    if ($data['password'] == $pwd) {
+      $_SESSION['user'] = $data['name'];
+      $_SESSION['id'] = $data['id'];
+      $_SESSION['role'] = $data['role'];
     } else {
       $message = _ERREUR_SAISIEINCORRECTE;
     }
-    $requete->closeCursor();
+    $req->closeCursor();
     // Redirection page précédente
     header ("Location: $_SERVER[HTTP_REFERER]" );
   }

@@ -1,13 +1,13 @@
 <?php
-	session_start();
 
 	$sql = "
-		INSERT INTO bandesdessinees (title, droits, id_user, url, couverture, etat, date_creation, pages, temps_real, participants)
-		VALUES (:titre, :droits, :id_user, :url, :couverture, :etat, :date_creation, :pages, :temps, :participant)";
+		INSERT INTO bandesdessinees (id, title, droits, id_user, url, couverture, etat, date_creation, pages, temps_real, participants)
+		VALUES (:id_bd, :titre, :droits, :id_user, :url, :couverture, :etat, :date_creation, :pages, :temps, :participant)";
 
 	// Création entrée dans table bandesdessinees //
 	$req=$bdd->prepare($sql);
 
+	$req->bindParam(':id_bd', $id_bd);
 	$req->bindParam(':titre', $titre);
 	$req->bindParam(':droits', $droits);
 	$req->bindParam(':id_user', $id_user);
