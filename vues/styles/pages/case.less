@@ -7,13 +7,59 @@
 		padding: 20px;
 	}
 
+	.fleche {
+		font-size: 3em;
+		position: relative;
+		top: 170px;
+	}
+	#flechegauche {
+		left: 10px;
+	}
+	#flechedroite {
+		left: 230px;
+	}
+
 	#templatevide {
 		width: 273px; height: 421px;
 		text-align: left;
 		background: rgba(0,0,0,0.1);
-		img {
-			position: relative;
-			top: 370px;
+
+
+	}
+
+	.icones {
+		display: flex;
+		justify-content: space-between;
+		width: 273px;
+
+		img.icone:hover {
+			width:42px;
+			transition-duration: 0.2s
+		}
+		#choix_formes {
+
+			.bouton_formes {
+				width:45px; height:45px;
+				.zeromarges;
+				border:none;
+				background:none;
+				img.template {
+					display: inline-block;			
+				}
+			}
+
+			#formes-modal {
+			border: 1px solid red;
+
+				background: @white;
+
+				img {
+					float: left;
+					background: rgba(0,0,0,0.1);
+				}
+			}
 		}
 	}
+
+
 }
