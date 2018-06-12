@@ -64,7 +64,8 @@
 	define("_ERREUR_SAISIEINCORRECTE", "Saisie incorrecte");
 	define("_ERREUR_PSEUDOPRIT", "Ce Pseudo est déjà prit");
 	define("_ERREUR_MAILPRIT", "Il existe déjà un compte avec cet email");
-
+	define("_ERREUR_TITREPRIT", "Ce titre est déjà prit");
+	
 	define("_ERREUR_FORMATPSEUDO", "Format du pseudo invalide");
 	define("_ERREUR_FORMATMAIL", "Format email invalide");
 	define("_ERREUR_FORMATMDP", "Format mot de passe invalide");
