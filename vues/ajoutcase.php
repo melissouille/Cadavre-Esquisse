@@ -21,30 +21,32 @@
 		</div>
 
 		<div id="templatevide">
-			<span class="fleche" id="flechegauche">
-				&#8249
-			</span>
-			<span class="fleche" id="flechedroite">
-				&#8250
-			</span>
+			<div class="icones">
+
+				<div class="alignleft">
+					<span id="choix_formes">
+						<?php include 'modals/choixformes.php';?>
+					</span>
+					<span id="telecharger_template"> 
+						<img class="icone" src="../img/telecharger-template.png" alt="Télécharger template" title="Télécharger" width="40px" />
+					</span>
+					<span id="ajouter_case">
+						<img class="icone" src="../img/ajouter-case.png" alt="Ajouter la case" title="Ajouter" width="40px" />
+					</span>
+				</div>
+
+				<div class="alignright">
+					<span id="valider_case">
+						<img class="icone" src="../img/valider-case.png" alt="Validation" title="Valider" width="40px" />
+					</span>
+					<span id="annulation">
+						<img class="icone" src="../img/annulation.png" alt="Annulation" title="Annuler" width="40px" />
+					</span>
+				</div>
+
+			</div>
 		</div>
-		<div class="icones">
-			<span id="choix_formes">
-				<?php include 'modals/choixformes.php';?>
-			</span>
-			<span id="ajouter_case">
-				<img class="icone" src="../img/ajouter-case.png" alt="Ajouter la case" title="Ajouter" width="40px" />
-			</span>
-			<span id="annulation">
-				<img class="icone" src="../img/annulation.png" alt="Annulation" title="Annuler" width="40px" />
-			</span>
-			<span id="telecharger_template"> 
-				<img class="icone" src="../img/telecharger-template.png" alt="Télécharger template" title="Télécharger" width="40px" />
-			</span>
-			<span id="valider_case">
-				<img class="icone" src="../img/valider-case.png" alt="Validation" title="Valider" width="40px" />
-			</span>
-		</div>
+		
 		
 	</div>
 
