@@ -21,19 +21,14 @@
 	@import "colors.less";
 	@import "styleclass.less";
 
-html, body{
+html, body, #main{
 	width: 100%; height: 100%;
 	.zeromarges;
-}
-#main {
-	display:flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 100%; width: 100%;
-	.zeromarges;
-	.ubuntu;
 	background: @blue;
+	/* Police par défaut */
+	.ubuntu;
 }
+
 #container {
 	width: 1280px; min-height:100%;
 	.center;

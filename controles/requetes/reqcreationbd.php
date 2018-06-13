@@ -18,7 +18,27 @@
 	$req->bindParam(':pages', $pages);
 	$req->bindParam(':temps', $temps);
 	$req->bindParam(':participant', $participant);
+	$req->execute();
 
-	$req->execute();				
+		$sqluser = "SELECT id, bd_cree FROM utilisateurs WHERE id = :id_user";
+		$requser=$bdd->prepare($sqluser);
+		$requser->bindParam(':id_user', $id_user);
+		$requser->execute();
+
+			$data = $requser->fetch();
+			$bd_cree_bdd = $data['bd_cree'];
+
+			$bd_cree = $bd_cree_bdd + 1;
+
+			$sqlupdate = "UPDATE utilisateurs SET bd_cree = :bd_cree WHERE id = :id_user";
+			$requpdate=$bdd->prepare($sqlupdate);
+			$requpdate->bindParam(':id_user', $id_user);
+			$requpdate->bindParam(':bd_cree', $bd_cree);
+			$requpdate->execute();
+			$requpdate->closeCursor();
+
+		$requser->closeCursor();
+
+
 	$req->closeCursor();
 ?>

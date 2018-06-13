@@ -1,37 +1,54 @@
 <?php
+ini_set('display_errors',1); 
+error_reporting(E_ALL);
   session_start();
   include 'functions.php';
   include 'lang_config.php';
   include 'bddconnect.php';
   
   $message = "";
+  $er = 0;
 
-  if (empty($_POST['user']) || empty($_POST['pass'])) {
+
+  $user = secureVar($_POST['user']);
+  $pwd = secureVar($_POST['pass']);
+
+  if (empty($user) || empty($pwd)) {
       $message= _ERREUR_CHAMPSVIDE;
+      $er++;
   } else {
+    $sql = "SELECT id, name, password, role FROM utilisateurs WHERE name =:user";
 
-    
-    $sql = "SELECT password, id, role, name FROM utilisateurs WHERE name =:user AND password =:pwd";
-
-    $user = secureVar($_POST['user']);
-    $pwd = secureVar($_POST['pass']);
-
-    $req=$bdd->prepare($sql);
+    $req = $bdd->prepare($sql);
     $req->bindParam(':user', $user);
-    $req->bindParam(':pwd', $pwd);
     $req->execute();
-    $data=$req->fetch();
+    while ($data = $req->fetch()) {
+      $name = $data['name'];
 
-    if ($data['password'] == $pwd) {
-      $_SESSION['user'] = $data['name'];
-      $_SESSION['id'] = $data['id'];
-      $_SESSION['role'] = $data['role'];
-    } else {
-      $message = _ERREUR_SAISIEINCORRECTE;
+      if ($user == $name) {
+        $hash = $data['password'];
+        $validPassword = password_verify($pwd, $hash);
+        echo $validPassword;
+        if ($validPassword || $pwd == $hash) {
+          $_SESSION['user'] = $data['name'];
+          $_SESSION['id'] = $data['id'];
+          $_SESSION['role'] = $data['role'];
+          $message = "Mot de passe valide";
+        } else {
+          $message = "Mot de passe invalide";
+          $er++;
+        }
+      } else {
+        $message = "Nom utilisateur incorrect";
+        $er++;
+      }
     }
     $req->closeCursor();
+  }
+  if ($er != 0) {
+    echo $message;
+  }  else {
     // Redirection page précédente
     header ("Location: $_SERVER[HTTP_REFERER]" );
   }
-  echo $message;
 ?>
