@@ -32,9 +32,10 @@
 					<a id="telecharger_template">
 						<img class="icone" src="../img/telecharger-template.png" alt="Télécharger template" title="Télécharger" width="40px" />
 					</a>
-					<button id="ajouter_case">
+					<label id="ajouter_case">
 						<img class="icone" src="../img/ajouter-case.png" alt="Ajouter la case" title="Ajouter" width="40px" />
-					</button>
+						<input type="file" class="hidden">
+					</label>
 				</div>
 				<div class="alignright">
 					<button id="valider_case">
