@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 28 mai 2018 à 12:42
+-- Généré le :  lun. 18 juin 2018 à 09:39
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -27,30 +27,6 @@ USE `cadavre_esquisse`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `assoc_bd_cases`
---
-
-DROP TABLE IF EXISTS `assoc_bd_cases`;
-CREATE TABLE IF NOT EXISTS `assoc_bd_cases` (
-  `id_bd` int(11) NOT NULL,
-  `id_case` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `assoc_bd_cases`
---
-
-INSERT INTO `assoc_bd_cases` (`id_bd`, `id_case`) VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(5, 4),
-(6, 10),
-(7, 13);
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `assoc_bd_user`
 --
 
@@ -65,16 +41,11 @@ CREATE TABLE IF NOT EXISTS `assoc_bd_user` (
 --
 
 INSERT INTO `assoc_bd_user` (`id_bd`, `id_user`) VALUES
-(3, 3),
-(4, 3),
-(5, 3),
-(6, 3),
-(8, 3),
-(10, 3),
-(12, 3),
-(18, 3),
-(19, 3),
-(23, 3);
+(10155, 1),
+(31293, 1),
+(18130, 1),
+(4531, 1),
+(30768, 1);
 
 -- --------------------------------------------------------
 
@@ -102,35 +73,15 @@ CREATE TABLE IF NOT EXISTS `bandesdessinees` (
   `note` set('1','2','3','4','5') COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=31294 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `bandesdessinees`
 --
 
 INSERT INTO `bandesdessinees` (`id`, `id_user`, `title`, `droits`, `pages`, `url`, `date_creation`, `etat`, `couverture`, `participants`, `cases`, `commentaires`, `temps_real`, `duree_real`, `commentaire`, `note`) VALUES
-(1, NULL, 'exemple1', 'potes', 10, NULL, '2018-04-09', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 4, 'exemple2', 'potes', 10, NULL, '2018-04-09', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 3, 'exemple3', 'privee', 10, '', '2018-04-13', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 2, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 3, 'exemple4', 'potes', 5, '', '2018-04-11', 'encours', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 3, 'exemple5', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 3, 'exemple6', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 4, 'exemple7', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 3, 'exemple8', 'tous', 2, '', '2018-04-13', 'encours', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 2, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 4, 'exemple9', 'tous', 3, '', '2018-04-02', 'encours', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 1, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, 3, 'exemple10', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, 5, 'exemple11', 'potes', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 3, 'exemple12', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 4, 'exemple13', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 5, 'exemple14', 'tous', 10, NULL, '2018-04-10', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 5, 'exemple15', 'tous', 4, NULL, '2018-04-17', 'encours', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 3, 'exemple18', 'potes', 10, 'www.cadavreesquisse.com/exemple1', '2018-04-19', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, '4j', NULL, NULL, NULL),
-(19, 3, 'exemple19', 'tous', 7, 'www.cadavreesquisse.com/exemple2', '2018-04-19', 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, '6j', NULL, NULL, NULL),
-(20, 5, 'exemple20', 'potes', 10, NULL, NULL, 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 4, 'exemple21', 'potes', 5, NULL, NULL, 'terminee', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 4, 'exemple22', 'potes', 1, '', '2018-04-20', 'encours', NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 3, 'exemple23', 'tous', 9, NULL, '2018-04-13', 'encours', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 4, 'exemple24', 'tous', 8, NULL, '2018-04-09', 'encours', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(10155, 1, 'test bd cree', 'privee', 1, 'www.cadavreesquisse.com/test bd cree', '2018-06-13', 'encours', 'http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg', 1, NULL, NULL, '1', NULL, NULL, NULL),
+(30768, 1, 'test ajout case', 'tous', 5, 'www.cadavreesquisse.com/test ajout case', '2018-06-18', 'encours', '', 1, NULL, NULL, '6', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -147,32 +98,14 @@ CREATE TABLE IF NOT EXISTS `cases` (
   `etatC` enum('vide','reserve','termine') COLLATE utf8_bin NOT NULL,
   `image` text COLLATE utf8_bin COMMENT 'url',
   `format` enum('1','2','3','4','5') COLLATE utf8_bin DEFAULT NULL,
+  `numero` int(11) NOT NULL,
   `time_creation` datetime DEFAULT NULL COMMENT 'y-m-d h:mn:sec',
   `date_real` date DEFAULT NULL,
   `date_resa` date DEFAULT NULL,
   `duree` time DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Déchargement des données de la table `cases`
---
-
-INSERT INTO `cases` (`id`, `id_bd`, `id_user`, `url`, `etatC`, `image`, `format`, `time_creation`, `date_real`, `date_resa`, `duree`) VALUES
-(1, 9, 2, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 4, 3, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 2, 5, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 3, 5, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
-(10, 15, 4, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 18, 3, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 19, 4, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 20, 5, NULL, 'termine', NULL, NULL, NULL, NULL, NULL, NULL),
-(16, 21, 3, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL),
-(17, 22, 4, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 23, 5, NULL, 'termine', NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 24, 5, NULL, 'reserve', NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 8, 3, NULL, 'vide', NULL, NULL, NULL, NULL, NULL, NULL);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -204,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(36) COLLATE utf8_bin NOT NULL,
   `email` varchar(100) COLLATE utf8_bin NOT NULL,
-  `password` varchar(535) COLLATE utf8_bin NOT NULL,
+  `password` char(255) COLLATE utf8_bin NOT NULL,
   `date_inscription` date NOT NULL,
   `url` varchar(535) COLLATE utf8_bin NOT NULL,
   `avatar` varchar(535) COLLATE utf8_bin NOT NULL DEFAULT 'localhost/cadavre_esquisse/img/cde-avatar-type.jpg' COMMENT 'url',
@@ -230,7 +163,8 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `name`, `email`, `password`, `date_inscription`, `url`, `avatar`, `description`, `website`, `facebook`, `instagram`, `twitter`, `role`, `bd_cree`, `bdjoin`, `case_cree`, `like`, `commentaire`) VALUES
-(1, 'admin', 'mailtemporaire@mail.com', 'uM#1F70ZL7vAjwZr', '2018-04-02', '', 'localhost/cadavre_esquisse/img/cde-avatar-type.jpg', '', NULL, NULL, NULL, NULL, 'admin', NULL, NULL, NULL, NULL, NULL);
+(1, 'admin', 'mailtemporaire@mail.com', 'uM#1F70ZL7vAjwZr', '2018-04-02', '', 'localhost/cadavre_esquisse/img/cde-avatar-type.jpg', '', NULL, NULL, NULL, NULL, 'admin', 5, NULL, NULL, NULL, NULL),
+(5, 'user', 'user@mail.com', '$2y$10$4biTe.Lmp3dyZVTqOAVJueKKwa8YPvdvpGELp9wknSCJxCLUGcFbW', '2018-06-14', 'http://localhost/cadavre_esquisse/vues/user', 'localhost/cadavre_esquisse/img/cde-avatar-type.jpg', 'gnrtyjjyjhrt', '', NULL, NULL, NULL, 'user', NULL, NULL, NULL, NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
