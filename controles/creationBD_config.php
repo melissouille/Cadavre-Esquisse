@@ -11,7 +11,7 @@
 
 		// LES VARIABLES SAISIES
 		$titre = secureVar($_POST['titre']);
-		$_SESSION['titre'] = $titre;
+		
 		$pages = secureVar($_POST['nb_pages']);
 		$temps = secureVar($_POST['temps']);
 		$droits = secureVar($_POST['droit']);
@@ -66,6 +66,7 @@
 		if ($er == 0) {
 			include 'requetes/reqcreationbd.php';
 			include 'requetes/assoc_bd_user.php';
+			$_SESSION['titre'] = $titre;
 			/* Créer un fichier pour la bd 
 			fopen('bd/'.$titre'.php', 'w+');
 			*/

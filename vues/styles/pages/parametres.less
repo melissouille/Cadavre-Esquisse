@@ -1,0 +1,145 @@
+div.paramBD {
+	background: @yellow;
+	color: @blue;
+	h2 {
+		.titreBlanc;
+		padding: 1em 0em;
+		font-size: 4em;
+	}
+	h3 {
+		font-size: 2.2em;
+	}
+	input[type=search] {
+		border: none;
+		width: 50%;
+		.center;
+	}
+	div.entete {
+		line-height: 0.5;
+		padding: 2% 0%;
+		font-size: 1.5em;
+	}
+	div.titre, div.participants, div.bouton {
+		padding: 5% 0%;
+	}
+	div.titre {
+		input {
+			font-size: 2.5em;
+			.pacifico;
+		}
+	}
+	div.participants {
+		color: @white;
+		input {
+			font-size: 1.8em;
+			color: @blue;
+		}
+		button {
+			background: @green;
+			font-size: 1.5em;
+			border: none;
+			margin: 2% 0%; padding: 1% 4%;
+			border-radius: 0.1em;
+		}
+		div.checkbox {
+				display:inline-block;
+				width: 50%;
+				text-align: left;
+				font-size: 1.3em;
+				label.nodelist {
+					cursor: pointer;
+				  position: relative;
+				  width: 100%;
+				  padding: 12px;
+				  list-style-type: none;
+				  font-size: 1.2em;
+				  transition: 0.2s;
+				  /* make the list items unselectable */
+				  -webkit-user-select: none;
+				  -moz-user-select: none;
+				  -ms-user-select: none;
+				  user-select: none;
+				  &:hover {
+					  background: @yellowlight;
+					}
+					.close {
+						color: @white;
+						.center;
+						width: 56px; height: 56px;
+						padding: 10px 8px;
+						position: absolute;
+						left: 91%;
+						font-size: 1.5em;
+						top: 0;
+						&:hover {
+							
+							color: @white;
+						}
+					}
+				}
+			}
+	}
+	div.etat {
+		margin: 0% 2.5%;
+		width: 95%;
+		background: @blue;
+		.center;
+		position:relative;
+
+		h3 {
+			padding: 2% 0%;
+			color: @white;
+		}
+		#includechoix {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			padding: 2% 0%;
+		}
+		.choix {
+			width: 20%;
+			label {
+				height: 100%;
+				h4 {
+					margin: 0; padding: 0.3em;
+				}
+				h4.privee {
+					background: @pink;
+				}
+				h4.tous {
+					background: @green;
+				}
+				h4.potes{
+					background: @yellow;
+				}
+				p {
+					background: @white;
+					color: @blue;
+					font-weight: 100;
+					height: 70%;
+					.center;
+					padding: 0.4em;
+				}
+				span.visibilite {
+					font-weight: bold;
+					font-style: italic;
+				}	
+			}
+			input {
+				position: relative;
+				bottom: 8%;
+			}
+		}
+	}
+	div.bouton {
+		button {
+			font-size: 2em;
+			background: @green;
+			border: none;
+			border-radius: 0.1em;
+			padding: 1% 5%;
+
+		}
+	}
+	
+}

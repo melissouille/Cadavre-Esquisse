@@ -1,6 +1,4 @@
 <?php
-ini_set('display_errors',1); 
-error_reporting(E_ALL);
   session_start();
   include 'functions.php';
   include 'lang_config.php';
@@ -8,7 +6,6 @@ error_reporting(E_ALL);
   
   $message = "";
   $er = 0;
-
 
   $user = secureVar($_POST['user']);
   $pwd = secureVar($_POST['pass']);
@@ -24,16 +21,13 @@ error_reporting(E_ALL);
     $req->execute();
     while ($data = $req->fetch()) {
       $name = $data['name'];
-
       if ($user == $name) {
         $hash = $data['password'];
         $validPassword = password_verify($pwd, $hash);
-        echo $validPassword;
         if ($validPassword || $pwd == $hash) {
           $_SESSION['user'] = $data['name'];
           $_SESSION['id'] = $data['id'];
           $_SESSION['role'] = $data['role'];
-          $message = "Mot de passe valide";
         } else {
           $message = "Mot de passe invalide";
           $er++;
@@ -47,8 +41,10 @@ error_reporting(E_ALL);
   }
   if ($er != 0) {
     echo $message;
-  }  else {
+  }  elseif ($er == 0) {
     // Redirection page précédente
     header ("Location: $_SERVER[HTTP_REFERER]" );
-  }
+  } 
+    
+  
 ?>

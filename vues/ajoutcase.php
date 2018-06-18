@@ -12,51 +12,82 @@
 	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
-		<?php include("includes/menu.php");?>
+		<?php include'includes/menu.php';?>
 	</div>
 
 	<div id="container" class="ajoutcase">
-		<div class="titre">
-			<h2><?echo $_SESSION['titre'];?>Titre</h2>
-		</div>
-
-		<div id="templatevide">
-			<div id="template_select">
-				<img class="apercu"/>
+		<form>
+			<div class="titre">
+				<h2><?php echo $_SESSION['titre'];?></h2>
 			</div>
-			<div class="icones">
-				<div class="alignleft">
-					<span id="choix_formes">
-						<?php include 'modals/choixformes.php';?>
-					</span>
-					<a id="telecharger_template">
-						<img class="icone" src="../img/telecharger-template.png" alt="Télécharger template" title="Télécharger" width="40px" />
-					</a>
-					<label id="ajouter_case">
-						<img class="icone" src="../img/ajouter-case.png" alt="Ajouter la case" title="Ajouter" width="40px" />
-						<input type="file" class="hidden">
-					</label>
-				</div>
-				<div class="alignright">
-					<button id="valider_case">
-						<img class="icone" src="../img/valider-case.png" alt="Validation" title="Valider" width="40px" />
-					</button>
-					<button id="annulation">
-						<img class="icone" src="../img/annulation.png" alt="Annulation" title="Annuler" width="40px" />
-					</button>
-				</div>
 
+			<div id="templatevide">
+				<label id="template_select">
+					<img class="apercu" name='apercu'/>
+					<input type="hidden" name="apercu"/>
+				</label>
+				<div class="icones">
+					<div class="alignleft">
+						<span id="choix_formes">
+							<?php include 'modals/choixformes.php';?>
+						</span>
+						<a id="telecharger_template">
+							<img class="icone" src="../img/telecharger-template.png" alt="Télécharger template" title="Télécharger" width="40px" />
+						</a>
+						<label id="ajouter_case">
+							<img class="icone" src="../img/ajouter-case.png" alt="Ajouter la case" title="Ajouter" width="40px" />
+							<input type="file" class="hidden" name="ajoutercase" id="ajouter" onchange="preview(this.value);">
+							<!-- <?php // include '../controles/ajoutcase.php';?> -->
+							<?php
+								if (isset($_FILES['ajoutercase'])) {
+									$_FILES['ajoutercase']['name'] ;
+									$_FILES['ajoutercase']['type'] ;
+									$_FILES['ajoutercase']['size'];
+									$_FILES['ajoutercase']['tmp_name'];
+									$_FILES['ajoutercase']['error'];
+								}
+							?>
+						</label>
+					</div>
+					<div class="alignright">
+						<button type="submit" id="valider_case">
+							<img class="icone" src="../img/valider-case.png" alt="Validation" title="Valider" width="40px" />
+						</button>
+						<button type='reset' id="annulation" onclick="delpreview()">
+							<img class="icone" src="../img/annulation.png" alt="Annulation" title="Annuler" width="40px" />
+						</button>
+					</div>
+				</div>
 			</div>
-		</div>
-		
-		
+		</form>
 	</div>
 
 		<!-- Pied de page -->
 	<div id="footer">
-		<?php include ("includes/footer.php");?>
+		<?php include 'includes/footer.php';?>
 	</div>
+	</div>
+	<script>
+		function preview(filename) {
+			document.getElementById('template_select').innerHTML='<img class="preview" name="apercu" src="'+filename+'" width="100%" height="100%"/>';
+		};
+		function delpreview() {
+			var div = document.getElementById('template_select');
+			div.removeChild(div.childNodes[0]);
+		}
+		$(function(){
+			$('#annulation').click(function() {
+				$(".apercu").attr({
+					src: '',
+					id: '',
+					alt: '',
+					class: '',
+					name: ''
+				});
+			});
+		});
 
-	</div>
+
+	</script>
 </body>
 </html>
