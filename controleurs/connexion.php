@@ -3,6 +3,7 @@
   include 'functions.php';
   include 'lang_config.php';
   include 'bddconnect.php';
+  include '../modeles/query.php';
   
   $message = "";
   $er = 0;
@@ -14,9 +15,7 @@
       $message= _ERREUR_CHAMPSVIDE;
       $er++;
   } else {
-    $sql = "SELECT id, name, password, role FROM utilisateurs WHERE name =:user";
-
-    $req = $bdd->prepare($sql);
+    $req = $bdd->prepare($sqlConnexion);
     $req->bindParam(':user', $user);
     $req->execute();
     while ($data = $req->fetch()) {

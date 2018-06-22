@@ -57,7 +57,7 @@
 
 	<!-- Pied de page -->
 	<div id="footer">
-		<?php include ("includes/footer.php");?>
+		<?php include 'includes/footer.php';?>
 	</div>
 	
 	</div>

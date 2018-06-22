@@ -18,7 +18,7 @@
 <div id="container" class="inscription">
 	<fieldset>
 		<legend>Inscription</legend>
-		<form id="registerForm" method="POST" action="../controles/inscription_config.php" novalidate="novalidate">
+		<form id="registerForm" method="POST" action="../controleurs/inscription.php" novalidate="novalidate">
 			
 			<label for="username">
 				<abbr>Un Pseudo ? *</abbr>

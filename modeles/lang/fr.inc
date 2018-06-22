@@ -99,9 +99,9 @@ define("_BDENREGISTREE", "Bande dessinée enregistrée");
 	define("_VISIBLE_PARTICIPANT", "Visible uniquement par les participants");
 
 	define("_CASERESERVEE", "Case réservée");
-	define("_CASERESERVEES", "Case réservées");
+	define("_CASERESERVEES", "Cases réservées");
 	define("_CASEDISPO", "Case disponible");
-	define("_CASEDISPOS", "Case disponibles");
+	define("_CASEDISPOS", "Cases disponibles");
 
 	define("_TRI_VUE", "Trier par nombre de vues");
 /* PRINCIPE.PHP */
@@ -126,6 +126,7 @@ define("_T_PARTICIPER", "Choisissez une BD à laquelle vous voudriez participer 
 /* EXPLORER.PHP */
 	define("_T_PARCOURIR", "Parcourez les différentes BD terminées ou en cours de création !");
 	define("_BARRE_RECHERCHE", "Rechercher une bd, un auteur…");
+	define("_CHAMPS_RECHERCHE_VIDE", "Champs de recherche vide");
 /* FORMULAIRES */
 	/* CREATION_BD.PHP */
 		define("_T_CREATION", "Vous êtes en train de créer une BD");

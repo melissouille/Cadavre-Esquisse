@@ -83,7 +83,7 @@
 
 				<div class="valider">
 					<h2 class="titres"><?php echo _LABEL_VALIDER ;?></h2>
-					<button type="submit" name="valider" formaction="../controles/creationBD_config.php" form="createForm">
+					<button type="submit" name="valider" formaction="../controleurs/creationBD.php" form="createForm">
 						<?php echo _VALIDER_ET_COMMENCER ;?>
 					</button>
 				</div>

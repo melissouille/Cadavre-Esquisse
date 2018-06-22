@@ -16,7 +16,7 @@
 	</div>
 
 	<div id="container" class="ajoutcase">
-		<form>
+		<form action="../controles/ajoutcase.php">
 			<div class="titre">
 				<h2><?php echo $_SESSION['titre'];?></h2>
 			</div>
@@ -37,23 +37,13 @@
 						<label id="ajouter_case">
 							<img class="icone" src="../img/ajouter-case.png" alt="Ajouter la case" title="Ajouter" width="40px" />
 							<input type="file" class="hidden" name="ajoutercase" id="ajouter" onchange="preview(this.value);">
-							<!-- <?php // include '../controles/ajoutcase.php';?> -->
-							<?php
-								if (isset($_FILES['ajoutercase'])) {
-									$_FILES['ajoutercase']['name'] ;
-									$_FILES['ajoutercase']['type'] ;
-									$_FILES['ajoutercase']['size'];
-									$_FILES['ajoutercase']['tmp_name'];
-									$_FILES['ajoutercase']['error'];
-								}
-							?>
 						</label>
 					</div>
 					<div class="alignright">
 						<button type="submit" id="valider_case">
 							<img class="icone" src="../img/valider-case.png" alt="Validation" title="Valider" width="40px" />
 						</button>
-						<button type='reset' id="annulation" onclick="delpreview()">
+						<button type="reset" id="annulation" onclick="delpreview()">
 							<img class="icone" src="../img/annulation.png" alt="Annulation" title="Annuler" width="40px" />
 						</button>
 					</div>
@@ -86,8 +76,6 @@
 				});
 			});
 		});
-
-
 	</script>
 </body>
 </html>

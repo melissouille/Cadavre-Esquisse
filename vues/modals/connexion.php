@@ -11,7 +11,7 @@
       </div>
 
       <div class="modal-body">      
-        <form method="post" action="../controles/connexion_config.php">
+        <form method="post" action="../controleurs/connexion.php">
           <input type="text" name="user" placeholder="Pseudo">
           <input type="password" name="pass" placeholder="<?php echo _MOTDEPASSE ;?>">
           <input type="submit" name="login" class="login modal-submit" value="<?php echo _CONNEXION ;?>">

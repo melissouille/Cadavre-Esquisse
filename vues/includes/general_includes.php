@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Connexion à la base de données :
-include '../controles/bddconnect.php';
+include '../controleurs/bddconnect.php';
 // Configuration langues :
-include "../controles/lang_config.php";
+include "../controleurs/lang_config.php";
 ?>

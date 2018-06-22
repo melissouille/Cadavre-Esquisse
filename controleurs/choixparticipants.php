@@ -3,6 +3,7 @@
 	include 'bddconnect.php';
 	include 'functions.php';
 	include 'lang_config.php';
+	include '../modeles/query.php';
 
 	//STOCKER LES ERREURS :
 	$er = 0;
@@ -17,7 +18,6 @@
 
 			echo "$nbparticipant participants <br>";
 
-			$sqlparticipant = "SELECT id, name, avatar FROM utilisateurs WHERE name = :value";
 			$reqparticipant = $bdd->prepare($sqlparticipant);
 			$reqparticipant->bindParam(':value', $value);
 			$reqparticipant->execute();
@@ -31,8 +31,7 @@
 				$titre = $_SESSION['titre'];
 				echo "Titre = ".$titre. "<br>";
 
-				$sqlbd = "SELECT id, title FROM bandesdessinees WHERE title = :titre";
-				$reqbd=$bdd->prepare($sqlbd);
+				$reqbd=$bdd->prepare($sqlParticipantBD);
 				$reqbd->bindParam(':titre', $titre);
 				$reqbd->execute();
 
@@ -41,7 +40,7 @@
 				
 				echo "Id BD = ".$id_bd. "<br>";
 
-				include 'requetes/assoc_bd_user.php';
+				include 'assoc_bd_user.php';
 	
 				$reqbd->closeCursor();
 			}

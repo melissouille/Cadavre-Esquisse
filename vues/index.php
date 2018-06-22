@@ -16,7 +16,9 @@
 	</div>
 
 	<div id="container" class="index">
-		<?php include 'includes/header.php';?>
+		<section class="header">
+			<?php include 'includes/header.php';?>
+		</section>
 		<section class="lidee">
 			<h2><?php echo _T_PRINCIPE ;?></h2>
 			<p><?php echo _PRINCIPE ;?></p>
@@ -34,7 +36,7 @@
 			<div class="miniature">
 				<?php 
 					$etatBD='terminee';
-					include '../controles/miniature_config.php';
+					include '../controleurs/miniature_config.php';
 				?>
 			</div>
 			
@@ -69,7 +71,7 @@
 			<div class="miniature">
 				<?php 
 					$etatBD = 'encours';
-					include '../controles/miniature_config.php'; 
+					include '../controleurs/miniature_config.php';
 				?>
 			</div>
 

@@ -54,7 +54,7 @@
 			</div>
 
 			<div id="liste_rechercher">
-				<?php include '../controles/recherche.php'; ?>
+				<?php include '../controleurs/explorer.php'; ?>
 			</div>
 			<span class="nbresults"><?php echo $resultat; ?></span>
 		</div>
@@ -62,11 +62,11 @@
 	
 	<!-- Pied de page -->
 	<div id="footer">
-		<?php include ("includes/footer.php");?>
+		<?php include 'includes/footer.php';?>
 	</div>
 	</div>
 
-	<script src="../controles/autocomplete.js">
+	<script src="../controleurs/autocomplete/autocomplete.js">
 	</script>
 </body>
 <html>

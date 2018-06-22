@@ -1,6 +1,7 @@
 <?php
 	include 'lang_config.php';
 	include 'functions.php';
+	include '../modeles/query.php';
 	//Stocker nombre d'erreur :
 	$er = 0;
 	$message = "";
@@ -53,10 +54,7 @@
 			} // ne retourne pas d'er car pas obligatoire
 
 		if ($er == 0) {
-			$sqlInsert = "
-			INSERT INTO utilisateurs (name, email, password, date_inscription, url, description, website)
-			VALUES (:username, :email, :password, :date_inscription, :url, :description, :lien)";
-			$req=$bdd->prepare($sqlInsert);
+			$req=$bdd->prepare($sqlInsertInscription);
 			$req->bindParam(':username', $username);
 			$req->bindParam(':email', $email);
 			$req->bindParam(':password', $password);
@@ -69,8 +67,6 @@
 			// Redirection page d'accueil
 			header('Location:../vues/index.php');
 		}
-		echo 'Il y a '.$er.' erreurs <br>';
 		echo $message; 
 	}
-// if ($er!=0) erreur(ERR_IS_CO);
 ?>

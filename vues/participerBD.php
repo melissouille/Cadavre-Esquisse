@@ -12,7 +12,7 @@
 	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
-		<?php include("includes/menu.php");?>
+		<?php include 'includes/menu.php';?>
 	</div>
 
 	<div id="container" class="participer">
@@ -23,7 +23,7 @@
 			<!-- pour mise en forme jquery ui id="box" -->
 			<div id="box">
 				<label for="recherche"><?php echo _BARRE_RECHERCHE ;?></label><br>
-				<input type="text" name="recherche" id="rechercheencours" autocomplete="off">
+				<input type="text" name="recherche" id="recherche" autocomplete="off">
 			</div>
 			<br>
 			<div id="filtres">
@@ -57,7 +57,7 @@
 			</div>
 
 			<div id="liste_rechercher">
-				<?php include '../controles/participer.php'; ?>
+				<?php include '../controleurs/participer.php'; ?>
 			</div>
 			<span class="nbresults"><?php echo $resultat; ?></span>
 		</div>
@@ -70,11 +70,11 @@
 	
 	<!-- Pied de page -->
 	<div id="footer">
-		<?php include ("includes/footer.php");?>
+		<?php include 'includes/footer.php';?>
 	</div>
 
 	</div>
-	<script src="../controles/autocomplete.js">
+	<script src="../controleurs/autocomplete/autocomplete.js">
 	</script>
 </body>
 <html>
