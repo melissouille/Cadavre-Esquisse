@@ -204,4 +204,7 @@ define("_OUBLI_MDP", "Mot de passe oublié");
 
 define("_AVATAR", "Choisissez votre avatar :");
 define("_CHOIX_ETAT", "Choisisser l'état de votre bd : ");
+
+define("_ENVOYER", "Envoyer");
+define("_OBJET", "Objet");
 ?>
