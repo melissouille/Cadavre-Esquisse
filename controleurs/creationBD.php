@@ -12,7 +12,6 @@
 
 		// LES VARIABLES SAISIES
 		$titre = secureVar($_POST['titre']);
-		
 		$pages = secureVar($_POST['nb_pages']);
 		$temps = secureVar($_POST['temps']);
 		$droits = secureVar($_POST['droit']);
@@ -24,17 +23,16 @@
 		$hasardcouverture = rand(1,2);
 		switch ($hasardcouverture) {
 			case 1:
-				$couverture = "http://localhost/cadavre_esquisse/img/cde-apercubd-type.jpg";
+				$couverture = "http://localhost/cadavre_esquisse/img/couverture1.jpg";
 				break;
 			case 2:
-				$couverture = "";
+				$couverture = "http://localhost/cadavre_esquisse/img/couverture2.jpg";
 				break;
 		}
 		$date_creation = date('Y-m-d');
 		$etat = 'encours';
 	
-		// Création de la page de la bande dessinée //
-		$url = "www.cadavreesquisse.com/".$titre."";
+		
 
 		
 	// LES TESTS
@@ -65,6 +63,8 @@
  
 		// BASE DE DONNEES
 		if ($er == 0) {
+			// Créer un fichier et url
+			include 'creationfichier.php';
 			// Création entrée dans table bandesdessinees //
 			$req=$bdd->prepare($sqlCreationBD);
 			$req->bindParam(':id_bd', $id_bd);
@@ -100,15 +100,12 @@
 			include 'assoc_bd_user.php';
 
 		$_SESSION['titre'] = $titre;
-		/* Créer un fichier pour la bd 
-		fopen('bd/'.$titre'.php', 'w+');
-		*/
-			
+					
 		if ($droits == 'potes') {
-			header('Location: http://localhost/cadavre-esquisse/vues/ajoutparticipant.php');
+			header('Location: http://localhost/cadavre_esquisse/vues/ajoutparticipant.php');
 		} 
 		if ($droits == 'tous' || $droits == 'privee') {
-			header('Location: http://localhost/cadavre-esquisse/vues/ajoutcase.php');
+			header('Location: http://localhost/cadavre_esquisse/vues/ajoutcase.php');
 		}
 	}
 	echo $message;

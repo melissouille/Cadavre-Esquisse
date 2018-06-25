@@ -18,6 +18,7 @@
 	@import "pages/participant.less";
 	@import "pages/parametres.less";
 	@import "pages/case.less";
+	@import "pages/listeBD.less";
 
 /* STYLES */
 	@import "fonts.less";
@@ -54,5 +55,21 @@ img.avatar {
 	}
 	p {
 		display: none;
+	}
+}
+.unlog {
+	p {
+		.center;
+		color: @white;
+		padding-top: 80px;
+		font-size: 1.2em;
+	}
+	button {
+		width: 12%; height: 50px;
+		margin: 2% 44%;
+		color: @blue;
+		&:hover {
+			font-weight: bold;
+		}
 	}
 }

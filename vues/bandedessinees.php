@@ -15,9 +15,9 @@
 		<?php include'includes/menu.php';?>
 	</div>
 
-	<div id="container">
+	<div id="container" class="listeBD">
 		<?php if(isset($_SESSION['id'])) {
-			include '../controles/listeBD.php';
+			include '../controleurs/listeBD.php';
 		} else {
 			include 'includes/noconnect.php';
 		}
@@ -26,7 +26,7 @@
 
 	<!-- Pied de page -->
 	<div id="footer">
-		<?php include ("includes/footer.php");?>
+		<?php include 'includes/footer.php';?>
 	</div>
 	</div>
 </body>

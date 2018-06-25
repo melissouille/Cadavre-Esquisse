@@ -1,14 +1,13 @@
 <article>
 	<div class="contener_bd">
-
 		<div class="image" id="<?php echo $etatBD ;?>">
-			<span class="fanionminiature" id="<?php echo $etatC ;?>"></span>
-			<img src="<?php echo $couverture ;?>" width=198 height=280>
-			<div>
-				<a class="boutonLire" href="<?php echo $url ;?>">
+			<a href="<?php echo $url ;?>">
+				<span class="fanionminiature" id="<?php echo $etatC ;?>"></span>
+				<img src="<?php echo $couverture ;?>" width=198 height=280>
+				<span class="boutonLire">
 					<?php echo _LIRE ;?>
-				</a>
-			</div>
+				</span>
+			</a>
 		</div>
 		<div class="description">
 			<h3 class="titres"><?php echo $titre ;?></h3>

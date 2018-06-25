@@ -86,4 +86,21 @@ $sqlParticipantBD = "
 	FROM bandesdessinees 
 	WHERE title = :titre";
 
+//LISTE BD
+$sqlBD = "
+	SELECT * FROM bandesdessinees
+	WHERE id = :id_bd";
+$sqlSelectAssoc = "
+	SELECT id_bd FROM assoc_bd_user 
+	WHERE id_user=:id_user";
+	
+$sqlSelectUser = "
+	SELECT *
+	FROM utilisateurs
+	WHERE name=:user";
+
+$sqlSelectCase ="
+	SELECT *
+	FROM cases
+	WHERE id_user=:id_user";
 ?>

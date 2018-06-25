@@ -16,7 +16,7 @@
 	</div>
 
 	<div id="container" class="ajoutcase">
-		<form action="../controles/ajoutcase.php">
+		<form action="../controleurs/ajoutcase.php">
 			<div class="titre">
 				<h2><?php echo $_SESSION['titre'];?></h2>
 			</div>

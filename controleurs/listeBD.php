@@ -1,17 +1,9 @@
 <?php
+	include '../modeles/query.php';
 	include 'bddconnect.php';
 	$id_user = $_SESSION['id'];
 
-	//Requète SQL
-	$sqlAssoc = "
-		SELECT id_bd FROM assoc_bd_user 
-		WHERE id_user=:id_user";
-	$sqlBD = "
-		SELECT * FROM bandesdessinees
-		WHERE id = :id_bd";
-	$sqlCase = "SELECT etatC FROM cases WHERE id_bd =:id_bd";
-
-	$reqAssoc=$bdd->prepare($sqlAssoc);
+	$reqAssoc=$bdd->prepare($sqlSelectAssoc);
 	$reqAssoc->bindParam(':id_user', $id_user);
 	$reqAssoc->execute();
 

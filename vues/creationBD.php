@@ -88,11 +88,11 @@
 					</button>
 				</div>
 			</form>
-			<?php
-				} else {
-					include 'includes/noconnect.php';
-				}
-			?>
+		<?php
+		} else {
+			include 'includes/noconnect.php';
+		}
+		?>
 	</div>	
 	
 	<!-- Pied de page -->
