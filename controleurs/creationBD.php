@@ -63,8 +63,6 @@
  
 		// BASE DE DONNEES
 		if ($er == 0) {
-			// Créer un fichier et url
-			include 'creationfichier.php';
 			// Création entrée dans table bandesdessinees //
 			$req=$bdd->prepare($sqlCreationBD);
 			$req->bindParam(':id_bd', $id_bd);

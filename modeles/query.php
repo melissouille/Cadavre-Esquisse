@@ -86,10 +86,13 @@ $sqlParticipantBD = "
 	FROM bandesdessinees 
 	WHERE title = :titre";
 
-//LISTE BD
 $sqlBD = "
 	SELECT * FROM bandesdessinees
 	WHERE id = :id_bd";
+$sqlSelectIdBD ="
+	SELECT id
+	FROM bandesdessinees
+	WHERE title=:titre";
 $sqlSelectAssoc = "
 	SELECT id_bd FROM assoc_bd_user 
 	WHERE id_user=:id_user";
@@ -103,4 +106,15 @@ $sqlSelectCase ="
 	SELECT *
 	FROM cases
 	WHERE id_user=:id_user";
+$SelectCountCase ="
+	SELECT COUNT(*) AS nbr 
+	FROM cases 
+	WHERE id_bd=:id_bd";
+$SelectMaxCase ="
+	SELECT MAX(numero) as numax 
+	FROM cases 
+	WHERE id_bd=:id_bd";
+$InsertCase ="
+	INSERT INTO cases (id_bd, id_user, url, etatC, image, format, numero) 
+	VALUES :id_bd, :id_user, :url, :etat, :image, :format, :numero";
 ?>

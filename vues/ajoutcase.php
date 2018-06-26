@@ -12,7 +12,7 @@
 	<div id="main">
 	<!-- Menu -->
 	<div id="menu">
-		<?php include'includes/menu.php';?>
+		<?php include 'includes/menu.php';?>
 	</div>
 
 	<div id="container" class="ajoutcase">
