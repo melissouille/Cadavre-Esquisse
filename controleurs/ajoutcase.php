@@ -30,19 +30,25 @@ include '../modeles/query.php';
 						while ($data=$reqcase->fetch()) {
 							$format=$data['format'];
 							if ($format == 1) {
-								// forme 1 ou 4
+								// format 1 ou 4
+								// afficher seulement template 1 et 4
+								// sauf si dernière case de ligne retour ligne
 							}
 							elseif ($format == 2) {
-								// forme 2
+								// format 2
+								// afficher seulement template 2
+								// sauf si dernière case de ligne retour ligne
 							}
 							elseif ($format == 3) {
 								// nouvelle ligne
+								// retour à la ligne
 							}
 							elseif ($format == 4) {
-								// forme 1 ou nouvelle ligne
+								// format 1 ou nouvelle ligne
+								// sauf si dernière case de ligne retour ligne
 							}
 							elseif ($format == 5) {
-								// forme 2
+								// format 2
 							}
 						}
 				} 

@@ -1,28 +1,29 @@
-<button type="button" class="bouton_formes">
+<button type="button" class="bouton_formes" onclick="loadDoc()">
 	<img class="icone" src="../img/choix-formes.png" alt="Choix formes" title="Choisir formes" width="40px" />
 </button>
 
 <div id="formes-modal" style="display: none">
-		<h3>Choisissez la forme de votre case :</h3>
-		<div class="templates">
-	  		<img id="template1.jpg" class="template" src="../img/templates/template1.jpg" value="1"/>
-	    	<img id="template2.jpg" class="template" src="../img/templates/template2.jpg" value="2"/>
-	    	<img id="template3.jpg" class="template" src="../img/templates/template3.jpg" value="3"/>
-	    	<img id="template4.jpg" class="template" src="../img/templates/template4.jpg" value="4"/>
-	    	<img id="template5.jpg" class="template" src="../img/templates/template5.jpg" value="5"/>
-	  </div>
-  <button type="button" class="close">x</button>
-  <div class="arrow-up"></div>
 </div>
 
 <script>
-		$('.bouton_formes').click(function() {
-			$("#formes-modal").toggle('slow');
-		});
-		$('.close').click(function() {
-			$("#formes-modal").hide('slow');
-		});
-
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("formes-modal").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax.php", true);
+  xhttp.send();
+}
+/*	$('.bouton_formes').click(function() {
+		$("#formes-modal").toggle('slow');
+	});
+	$('.close').click(function() {
+		$("#formes-modal").hide('slow');
+	});
+*/
 	$(function() {
 		$('.template').css('border', '5px white solid');
 		$('.template').click(function() {
